@@ -1,12 +1,14 @@
 import React from 'react'
-import styles from './Button.module.css'
+import style from './Button.module.css'
+import classNames from 'classnames'
 
-interface ButtonProps {
+export interface ButtonProps {
 	label: string
+	children: React.ReactNode
 }
 
 const Button = (props: ButtonProps) => {
-	return <button className={styles.red}>{props.label}</button>
+	return <button className={classNames(style.red)}>{props.children}</button>
 }
 
 export default Button
