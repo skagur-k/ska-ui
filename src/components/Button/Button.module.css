@@ -1,0 +1,7 @@
+.red {
+	@apply text-sky-500 font-bold w-40 h-20 ring-8;
+}
+
+.blue {
+	color: #00f;
+}
