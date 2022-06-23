@@ -11,11 +11,7 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = (args) => {
-	return (
-		<div className='bg-sky-400 h-screen'>
-			<Button {...args}>{args.children}</Button>
-		</div>
-	)
+	return <Button {...args}>{args.children}</Button>
 }
 
 export const Primary = Template.bind({})

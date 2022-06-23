@@ -1,6 +1,5 @@
 .red {
-	font-size: 20px;
-	@apply bg-sky-500 font-bold ring-8;
+	@apply bg-amber-500 font-bold ring-8 p-4;
 }
 
 .blue {

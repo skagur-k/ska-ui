@@ -5,6 +5,8 @@ import dts from 'rollup-plugin-dts'
 import postcss from 'rollup-plugin-postcss'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import { terser } from 'rollup-plugin-terser'
+import babel from '@rollup/plugin-babel'
+
 const packageJson = require('./package.json')
 
 export default [
@@ -27,13 +29,17 @@ export default [
 			resolve(),
 			commonjs(),
 			typescript({ tsconfig: './tsconfig.json', exclude: ['**/*.stories.tsx', '**/*.test.tsx'] }),
+			babel({
+				babelHelpers: 'bundled',
+				exclude: 'node_modules/**',
+			}),
 			postcss({
 				config: {
 					path: './postcss.config.js',
 				},
 				extensions: ['.css'],
 				minimize: true,
-				extract: true,
+				sourcemap: true,
 				inject: {
 					insertAt: 'top',
 				},
@@ -43,7 +49,7 @@ export default [
 	},
 	{
 		input: 'dist/esm/types/index.d.ts',
-		output: [{ file: 'dist/index.d.ts', format: 'esm', sourcemap: true }],
+		output: [{ file: 'dist/index.d.ts', format: 'esm' }],
 		external: [/\.css$/],
 		plugins: [dts()],
 	},

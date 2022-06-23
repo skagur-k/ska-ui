@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './Button.module.css'
-import classNames from 'classnames'
+import clx from 'classnames'
 
 export interface ButtonProps {
 	label: string
@@ -8,7 +8,7 @@ export interface ButtonProps {
 }
 
 const Button = (props: ButtonProps) => {
-	return <button className={classNames(style.red)}>{props.children}</button>
+	return <button className={clx(style.red)}>{props.children}asd</button>
 }
 
 export default Button
