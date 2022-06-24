@@ -5,7 +5,7 @@ import dts from 'rollup-plugin-dts'
 import postcss from 'rollup-plugin-postcss'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import { terser } from 'rollup-plugin-terser'
-import babel from '@rollup/plugin-babel'
+import swc from 'rollup-plugin-swc'
 
 const packageJson = require('./package.json')
 
@@ -26,13 +26,9 @@ export default [
 		],
 		plugins: [
 			peerDepsExternal(),
+			typescript({ tsconfig: './tsconfig.json', exclude: ['**/*.stories.tsx', '**/*.test.tsx'] }),
 			resolve(),
 			commonjs(),
-			typescript({ tsconfig: './tsconfig.json', exclude: ['**/*.stories.tsx', '**/*.test.tsx'] }),
-			babel({
-				babelHelpers: 'bundled',
-				exclude: 'node_modules/**',
-			}),
 			postcss({
 				config: {
 					path: './postcss.config.js',
@@ -44,6 +40,7 @@ export default [
 					insertAt: 'top',
 				},
 			}),
+			swc({ minify: true }),
 			terser(),
 		],
 	},
