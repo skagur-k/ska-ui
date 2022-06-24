@@ -40,7 +40,9 @@ export default [
 					insertAt: 'top',
 				},
 			}),
-			swc({ minify: true }),
+			swc({
+				minify: true,
+			}),
 			terser(),
 		],
 	},

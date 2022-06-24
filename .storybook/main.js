@@ -6,6 +6,16 @@ module.exports = {
 		'@storybook/addon-interactions',
 		'storybook-css-modules-preset',
 		{
+			name: 'storybook-addon-swc',
+			options: {
+				enable: true,
+				enableSwcLoader: true,
+				enableSwcMinify: true,
+				swcLoaderOptions: {},
+				swcMinifyOptions: {},
+			},
+		},
+		{
 			name: '@storybook/addon-postcss',
 			options: {
 				cssLoaderOptions: {
