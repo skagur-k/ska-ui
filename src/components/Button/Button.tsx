@@ -8,7 +8,7 @@ export interface ButtonProps {
 }
 
 const Button = (props: ButtonProps) => {
-	return <button className={clx(style.red)}>{props.children}asd</button>
+	return <button className={clx(style.red)}>{props.children}</button>
 }
 
 export default Button

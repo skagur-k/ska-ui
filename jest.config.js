@@ -1,23 +1,11 @@
+// TODO: FIX TEST!!
 module.exports = {
-	rootDir: process.cwd(),
-	moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
-	transformIgnorePatterns: [],
 	testEnvironment: 'jsdom',
+	extensionsToTreatAsEsm: ['.ts', '.tsx'],
 	moduleNameMapper: {
 		'.(css|less|scss)$': 'identity-obj-proxy',
 	},
 	transform: {
-		'^.*\\.(t|j)sx?$': [
-			'@swc/jest',
-			{
-				jsc: {
-					transform: {
-						react: {
-							runtime: 'automatic',
-						},
-					},
-				},
-			},
-		],
+		'^.+\\.(t|j)sx?$': ['@swc/jest'],
 	},
 }

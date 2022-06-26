@@ -1,3 +1,12 @@
 {
-	"sourceMaps": true
+	"sourceMaps": true,
+	"jsc": {
+		"target": "es2017",
+		"parser": {
+			"syntax": "typescript",
+			"tsx": true,
+			"decorators": false,
+			"dynamicImport": false
+		}
+	}
 }
