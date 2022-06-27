@@ -1,13 +1,11 @@
 import React from 'react'
 import { forwardRef, useState, useRef, useContext } from 'react'
-
-import style from './Button.module.css'
 import { useButton } from '@react-aria/button'
 import { useHover } from '@react-aria/interactions'
 import { DisabledContext } from '../../contexts/DisabledContext'
 import { ButtonOwnProps } from './Button.types'
-import { mergeRefs } from '@react-aria/utils'
 import classNames from 'classnames'
+import StyledButton from './Button.styled'
 
 const Button = forwardRef(
 	({ size, suffix, prefix, align, type, shape, variant, className, children, disabled, loading, onClick, ...props }: ButtonOwnProps, extRef) => {
@@ -38,14 +36,26 @@ const Button = forwardRef(
 		const { hoverProps, isHovered } = useHover({ isDisabled: false })
 
 		return (
-			<button
+			<StyledButton
+				$isHovered={isHovered}
+				$isPressed={isPressed}
+				$isDisabled={isDisabled}
+				$isFocused={isFocused}
+				ref={ref}
 				{...buttonProps}
 				{...hoverProps}
 				{...props}
-				ref={ref}
-				className={classNames(`px-4 ${isHovered ? 'bg-sky-500' : 'bg-amber-200'} ${isPressed ? 'bg-red-500' : ''}`, className)}>
-				{children}
-			</button>
+				size={size}
+				variant={variant}
+				type={type}
+				shape={shape}
+				disabled={disabled}
+				prefix={prefix}
+				onClick={onClick}
+				className={classNames(className)}>
+				{prefix && <div>{loading ? <span>Loading</span> : prefix}</div>}
+				<div>{children}</div>
+			</StyledButton>
 		)
 	}
 )

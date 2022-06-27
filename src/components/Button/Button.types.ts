@@ -4,10 +4,10 @@ type IntrinsicProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLBut
 
 export interface ButtonOwnProps extends Omit<IntrinsicProps, 'prefix' | 'type'> {
 	size?: 'sm' | 'md' | 'lg'
-	prefix?: JSX.Element | string
+	prefix?: string
 	suffix?: JSX.Element | string
 	align?: 'start' | 'grow'
-	type?: 'secondary' | 'success' | 'error' | 'warning' | 'alert'
+	type?: 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'alert'
 	shape?: 'rounded' | 'square'
 	variant?: 'shadow' | 'unstyled' | 'ghost'
 	disabled?: boolean
