@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-
 import Button from './Button'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -11,9 +10,10 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = (args) => {
-	const [isLoading, setLoading] = useState(true)
+	const [isLoading, setLoading] = useState<boolean>(false)
+
 	return (
-		<Button loading={isLoading} onClick={() => setLoading(true)} {...args}>
+		<Button loading={isLoading} onClick={() => setLoading(!isLoading)} {...args}>
 			{args.children}
 		</Button>
 	)

@@ -1,22 +1,39 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import { forwardRef, useState, useRef, useContext } from 'react'
 import { useButton } from '@react-aria/button'
 import { useHover } from '@react-aria/interactions'
 import { DisabledContext } from '../../contexts/DisabledContext'
-import { ButtonOwnProps } from './Button.types'
+import { ButtonProps } from './Button.types'
 import classNames from 'classnames'
+import { mergeRefs } from 'react-merge-refs'
 import StyledButton from './Button.styled'
 
-const Button = forwardRef(
-	({ size, suffix, prefix, align, type, shape, variant, className, children, disabled, loading, onClick, ...props }: ButtonOwnProps, extRef) => {
-		const ref = useRef<HTMLButtonElement>(null)
+const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
+	(btnProps: ButtonProps, extRef: React.Ref<HTMLButtonElement | null>) => {
+		const {
+			size,
+			icon,
+			iconRight,
+			type,
+			shape,
+			variant,
+			className,
+			children,
+			disabled,
+			loading,
+			onClick,
+			...rest
+		} = btnProps
+		const buttonRef = useRef<HTMLButtonElement>(null)
 		const ctxDisabled = useContext(DisabledContext)
 		const isDisabled = disabled ?? ctxDisabled
-		const [isFocused, setFocused] = useState(false)
 
+		const [isFocused, setFocused] = useState(false)
+		const { hoverProps, isHovered } = useHover({ isDisabled: false })
 		const { buttonProps, isPressed } = useButton(
 			{
 				type: 'submit',
+				isDisabled: isDisabled || loading,
 				onFocusChange: setFocused,
 				onKeyDown: (e) => {
 					if (e.key === 'Enter' || e.key === ' ') {
@@ -29,31 +46,30 @@ const Button = forwardRef(
 					if (e.pointerType === 'touch') {
 						onClick?.(e as any)
 					}
+					return e
+				},
+				onPressStart: (e) => {
+					if (e.pointerType === 'mouse') {
+						setFocused(false)
+						onClick?.(e as any)
+					}
+					return e
 				},
 			},
-			ref
+			buttonRef
 		)
-		const { hoverProps, isHovered } = useHover({ isDisabled: false })
 
 		return (
 			<StyledButton
-				$isHovered={isHovered}
-				$isPressed={isPressed}
-				$isDisabled={isDisabled}
-				$isFocused={isFocused}
-				ref={ref}
+				ref={mergeRefs([buttonRef, extRef])}
 				{...buttonProps}
 				{...hoverProps}
-				{...props}
-				size={size}
-				variant={variant}
-				type={type}
-				shape={shape}
 				disabled={disabled}
-				prefix={prefix}
-				onClick={onClick}
-				className={classNames(className)}>
-				{prefix && <div>{loading ? <span>Loading</span> : prefix}</div>}
+				data-focus={isFocused ? '' : null}
+				data-active={isPressed ? '' : null}
+				data-hover={isHovered ? '' : null}
+				className={classNames([])}
+				{...rest}>
 				<div>{children}</div>
 			</StyledButton>
 		)

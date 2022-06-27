@@ -6,6 +6,7 @@ import postcss from 'rollup-plugin-postcss'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import { terser } from 'rollup-plugin-terser'
 import swc from 'rollup-plugin-swc'
+import svgr from '@svgr/rollup'
 
 const packageJson = require('./package.json')
 
@@ -43,6 +44,7 @@ export default [
 			swc({
 				minify: true,
 			}),
+			svgr(),
 			terser(),
 		],
 	},
