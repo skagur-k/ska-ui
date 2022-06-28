@@ -10,22 +10,24 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = (args) => {
-	const [isLoading, setLoading] = useState<boolean>(false)
-
 	return (
-		<Button loading={isLoading} onClick={() => setLoading(!isLoading)} {...args}>
-			{args.children}
-		</Button>
+		<div className='flex flex-col gap-4'>
+			<Button size='sm' {...args}>
+				{args.children}
+			</Button>
+			<Button size='md' {...args}>
+				{args.children}
+			</Button>
+			<Button size='lg' {...args}>
+				{args.children}
+			</Button>
+			<Button {...args}>{args.children}</Button>
+		</div>
 	)
 }
 
 export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-	children: 'Button',
-}
-
-export const Secondary = Template.bind({})
-Secondary.args = {
 	children: 'Button',
 }

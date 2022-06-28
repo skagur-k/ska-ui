@@ -1,11 +1,12 @@
 import React from 'react'
 export interface ButtonOwnProps {
 	size?: 'sm' | 'md' | 'lg'
-	type?: 'submit' | 'reset' | 'button'
+	block?: boolean
+	type?: 'secondary' | 'success' | 'error' | 'warning' | 'alert'
 	shape?: 'rounded' | 'square'
 	icon?: JSX.Element | string
 	iconRight?: boolean
-	variant?: 'solid' | 'outline' | 'ghost'
+	variant?: 'solid' | 'shadow' | 'ghost' | 'unstyled'
 	disabled?: boolean
 	loading?: boolean
 }

@@ -1,7 +1,115 @@
-.red {
-	@apply bg-sky-500 font-bold ring-8 p-4;
+.base {
+	@apply font-bold cursor-pointer select-none bg-none relative border-2;
 }
 
-.blue {
-	color: #00f;
+.button {
+	@apply text-themed-fg bg-themed-bg border-themed-border flex items-center justify-center ease-linear max-w-full border-[1px] transition-all duration-150 rounded-sm font-medium;
+}
+
+.block {
+	@apply py-2 w-full;
+}
+
+.content {
+	@apply overflow-ellipsis whitespace-nowrap overflow-hidden inline-block;
+}
+
+.content.start {
+	@apply mr-auto;
+}
+
+.content.grow {
+	@apply mx-auto;
+}
+
+.base[data-focus] {
+	@apply shadow-lg;
+}
+
+.button.loading,
+.button[disabled] {
+	@apply cursor-not-allowed bg-gray-100 text-gray-300 border-gray-300;
+}
+
+.rounded {
+	@apply rounded-xl;
+}
+
+.square {
+	@apply rounded-none;
+}
+
+.shape {
+	@apply p-0;
+}
+
+.sm {
+	@apply text-sm px-4 py-1 max-w-fit;
+}
+
+.md {
+	@apply text-base px-6 py-1 max-w-fit;
+}
+
+.lg {
+	@apply text-lg px-8 py-1 max-w-fit;
+}
+
+.shadow {
+	@apply shadow-sm;
+}
+
+:global(.dark) .button.shadow {
+	@apply shadow-none;
+}
+
+.shadow[data-hover] {
+	@apply shadow-md;
+}
+
+.shadow[data-active] {
+	@apply shadow-sm;
+}
+
+.shadow[data-hover][data-active] {
+}
+
+.ghost {
+	@apply bg-transparent border-themed-bg text-themed-bg;
+}
+
+.ghost[data-hover] {
+	@apply text-themed-fg bg-themed-bg shadow-md;
+}
+
+.ghost[data-active] {
+	@apply shadow-sm;
+}
+
+.secondary {
+	@apply text-themed-fg bg-themed-bg border-themed-border;
+}
+
+.secondary[data-focus] {
+	@apply shadow-lg;
+}
+
+.secondary.shadow {
+	@apply border-bg;
+}
+
+.secondary.shadow[data-focus][data-active] {
+	@apply shadow-sm;
+}
+
+.secondary.ghost {
+	@apply text-themed-fg;
+}
+
+.secondary.ghost[data-focus] {
+	@apply shadow-sm;
+}
+
+:global(.dark) .secondary.shadow {
+	@apply border-accent-200;
 }
