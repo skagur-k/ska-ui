@@ -70,7 +70,6 @@ const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
 					styles.base,
 					{ [styles.button]: variant !== 'unstyled' },
 					{
-						[styles.solid]: variant === 'solid',
 						[styles.ghost]: variant === 'ghost',
 						[styles.shadow]: variant === 'shadow',
 					},
@@ -82,7 +81,7 @@ const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
 					{
 						[styles.secondary]: type === 'secondary',
 					},
-					size && [styles[size]],
+					size !== undefined ? [styles[size]] : [styles.block],
 					type === 'success' && ['geist-themed', 'geist-success', 'geist-success-fill'],
 					type === 'warning' && ['geist-themed', 'geist-warning', 'geist-warning-fill'],
 					type === 'alert' && ['geist-themed', 'geist-alert', 'geist-alert-fill'],

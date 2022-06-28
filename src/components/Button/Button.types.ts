@@ -6,7 +6,7 @@ export interface ButtonOwnProps {
 	shape?: 'rounded' | 'square'
 	icon?: JSX.Element | string
 	iconRight?: boolean
-	variant?: 'solid' | 'shadow' | 'ghost' | 'unstyled'
+	variant?: 'shadow' | 'ghost' | 'unstyled'
 	disabled?: boolean
 	loading?: boolean
 }

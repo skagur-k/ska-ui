@@ -6,7 +6,7 @@
 	@apply text-themed-fg bg-themed-bg border-themed-border flex items-center justify-center ease-linear max-w-full border-[1px] transition-all duration-150 rounded-sm font-medium;
 }
 
-.block {
+.button.block {
 	@apply py-2 w-full;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .rounded {
-	@apply rounded-xl;
+	@apply rounded-md;
 }
 
 .square {
