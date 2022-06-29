@@ -1,25 +1,13 @@
 .base {
-	@apply cursor-pointer select-none relative;
+	@apply cursor-pointer select-none relative min-h-[30px];
 }
 
 .button {
-	@apply text-themed-fg bg-themed-bg border-themed-border outline-none flex items-center justify-center ease-linear max-w-full border-[1px] transition-all duration-200 rounded-md font-semibold;
+	@apply border-[1px] transition-all duration-200 rounded-md font-semibold outline-none flex items-center justify-center ease-linear max-w-full text-themed-fg bg-themed-bg border-themed-border;
 }
 
 .button.block {
 	@apply py-3 w-full;
-}
-
-.content {
-	@apply overflow-ellipsis whitespace-nowrap overflow-hidden inline-block;
-}
-
-.content.start {
-	@apply mr-auto;
-}
-
-.content.grow {
-	@apply mx-auto;
 }
 
 .base[data-focus] {
@@ -48,19 +36,58 @@
 }
 
 .sm {
-	@apply text-sm px-4 py-1 max-w-fit;
+	@apply text-sm px-7 py-1 max-w-fit;
 }
 
 .md {
-	@apply text-base px-6 py-2 max-w-fit;
+	@apply text-sm px-8 py-1 max-w-fit;
 }
 
 .lg {
-	@apply text-base px-10 py-3 max-w-fit;
+	@apply text-sm px-10 py-2 max-w-fit;
+}
+
+.content {
+	@apply flex items-center space-x-1 overflow-ellipsis whitespace-nowrap overflow-hidden;
+}
+
+.sm .icon {
+	@apply absolute left-2 text-base;
+}
+.md .icon {
+	@apply absolute left-2 text-lg;
+}
+.lg .icon {
+	@apply absolute left-2 text-xl;
+}
+.block .icon {
+	@apply absolute left-3 text-2xl;
+}
+.sm.icononly .icon {
+	@apply static text-lg;
+}
+
+.md.icononly .icon {
+	@apply static text-xl;
+}
+.lg.icononly .icon {
+	@apply static text-2xl;
+}
+
+.sm.icononly {
+	@apply p-1;
+}
+
+.md.icononly {
+	@apply p-2;
+}
+
+.lg.icononly {
+	@apply p-2;
 }
 
 .shadow {
-	@apply shadow-none focus:ring-2 ring-themed-border ring-offset-2;
+	@apply shadow-none;
 }
 
 :global(.dark) .button .shadow {
@@ -68,7 +95,7 @@
 }
 
 .shadow[data-hover] {
-	@apply opacity-60 shadow-md;
+	@apply bg-white text-themed-text shadow-md;
 }
 
 .shadow[data-focus] {
@@ -80,7 +107,7 @@
 }
 
 .ghost {
-	@apply bg-transparent border-themed-border text-themed-text;
+	@apply bg-white border-themed-border text-themed-text;
 }
 
 .ghost[data-hover] {
@@ -93,4 +120,12 @@
 
 .ghost[data-active] {
 	@apply shadow-lg opacity-60;
+}
+
+.loader {
+	@apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+.notification {
+	@apply bg-red-500 h-2 w-2 rounded-full absolute -top-1 -right-1;
 }

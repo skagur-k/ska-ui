@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root,
-.dark-theme .invert-theme,
+.dark .invert-theme,
 .__LIGHT {
 	--geist-foreground: #000000;
 	--geist-background: #ffffff;
@@ -54,20 +54,20 @@
 	--wv-red: #ff4e42;
 }
 
-.dark-theme,
+.dark,
 .invert-theme,
 .__DARK {
 	--geist-foreground: #ffffff;
 	--geist-background: #000000;
 	--geist-selection: var(--geist-highlight-purple);
-	--accents-1: #111111;
-	--accents-2: #333333;
-	--accents-3: #444444;
-	--accents-4: #666666;
-	--accents-5: #888888;
-	--accents-6: #999999;
-	--accents-7: #eaeaea;
-	--accents-8: #fafafa;
+	--accents-1: #fafafa;
+	--accents-2: #eaeaea;
+	--accents-3: #999999;
+	--accents-4: #888888;
+	--accents-5: #666666;
+	--accents-6: #444444;
+	--accents-7: #333333;
+	--accents-8: #111111;
 	--geist-secondary-lighter: var(--accents-2);
 	--geist-secondary-light: var(--accents-3);
 	--geist-secondary: var(--accents-5);
@@ -83,17 +83,17 @@
 /* Colors from Note */
 
 .geist-themed.geist-primary {
-	--themed-fg: var(--accents-8);
-	--themed-bg: var(--accents-1);
-	--themed-text: var(--accents-6);
-	--themed-border: var(--accents-2);
+	--themed-fg: var(--accents-1);
+	--themed-bg: var(--accents-7);
+	--themed-text: var(--accents-7);
+	--themed-border: var(--accents-4);
 }
 
 .geist-themed.geist-secondary {
 	--themed-fg: var(--accents-1);
-	--themed-bg: var(--accents-6);
-	--themed-text: #000;
-	--themed-border: var(--accents-4);
+	--themed-bg: var(--accents-5);
+	--themed-text: var(--accents-7);
+	--themed-border: var(--accents-5);
 }
 
 .geist-themed.geist-success {

@@ -7,7 +7,7 @@ import { ButtonProps } from './Button.types'
 import classNames from 'classnames'
 import { mergeRefs } from 'react-merge-refs'
 import styles from './Button.module.css'
-import { BarLoader, BeatLoader, MoonLoader } from 'react-spinners'
+import { BeatLoader, ClockLoader } from 'react-spinners'
 
 const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
 	(btnProps: ButtonProps, extRef: React.Ref<HTMLButtonElement | null>) => {
@@ -18,7 +18,7 @@ const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
 			variant = 'shadow',
 			type = 'primary',
 			icon,
-			iconRight,
+			notification,
 			className,
 			children,
 			disabled,
@@ -39,7 +39,7 @@ const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
 				error: '#c50000',
 			},
 			shadow: {
-				primary: '#000000',
+				primary: '#ffffff',
 				secondary: '#ffffff',
 				success: '#d3e5ff',
 				warning: '#ab570d',
@@ -89,29 +89,34 @@ const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
 				data-active={isPressed ? '' : null}
 				data-hover={isHovered ? '' : null}
 				data-loading={loading ? '' : null}
-				className={classNames([
-					styles.base,
-					{ [styles.button]: variant !== 'unstyled' },
-					{ [styles.block]: block },
-					size && !block && [styles[size]],
-					{
-						[styles.ghost]: variant === 'ghost',
-						[styles.shadow]: variant === 'shadow',
-					},
-					{
-						[styles.rounded]: shape === 'rounded',
-						[styles.square]: shape === 'square',
-					},
-					type === 'primary' && [styles.primary, 'geist-themed', 'geist-primary'],
-					type === 'secondary' && ['geist-themed', 'geist-secondary'],
-					type === 'success' && ['geist-themed', 'geist-success'],
-					type === 'warning' && ['geist-themed', 'geist-warning'],
-					type === 'alert' && ['geist-themed', 'geist-alert'],
-					type === 'error' && ['geist-themed', 'geist-error'],
-				])}
+				className={classNames(
+					[
+						styles.base,
+						{ [styles.button]: variant !== 'unstyled' },
+						{ [styles.block]: block },
+						size && !block && [styles[size]],
+						{
+							[styles.ghost]: variant === 'ghost',
+							[styles.shadow]: variant === 'shadow',
+						},
+						{
+							[styles.rounded]: shape === 'rounded',
+							[styles.square]: shape === 'square',
+						},
+						type === 'primary' && [styles.primary, 'geist-themed', 'geist-primary'],
+						type === 'secondary' && ['geist-themed', 'geist-secondary'],
+						type === 'success' && ['geist-themed', 'geist-success'],
+						type === 'warning' && ['geist-themed', 'geist-warning'],
+						type === 'alert' && ['geist-themed', 'geist-alert'],
+						type === 'error' && ['geist-themed', 'geist-error'],
+						!!icon ? (!!children ? 'icon' : [styles.icononly]) : '',
+						,
+					],
+					className
+				)}
 				{...rest}
 				ref={mergeRefs([buttonRef, extRef])}>
-				{loading && (
+				{loading && children && (
 					<span>
 						<BeatLoader
 							size={5}
@@ -121,7 +126,15 @@ const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
 						/>
 					</span>
 				)}
-				{!loading && <span className={classNames([styles.content])}>{children}</span>}
+				{
+					<div className={styles.content}>
+						{icon && <span className={classNames(styles.icon)}>{icon}</span>}
+						{children && (
+							<span className={classNames(`${loading ? 'invisible' : 'visible'}`)}>{children}</span>
+						)}
+					</div>
+				}
+				{notification && <span className={styles.notification} />}
 			</button>
 		)
 	}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import Button from './Button'
-
+import { AiOutlineSetting } from 'react-icons/ai'
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
 	title: 'ska-ui/Button',
@@ -12,13 +12,17 @@ export default {
 const Template: ComponentStory<typeof Button> = (args) => {
 	return (
 		<div className='flex flex-col gap-4'>
-			<Button size='sm' variant='ghost' {...args}>
+			<Button type={'success'} notification loading size='sm' icon={<AiOutlineSetting />} />
+			<Button size='md' icon={<AiOutlineSetting />} />
+			<Button size='lg' icon={<AiOutlineSetting />} />
+
+			<Button size='sm' iconRight={true} variant='ghost' {...args}>
 				{args.children}
 			</Button>
-			<Button size='md' variant='ghost' {...args}>
+			<Button size='md' iconRight variant='ghost' {...args}>
 				{args.children}
 			</Button>
-			<Button size='lg' variant='ghost' {...args}>
+			<Button size='lg' iconRight variant='ghost' {...args}>
 				{args.children}
 			</Button>
 			<Button variant='ghost' block {...args}>
@@ -44,7 +48,8 @@ const Template: ComponentStory<typeof Button> = (args) => {
 export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-	children: 'Primary',
+	children: 'Settings',
+	icon: <AiOutlineSetting />,
 }
 
 export const Secondary = Template.bind({})

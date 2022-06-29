@@ -5,6 +5,7 @@ export interface ButtonOwnProps {
 	type?: 'secondary' | 'success' | 'error' | 'warning' | 'alert'
 	shape?: 'rounded' | 'square'
 	icon?: JSX.Element | string
+	notification?: boolean
 	iconRight?: boolean
 	variant?: 'shadow' | 'ghost' | 'unstyled'
 	disabled?: boolean
