@@ -1,13 +1,13 @@
 .base {
-	@apply font-bold cursor-pointer select-none bg-none relative border-2;
+	@apply cursor-pointer select-none relative;
 }
 
 .button {
-	@apply text-themed-fg bg-themed-bg border-themed-border flex items-center justify-center ease-linear max-w-full border-[1px] transition-all duration-150 rounded-sm font-medium;
+	@apply text-themed-fg bg-themed-bg border-themed-border outline-none flex items-center justify-center ease-linear max-w-full border-[1px] transition-all duration-200 rounded-md font-semibold;
 }
 
 .button.block {
-	@apply py-2 w-full;
+	@apply py-3 w-full;
 }
 
 .content {
@@ -23,24 +23,28 @@
 }
 
 .base[data-focus] {
-	@apply shadow-lg;
+	@apply shadow-md ring-2 ring-offset-2;
 }
 
-.button.loading,
+.button[data-loading],
 .button[disabled] {
-	@apply cursor-not-allowed bg-gray-100 text-gray-300 border-gray-300;
+	@apply opacity-80;
+}
+
+.button[data-loading] {
+	@apply cursor-wait;
+}
+
+.button[disabled] {
+	@apply cursor-not-allowed;
 }
 
 .rounded {
-	@apply rounded-md;
+	@apply rounded-full;
 }
 
 .square {
-	@apply rounded-none;
-}
-
-.shape {
-	@apply p-0;
+	@apply rounded-md;
 }
 
 .sm {
@@ -48,68 +52,45 @@
 }
 
 .md {
-	@apply text-base px-6 py-1 max-w-fit;
+	@apply text-base px-6 py-2 max-w-fit;
 }
 
 .lg {
-	@apply text-lg px-8 py-1 max-w-fit;
+	@apply text-base px-10 py-3 max-w-fit;
 }
 
 .shadow {
-	@apply shadow-sm;
+	@apply shadow-none focus:ring-2 ring-themed-border ring-offset-2;
 }
 
-:global(.dark) .button.shadow {
+:global(.dark) .button .shadow {
 	@apply shadow-none;
 }
 
 .shadow[data-hover] {
-	@apply shadow-md;
+	@apply opacity-60 shadow-md;
+}
+
+.shadow[data-focus] {
+	@apply ring-2 ring-offset-2 ring-themed-text shadow-lg;
 }
 
 .shadow[data-active] {
-	@apply shadow-sm;
-}
-
-.shadow[data-hover][data-active] {
+	@apply shadow-lg opacity-80;
 }
 
 .ghost {
-	@apply bg-transparent border-themed-bg text-themed-bg;
+	@apply bg-transparent border-themed-border text-themed-text;
 }
 
 .ghost[data-hover] {
 	@apply text-themed-fg bg-themed-bg shadow-md;
 }
 
+.ghost[data-focus] {
+	@apply ring-2 ring-offset-2 ring-themed-text shadow-lg;
+}
+
 .ghost[data-active] {
-	@apply shadow-sm;
-}
-
-.secondary {
-	@apply text-themed-fg bg-themed-bg border-themed-border;
-}
-
-.secondary[data-focus] {
-	@apply shadow-lg;
-}
-
-.secondary.shadow {
-	@apply border-bg;
-}
-
-.secondary.shadow[data-focus][data-active] {
-	@apply shadow-sm;
-}
-
-.secondary.ghost {
-	@apply text-themed-fg;
-}
-
-.secondary.ghost[data-focus] {
-	@apply shadow-sm;
-}
-
-:global(.dark) .secondary.shadow {
-	@apply border-accent-200;
+	@apply shadow-lg opacity-60;
 }

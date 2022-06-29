@@ -7,14 +7,16 @@ import { ButtonProps } from './Button.types'
 import classNames from 'classnames'
 import { mergeRefs } from 'react-merge-refs'
 import styles from './Button.module.css'
+import { BarLoader, BeatLoader, MoonLoader } from 'react-spinners'
 
 const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
 	(btnProps: ButtonProps, extRef: React.Ref<HTMLButtonElement | null>) => {
 		const {
-			size,
-			shape,
-			variant,
-			type,
+			size = 'md',
+			block,
+			shape = 'square',
+			variant = 'shadow',
+			type = 'primary',
 			icon,
 			iconRight,
 			className,
@@ -27,6 +29,23 @@ const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
 		const buttonRef = useRef<HTMLButtonElement>(null)
 		const ctxDisabled = useContext(DisabledContext)
 		const isDisabled = disabled ?? ctxDisabled
+
+		const loaderColor: any = {
+			ghost: {
+				primary: '#000000',
+				secondary: '#000000',
+				success: '#0761d1',
+				warning: '#ab570a',
+				error: '#c50000',
+			},
+			shadow: {
+				primary: '#000000',
+				secondary: '#ffffff',
+				success: '#d3e5ff',
+				warning: '#ab570d',
+				error: '#ffffff',
+			},
+		}
 
 		const [isFocused, setFocused] = useState(false)
 		const { hoverProps, isHovered } = useHover({ isDisabled: isDisabled || loading })
@@ -46,11 +65,14 @@ const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
 					if (e.pointerType === 'touch') {
 						onClick?.(e as any)
 					}
+					if (e.pointerType === 'mouse') {
+						// e.target.blur()
+					}
 					return e
 				},
 				onPressStart: (e) => {
 					if (e.pointerType === 'mouse') {
-						setFocused(false)
+						setFocused(true)
 						onClick?.(e as any)
 					}
 					return e
@@ -66,31 +88,40 @@ const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
 				data-focus={isFocused ? '' : null}
 				data-active={isPressed ? '' : null}
 				data-hover={isHovered ? '' : null}
+				data-loading={loading ? '' : null}
 				className={classNames([
 					styles.base,
 					{ [styles.button]: variant !== 'unstyled' },
+					{ [styles.block]: block },
+					size && !block && [styles[size]],
 					{
 						[styles.ghost]: variant === 'ghost',
 						[styles.shadow]: variant === 'shadow',
 					},
 					{
-						[styles.shape]: !!shape,
 						[styles.rounded]: shape === 'rounded',
 						[styles.square]: shape === 'square',
 					},
-					{
-						[styles.secondary]: type === 'secondary',
-					},
-					size !== undefined ? [styles[size]] : [styles.block],
-					type === 'success' && ['geist-themed', 'geist-success', 'geist-success-fill'],
-					type === 'warning' && ['geist-themed', 'geist-warning', 'geist-warning-fill'],
-					type === 'alert' && ['geist-themed', 'geist-alert', 'geist-alert-fill'],
-					type === 'error' && ['geist-themed', 'geist-error', 'geist-error-fill'],
-					className,
+					type === 'primary' && [styles.primary, 'geist-themed', 'geist-primary'],
+					type === 'secondary' && ['geist-themed', 'geist-secondary'],
+					type === 'success' && ['geist-themed', 'geist-success'],
+					type === 'warning' && ['geist-themed', 'geist-warning'],
+					type === 'alert' && ['geist-themed', 'geist-alert'],
+					type === 'error' && ['geist-themed', 'geist-error'],
 				])}
-				ref={mergeRefs([buttonRef, extRef])}
-				{...rest}>
-				<span className={classNames([styles.content])}>{children}</span>
+				{...rest}
+				ref={mergeRefs([buttonRef, extRef])}>
+				{loading && (
+					<span>
+						<BeatLoader
+							size={5}
+							speedMultiplier={0.6}
+							color={variant === 'ghost' ? loaderColor['ghost'][type] : loaderColor['shadow'][type]}
+							className={styles.loader}
+						/>
+					</span>
+				)}
+				{!loading && <span className={classNames([styles.content])}>{children}</span>}
 			</button>
 		)
 	}

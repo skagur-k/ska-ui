@@ -12,16 +12,31 @@ export default {
 const Template: ComponentStory<typeof Button> = (args) => {
 	return (
 		<div className='flex flex-col gap-4'>
-			<Button size='sm' {...args}>
+			<Button size='sm' variant='ghost' {...args}>
 				{args.children}
 			</Button>
-			<Button size='md' {...args}>
+			<Button size='md' variant='ghost' {...args}>
 				{args.children}
 			</Button>
-			<Button size='lg' {...args}>
+			<Button size='lg' variant='ghost' {...args}>
 				{args.children}
 			</Button>
-			<Button {...args}>{args.children}</Button>
+			<Button variant='ghost' block {...args}>
+				{args.children}
+			</Button>
+
+			<Button size='sm' variant='shadow' {...args}>
+				{args.children}
+			</Button>
+			<Button size='md' variant='shadow' {...args}>
+				{args.children}
+			</Button>
+			<Button size='lg' variant='shadow' {...args}>
+				{args.children}
+			</Button>
+			<Button variant='shadow' block {...args}>
+				{args.children}
+			</Button>
 		</div>
 	)
 }
@@ -29,5 +44,29 @@ const Template: ComponentStory<typeof Button> = (args) => {
 export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-	children: 'Button',
+	children: 'Primary',
+}
+
+export const Secondary = Template.bind({})
+Secondary.args = {
+	children: 'Secondary',
+	type: 'secondary',
+}
+
+export const Success = Template.bind({})
+Success.args = {
+	children: 'Success',
+	type: 'success',
+}
+
+export const Error = Template.bind({})
+Error.args = {
+	children: 'Error',
+	type: 'error',
+}
+
+export const Warning = Template.bind({})
+Warning.args = {
+	children: 'Warning',
+	type: 'warning',
 }
