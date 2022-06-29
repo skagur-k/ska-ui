@@ -7,16 +7,17 @@ import { ButtonProps } from './Button.types'
 import classNames from 'classnames'
 import { mergeRefs } from 'react-merge-refs'
 import styles from './Button.module.css'
-import { BeatLoader, ClockLoader } from 'react-spinners'
+import { BeatLoader } from 'react-spinners'
 
-const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
+const Button: React.ComponentType<ButtonProps> = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
 	(btnProps: ButtonProps, extRef: React.Ref<HTMLButtonElement | null>) => {
 		const {
 			size = 'md',
-			block,
 			shape = 'square',
 			variant = 'shadow',
 			type = 'primary',
+			block,
+			focusafterclick = true,
 			icon,
 			notification,
 			className,
@@ -66,7 +67,7 @@ const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
 						onClick?.(e as any)
 					}
 					if (e.pointerType === 'mouse') {
-						// e.target.blur()
+						focusafterclick ? '' : e.target.blur()
 					}
 					return e
 				},
@@ -122,19 +123,28 @@ const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
 							size={5}
 							speedMultiplier={0.6}
 							color={variant === 'ghost' ? loaderColor['ghost'][type] : loaderColor['shadow'][type]}
-							className={styles.loader}
+							className={classNames(
+								`${loading ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`,
+								styles.loader
+							)}
 						/>
 					</span>
 				)}
 				{
-					<div className={styles.content}>
+					<div className={styles.contentwrapper}>
 						{icon && <span className={classNames(styles.icon)}>{icon}</span>}
 						{children && (
-							<span className={classNames(`${loading ? 'invisible' : 'visible'}`)}>{children}</span>
+							<span
+								className={classNames(
+									`${loading ? 'opacity-0 translate-y-10' : 'opacity-100 translate-y-0'}`,
+									styles.content
+								)}>
+								{children}
+							</span>
 						)}
 					</div>
 				}
-				{notification && <span className={styles.notification} />}
+				{notification && !isFocused && <span className={styles.notification} />}
 			</button>
 		)
 	}

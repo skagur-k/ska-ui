@@ -6,6 +6,7 @@ export interface ButtonOwnProps {
 	shape?: 'rounded' | 'square'
 	icon?: JSX.Element | string
 	notification?: boolean
+	focusafterclick?: boolean
 	iconRight?: boolean
 	variant?: 'shadow' | 'ghost' | 'unstyled'
 	disabled?: boolean

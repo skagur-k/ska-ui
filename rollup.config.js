@@ -6,13 +6,12 @@ import postcss from 'rollup-plugin-postcss'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import { terser } from 'rollup-plugin-terser'
 import swc from 'rollup-plugin-swc'
-import svgr from '@svgr/rollup'
 
 const packageJson = require('./package.json')
 
 export default [
 	{
-		input: 'src/index.ts',
+		input: './src/index.ts',
 		output: [
 			{
 				file: packageJson.main,
@@ -27,7 +26,7 @@ export default [
 		],
 		plugins: [
 			peerDepsExternal(),
-			typescript({ tsconfig: './tsconfig.json', exclude: ['**/*.stories.tsx', '**/*.test.tsx'] }),
+			typescript({ tsconfig: './tsconfig.json', exclude: ['./**/*.stories.tsx', './**/*.test.tsx'] }),
 			resolve(),
 			commonjs(),
 			postcss({
@@ -41,16 +40,13 @@ export default [
 					insertAt: 'top',
 				},
 			}),
-			swc({
-				minify: true,
-			}),
-			svgr(),
+			swc(),
 			terser(),
 		],
 	},
 	{
-		input: 'dist/esm/types/index.d.ts',
-		output: [{ file: 'dist/index.d.ts', format: 'esm' }],
+		input: './dist/esm/types/index.d.ts',
+		output: [{ file: './dist/index.d.ts', format: 'esm' }],
 		external: [/\.css$/],
 		plugins: [dts()],
 	},

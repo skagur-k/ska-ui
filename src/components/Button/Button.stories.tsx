@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import Button from './Button'
 import { AiOutlineSetting } from 'react-icons/ai'
@@ -12,24 +12,24 @@ export default {
 const Template: ComponentStory<typeof Button> = (args) => {
 	return (
 		<div className='flex flex-col gap-4'>
-			<Button type={'success'} notification loading size='sm' icon={<AiOutlineSetting />} />
+			<Button size='sm' notification icon={<AiOutlineSetting />} />
 			<Button size='md' icon={<AiOutlineSetting />} />
-			<Button size='lg' icon={<AiOutlineSetting />} />
+			<Button size='lg' focusafterclick icon={<AiOutlineSetting />} />
 
-			<Button size='sm' iconRight={true} variant='ghost' {...args}>
+			<Button size='sm' variant='ghost' {...args}>
 				{args.children}
 			</Button>
-			<Button size='md' iconRight variant='ghost' {...args}>
+			<Button size='md' variant='ghost' {...args}>
 				{args.children}
 			</Button>
-			<Button size='lg' iconRight variant='ghost' {...args}>
+			<Button size='lg' notification variant='ghost' {...args}>
 				{args.children}
 			</Button>
 			<Button variant='ghost' block {...args}>
 				{args.children}
 			</Button>
 
-			<Button size='sm' variant='shadow' {...args}>
+			<Button size='sm' notification variant='shadow' {...args}>
 				{args.children}
 			</Button>
 			<Button size='md' variant='shadow' {...args}>

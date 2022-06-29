@@ -1,5 +1,6 @@
 {
 	"sourceMaps": true,
+	"minify": true,
 	"jsc": {
 		"target": "es2017",
 		"parser": {
@@ -7,6 +8,11 @@
 			"tsx": true,
 			"decorators": false,
 			"dynamicImport": false
+		},
+		"transform": {
+			"react": {
+				"runtime": "automatic"
+			}
 		}
 	}
 }

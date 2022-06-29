@@ -3,7 +3,7 @@
 }
 
 .button {
-	@apply border-[1px] transition-all duration-200 rounded-md font-semibold outline-none flex items-center justify-center ease-linear max-w-full text-themed-fg bg-themed-bg border-themed-border;
+	@apply border-[1px] transition-all duration-100 rounded-md font-semibold outline-none flex items-center justify-center ease-linear max-w-full text-themed-fg bg-themed-bg border-themed-border;
 }
 
 .button.block {
@@ -47,8 +47,12 @@
 	@apply text-sm px-10 py-2 max-w-fit;
 }
 
-.content {
+.contentwrapper {
 	@apply flex items-center space-x-1 overflow-ellipsis whitespace-nowrap overflow-hidden;
+}
+
+.content {
+	@apply transition-all ease-in-out duration-100;
 }
 
 .sm .icon {
@@ -95,7 +99,7 @@
 }
 
 .shadow[data-hover] {
-	@apply bg-white text-themed-text shadow-md;
+	@apply opacity-70 text-themed-fg shadow-md;
 }
 
 .shadow[data-focus] {
@@ -103,7 +107,7 @@
 }
 
 .shadow[data-active] {
-	@apply shadow-lg opacity-80;
+	@apply shadow-lg opacity-60;
 }
 
 .ghost {
@@ -123,9 +127,9 @@
 }
 
 .loader {
-	@apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+	@apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all ease-in-out duration-100;
 }
 
 .notification {
-	@apply bg-red-500 h-2 w-2 rounded-full absolute -top-1 -right-1;
+	@apply bg-red-500 h-3 w-3 rounded-full absolute -top-1 -right-1;
 }
