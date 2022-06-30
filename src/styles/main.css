@@ -1,140 +1,162 @@
-@tailwind base;
-@layer base {
-	:root,
-	.dark .invert-theme,
-	.__LIGHT {
-		--geist-foreground: theme('colors.black');
-		--geist-background: theme('colors.white');
-		--geist-selection: var(--geist-cyan-light);
-		--accents-1: theme('colors.neutral.50');
-		--accents-2: theme('colors.neutral.100');
-		--accents-3: theme('colors.neutral.300');
-		--accents-4: theme('colors.neutral.400');
-		--accents-5: theme('colors.neutral.500');
-		--accents-6: theme('colors.neutral.600');
-		--accents-7: theme('colors.neutral.900');
-		--accents-8: theme('colors.neutral.900');
-
-		--geist-error-light: theme('colors.red.500');
-		--geist-error: theme('colors.red.600');
-		--geist-error-dark: theme('colors.red.700');
-		--geist-error-lighter: theme('colors.red.400');
-		--geist-success-lighter: theme('colors.blue.500');
-		--geist-success-light: theme('colors.blue.600');
-		--geist-success: theme('colors.blue.700');
-		--geist-success-dark: theme('colors.blue.800');
-		--geist-warning-lighter: theme('colors.yellow.300');
-		--geist-warning-light: theme('colors.yellow.400');
-		--geist-warning: theme('colors.yellow.500');
-		--geist-warning-dark: theme('colors.yellow.600');
-		--geist-violet-lighter: theme('colors.yellow.600');
-		--geist-violet-light: theme('colors.violet.400');
-		--geist-violet: theme('colors.violet.500');
-		--geist-violet-dark: theme('colors.violet.800');
-		--geist-cyan-lighter: theme('colors.cyan.300');
-		--geist-cyan-light: theme('colors.cyan.400');
-		--geist-cyan: theme('colors.cyan.500');
-		--geist-cyan-dark: theme('colors.cyan.700');
-		--geist-highlight-purple: theme('colors.purple.700');
-		--geist-highlight-pink: theme('colors.pink.500');
-		--geist-highlight-yellow: theme('colors.yellow.500');
-
-		--geist-link-color: var(--geist-success);
-		--geist-marketing-gray: #fafbfc;
-		--geist-code: var(--geist-highlight-purple);
-		--geist-secondary-lighter: var(--accents-2);
-		--geist-secondary-light: var(--accents-3);
-		--geist-secondary: var(--accents-5);
-		--geist-secondary-dark: var(--accents-7);
-		--wv-green: #0cce6b;
-		--wv-orange: #ffa400;
-		--wv-red: #ff4e42;
-	}
-
-	.dark,
-	.invert-theme,
-	.__DARK {
-		--geist-foreground: #ffffff;
-		--geist-background: #000000;
-		--geist-selection: var(--geist-highlight-purple);
-		--accents-1: theme('colors.neutral.50');
-		--accents-2: theme('colors.neutral.100');
-		--accents-3: theme('colors.neutral.300');
-		--accents-4: theme('colors.neutral.400');
-		--accents-5: theme('colors.neutral.500');
-		--accents-6: theme('colors.neutral.600');
-		--accents-7: theme('colors.neutral.900');
-		--accents-8: theme('colors.neutral.900');
-		--geist-secondary-lighter: var(--accents-2);
-		--geist-secondary-light: var(--accents-3);
-		--geist-secondary: var(--accents-5);
-		--geist-secondary-dark: var(--accents-7);
-		--geist-link-color: var(--geist-success-light);
-		--geist-marketing-gray: var(--accents-1);
-		--geist-code: var(--geist-cyan-light);
-		--geist-error-light: #ff3333;
-		--geist-error: #cc3300;
-		--geist-error-dark: #e60000;
-	}
-
-	/* Colors from Note */
-
-	.geist-themed.geist-primary {
-		--themed-fg: var(--accents-1);
-		--themed-bg: var(--accents-7);
-		--themed-text: var(--accents-7);
-		--themed-border: var(--accents-7);
-	}
-
-	.geist-themed.geist-secondary {
-		--themed-fg: var(--accents-1);
-		--themed-bg: var(--accents-5);
-		--themed-text: var(--accents-7);
-		--themed-border: var(--accents-5);
-	}
-
-	.geist-themed.geist-success {
-		--themed-fg: #fff;
-		--themed-bg: var(--geist-success);
-		--themed-text: var(--geist-success);
-		--themed-border: var(--geist-success);
-	}
-
-	.geist-themed.geist-error {
-		--themed-fg: #fff;
-		--themed-bg: var(--geist-error);
-		--themed-text: var(--geist-error);
-		--themed-border: var(--geist-error);
-	}
-
-	.geist-themed.geist-warning {
-		--themed-fg: #fff;
-		--themed-bg: var(--geist-warning);
-		--themed-text: var(--geist-warning);
-		--themed-border: var(--geist-warning);
-	}
-
-	.geist-themed.geist-alert {
-		--themed-fg: #fff;
-		--themed-bg: var(--geist-highlight-pink);
-		--themed-text: var(--geist-highlight-pink);
-		--themed-border: var(--geist-highlight-pink);
-	}
-
-	.geist-themed.geist-lite {
-		--themed-fg: var(--geist-foreground);
-		--themed-bg: var(--accents-1);
-		--themed-border: var(--accents-2);
-	}
-
-	button,
-	[type='button'],
-	[type='reset'],
-	[type='submit'] {
-		-webkit-appearance: unset; /* 1 */
-		background-color: unset; /* 2 */
-		background-image: unset; /* 2 */
-	}
+html {
+	height: 100%;
+	box-sizing: border-box;
+	touch-action: manipulation;
+	font-feature-settings: 'rlig' 1, 'calt' 0;
 }
-@tailwind components;
-@tailwind utilities;
+html,
+body {
+	font-family: var(--font-sans);
+	text-rendering: optimizeLegibility;
+	background-color: var(--geist-background);
+	color: var(--geist-foreground);
+	scroll-padding-top: var(--header-height);
+}
+
+body {
+	position: relative;
+	min-height: 100%;
+	margin: 0;
+}
+
+a {
+	color: var(--geist-secondary);
+	text-decoration: none;
+	transition: color 0.1s ease;
+}
+a:hover {
+	color: var(--geist-foreground);
+}
+a.active {
+	color: var(--geist-foreground);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+:root,
+.dark,
+.__LIGHT {
+	--geist-foreground: var(--accents-8);
+	--geist-background: var(--accents-1);
+	--geist-selection: var(--geist-cyan-light);
+	--accents-1: #fafafa;
+	--accents-2: #f5f5f5;
+	--accents-3: #e5e5e5;
+	--accents-4: #d4d4d4;
+	--accents-5: #737373;
+	--accents-6: #525252;
+	--accents-7: #404040;
+	--accents-8: #262626;
+
+	--geist-error-light: #ef4444;
+	--geist-error: #dc2626;
+	--geist-error-dark: #b91c1c;
+	--geist-error-lighter: #f87171;
+	--geist-success-lighter: #3b82f6;
+	--geist-success-light: #2563eb;
+	--geist-success: #1d4ed8;
+	--geist-success-dark: #1e40af;
+	--geist-warning-lighter: #fde047;
+	--geist-warning-light: #facc15;
+	--geist-warning: #eab308;
+	--geist-warning-dark: #ca8a04;
+	--geist-violet-lighter: #a16207;
+	--geist-violet-light: #a78bfa;
+	--geist-violet: #8b5cf6;
+	--geist-violet-dark: #5b21b6;
+	--geist-cyan-lighter: #67e8f9;
+	--geist-cyan-light: #22d3ee;
+	--geist-cyan: #06b6d4;
+	--geist-cyan-dark: #0e7490;
+	--geist-highlight-purple: #7e22ce;
+	--geist-highlight-pink: #ec4899;
+	--geist-highlight-yellow: #eab308;
+
+	--geist-link-color: var(--geist-success);
+	--geist-marketing-gray: #fafbfc;
+	--geist-code: var(--geist-highlight-purple);
+	--geist-secondary-lighter: var(--accents-2);
+	--geist-secondary-light: var(--accents-3);
+	--geist-secondary: var(--accents-5);
+	--geist-secondary-dark: var(--accents-7);
+	--wv-green: #0cce6b;
+	--wv-orange: #ffa400;
+	--wv-red: #ff4e42;
+}
+
+.dark,
+.__DARK {
+	--geist-foreground: #ffffff;
+	--geist-background: #000000;
+	--geist-selection: var(--geist-highlight-purple);
+	--accents-1: #262626;
+	--accents-2: #404040;
+	--accents-3: #525252;
+	--accents-4: #737373;
+	--accents-5: #d4d4d4;
+	--accents-6: #e5e5e5;
+	--accents-7: #f5f5f5;
+	--accents-8: #fafafa;
+	--geist-secondary-lighter: var(--accents-2);
+	--geist-secondary-light: var(--accents-3);
+	--geist-secondary: var(--accents-5);
+	--geist-secondary-dark: var(--accents-7);
+	--geist-link-color: var(--geist-success-light);
+	--geist-marketing-gray: var(--accents-1);
+	--geist-code: var(--geist-cyan-light);
+	--geist-error-light: #ff3333;
+	--geist-error: #cc3300;
+	--geist-error-dark: #e60000;
+}
+
+/* Colors from Note */
+
+.geist-themed.geist-primary {
+	--themed-fg: var(--accents-1);
+	--themed-bg: var(--accents-6);
+	--themed-text: var(--accents-6);
+	--themed-border: var(--accents-6);
+}
+
+.geist-themed.geist-secondary {
+	--themed-fg: var(--accents-1);
+	--themed-bg: var(--accents-8);
+	--themed-text: var(--accents-8);
+	--themed-border: var(--accents-8);
+}
+
+.geist-themed.geist-success {
+	--themed-fg: #fff;
+	--themed-bg: var(--geist-success);
+	--themed-text: var(--geist-success);
+	--themed-border: var(--geist-success);
+}
+
+.geist-themed.geist-error {
+	--themed-fg: #fff;
+	--themed-bg: var(--geist-error);
+	--themed-text: var(--geist-error);
+	--themed-border: var(--geist-error);
+}
+
+.geist-themed.geist-warning {
+	--themed-fg: #fff;
+	--themed-bg: var(--geist-warning);
+	--themed-text: var(--geist-warning);
+	--themed-border: var(--geist-warning);
+}
+
+.geist-themed.geist-alert {
+	--themed-fg: #fff;
+	--themed-bg: var(--geist-highlight-pink);
+	--themed-text: var(--geist-highlight-pink);
+	--themed-border: var(--geist-highlight-pink);
+}
+
+.geist-themed.geist-lite {
+	--themed-fg: var(--geist-foreground);
+	--themed-bg: var(--accents-1);
+	--themed-border: var(--accents-2);
+}
