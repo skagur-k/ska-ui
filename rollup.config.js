@@ -41,7 +41,6 @@ export default [
 				},
 			}),
 			swc(),
-			terser(),
 		],
 	},
 	{
