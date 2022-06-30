@@ -1,7 +1,4 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @layer base {
 	:root,
 	.dark .invert-theme,
@@ -86,7 +83,7 @@
 		--themed-fg: var(--accents-1);
 		--themed-bg: var(--accents-7);
 		--themed-text: var(--accents-7);
-		--themed-border: var(--accents-4);
+		--themed-border: var(--accents-7);
 	}
 
 	.geist-themed.geist-secondary {
@@ -129,4 +126,15 @@
 		--themed-bg: var(--accents-1);
 		--themed-border: var(--accents-2);
 	}
+
+	button,
+	[type='button'],
+	[type='reset'],
+	[type='submit'] {
+		-webkit-appearance: unset; /* 1 */
+		background-color: unset; /* 2 */
+		background-image: unset; /* 2 */
+	}
 }
+@tailwind components;
+@tailwind utilities;

@@ -1,6 +1,6 @@
 {
 	"name": "@skagur-k/ska-ui",
-	"version": "0.0.4",
+	"version": "0.0.46",
 	"description": "SKA-UI, A React UI Component Library",
 	"main": "./dist/cjs/index.js",
 	"module": "./dist/esm/index.esm.js",
@@ -36,7 +36,6 @@
 		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
-		"@mdx-js/react": "^1.6.22",
 		"@modular-css/rollup": "^28.2.0",
 		"@rollup/plugin-commonjs": "^22.0.0",
 		"@rollup/plugin-node-resolve": "^13.3.0",
@@ -64,8 +63,6 @@
 		"jest": "^28.1.1",
 		"jest-environment-jsdom": "^28.1.1",
 		"postcss": "^8.4.14",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
 		"react-icons": "^4.4.0",
 		"react-merge-refs": "^2.0.1",
 		"rollup": "^2.75.7",

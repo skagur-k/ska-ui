@@ -6,7 +6,6 @@ import postcss from 'rollup-plugin-postcss'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import { terser } from 'rollup-plugin-terser'
 import swc from 'rollup-plugin-swc'
-
 const packageJson = require('./package.json')
 
 export default [
@@ -24,6 +23,7 @@ export default [
 				sourcemap: true,
 			},
 		],
+		external: ['react', 'react-dom'],
 		plugins: [
 			peerDepsExternal(),
 			typescript({ tsconfig: './tsconfig.json', exclude: ['./**/*.stories.tsx', './**/*.test.tsx'] }),
@@ -35,12 +35,14 @@ export default [
 				},
 				extensions: ['.css'],
 				minimize: true,
+				modules: true,
 				sourcemap: true,
 				inject: {
 					insertAt: 'top',
 				},
 			}),
 			swc(),
+			terser(),
 		],
 	},
 	{
