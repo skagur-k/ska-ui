@@ -36,14 +36,14 @@ const Button: React.ComponentType<ButtonProps> = forwardRef<HTMLButtonElement, P
 				primary: '#000000',
 				secondary: '#000000',
 				success: '#0761d1',
-				warning: '#ab570a',
+				warning: '#eab308',
 				error: '#c50000',
 			},
 			shadow: {
 				primary: '#ffffff',
 				secondary: '#ffffff',
 				success: '#d3e5ff',
-				warning: '#ab570d',
+				warning: '#000000',
 				error: '#ffffff',
 			},
 		}
@@ -123,10 +123,7 @@ const Button: React.ComponentType<ButtonProps> = forwardRef<HTMLButtonElement, P
 							size={5}
 							speedMultiplier={0.6}
 							color={variant === 'ghost' ? loaderColor['ghost'][type] : loaderColor['shadow'][type]}
-							className={classNames(
-								`${loading ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`,
-								styles.loader
-							)}
+							className={classNames(`${loading ? styles.show : styles.hide}`, styles.loader)}
 						/>
 					</span>
 				)}
@@ -134,11 +131,7 @@ const Button: React.ComponentType<ButtonProps> = forwardRef<HTMLButtonElement, P
 					<div className={styles.contentwrapper}>
 						{icon && <span className={classNames(styles.icon)}>{icon}</span>}
 						{children && (
-							<span
-								className={classNames(
-									`${loading ? 'opacity-0 translate-y-10' : 'opacity-100 translate-y-0'}`,
-									styles.content
-								)}>
+							<span className={classNames(`${loading ? styles.hide : styles.show}`, styles.content)}>
 								{children}
 							</span>
 						)}

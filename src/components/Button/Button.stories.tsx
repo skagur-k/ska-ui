@@ -25,7 +25,7 @@ const Template: ComponentStory<typeof Button> = (args) => {
 			<Button size='lg' notification variant='ghost' {...args}>
 				{args.children}
 			</Button>
-			<Button variant='ghost' block {...args}>
+			<Button variant='ghost' loading block {...args}>
 				{args.children}
 			</Button>
 
