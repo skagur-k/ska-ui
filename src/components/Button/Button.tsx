@@ -6,7 +6,7 @@ import { DisabledContext } from '../../contexts/DisabledContext'
 import { ButtonProps } from './Button.types'
 import classNames from 'classnames'
 import { mergeRefs } from 'react-merge-refs'
-import styles from './Button.module.css'
+import styles from './Button.css'
 import { BeatLoader } from 'react-spinners'
 
 const Button: React.ComponentType<ButtonProps> = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(

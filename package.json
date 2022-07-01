@@ -9,12 +9,13 @@
 		"dist"
 	],
 	"scripts": {
-		"build-lib": "npm run clean && rollup -c",
+		"build-lib": "npm run clean && NODE_ENV=production rollup -c",
 		"test": "jest",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
 		"clean": "rm -rf ./dist",
-		"build-publish": "npm run build-lib && npm publish"
+		"build-publish": "npm run build-lib && npm publish",
+		"link-react": "npm link ../test/node_modules/react"
 	},
 	"author": "Nam Hyuck Kim",
 	"repository": {
@@ -30,6 +31,10 @@
 		"classnames": "^2.3.1",
 		"react-aria": "^3.17.0",
 		"react-spinners": "^0.13.1"
+	},
+	"resolutions": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
 	},
 	"peerDependencies": {
 		"react": "^18.2.0",
@@ -63,6 +68,7 @@
 		"jest": "^28.1.1",
 		"jest-environment-jsdom": "^28.1.1",
 		"postcss": "^8.4.14",
+		"postcss-import": "^14.1.0",
 		"react-icons": "^4.4.0",
 		"react-merge-refs": "^2.0.1",
 		"rollup": "^2.75.7",

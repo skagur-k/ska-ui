@@ -1,4 +1,9 @@
-@tailwind base;
+@import 'tailwindcss/base';
+/* @import '../components/Button/Button.modul?e.css'; */
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';
 @layer base {
 	:root,
 	.dark .invert-theme,
@@ -126,15 +131,4 @@
 		--themed-bg: var(--accents-1);
 		--themed-border: var(--accents-2);
 	}
-
-	button,
-	[type='button'],
-	[type='reset'],
-	[type='submit'] {
-		-webkit-appearance: unset; /* 1 */
-		background-color: unset; /* 2 */
-		background-image: unset; /* 2 */
-	}
 }
-@tailwind components;
-@tailwind utilities;
