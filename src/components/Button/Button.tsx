@@ -8,23 +8,12 @@ import classNames from 'classnames'
 import { mergeRefs } from 'react-merge-refs'
 import { BeatLoader } from 'react-spinners'
 
-const Button = ({ children }: any) => {
+const Button = ({ color, children, className }: any) => {
 	return (
 		<div className='flex flex-col gap-4'>
-			<button data-focus className='btn btn-xs btn-disabled btn-solid'>
-				XS Button
-			</button>
-
-			<button data-focus className='btn btn-sm btn-disabled btn-solid'>
-				SM Button
-			</button>
-
-			<button data-focus className='btn btn-md btn-disabled btn-solid'>
-				MD Button
-			</button>
-
-			<button data-focus className='btn btn-lg btn-disabled btn-solid'>
-				LG Button
+			<button data-color={color} className={className}>
+				{children}
+				{/* <span className='btn-notification' /> */}
 			</button>
 		</div>
 	)

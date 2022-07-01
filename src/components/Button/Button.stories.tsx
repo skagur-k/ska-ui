@@ -12,12 +12,19 @@ export default {
 const Template = (args: any) => {
 	return (
 		<div className='flex flex-col gap-4'>
+			<Button className='btn'>Hello</Button>
+			<Button className='btn btn-xs btn-solid'>Hello</Button>
+			<Button className='btn btn-sm btn-solid'>Hello</Button>
+			<Button color='red' className='btn btn-md btn-solid'>
+				Hello
+			</Button>
+			<Button color='blue' className='btn btn-lg btn-solid'>
+				Hello
+			</Button>
+
 			{/* <Button size='sm' notification icon={<AiOutlineSetting />} />
 			<Button size='md' icon={<AiOutlineSetting />} />
 			<Button size='lg' focusafterclick icon={<AiOutlineSetting />} /> */}
-
-			<Button>Hello</Button>
-
 			{/* <Button size='md' variant='ghost' {...args}>
 				{args.children}
 			</Button>

@@ -4,6 +4,8 @@ const Button = require('./components/button')
 
 const components = [Button]
 
+const defaultColors = ['gray']
+
 const skaui = plugin.withOptions(
 	function (options = { colors: [], cssBase: true }) {
 		return function ({
@@ -15,7 +17,7 @@ const skaui = plugin.withOptions(
 			theme,
 			addUtilities,
 		}) {
-			const optionColors = ['red']
+			const optionColors = [...defaultColors, ...(options.colors || [])]
 
 			active({ addVariant, e, variants, theme, addUtilities })
 			focus({ addVariant, e, variants, theme, addUtilities })

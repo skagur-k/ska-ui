@@ -34,7 +34,7 @@ module.exports = {
 	},
 	plugins: [
 		skaui({
-			colors: ['red', 'blue'],
+			colors: ['red', 'blue', 'sky'],
 			cssBase: true,
 		}),
 	],
