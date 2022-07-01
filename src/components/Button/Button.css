@@ -1,4 +1,4 @@
-.base {
+.button_base {
 	@apply cursor-pointer select-none relative min-h-[30px];
 }
 
@@ -10,7 +10,7 @@
 	@apply py-3 w-full;
 }
 
-.base[data-focus] {
+.button_base[data-focus] {
 	@apply shadow-md ring-2 ring-offset-2;
 }
 

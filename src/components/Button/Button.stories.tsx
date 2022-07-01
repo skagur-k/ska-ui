@@ -6,20 +6,19 @@ import { AiOutlineSetting } from 'react-icons/ai'
 export default {
 	title: 'ska-ui/Button',
 	component: Button,
-} as ComponentMeta<typeof Button>
+}
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args) => {
+const Template = (args: any) => {
 	return (
 		<div className='flex flex-col gap-4'>
-			<Button size='sm' notification icon={<AiOutlineSetting />} />
+			{/* <Button size='sm' notification icon={<AiOutlineSetting />} />
 			<Button size='md' icon={<AiOutlineSetting />} />
-			<Button size='lg' focusafterclick icon={<AiOutlineSetting />} />
+			<Button size='lg' focusafterclick icon={<AiOutlineSetting />} /> */}
 
-			<Button size='sm' variant='ghost' {...args}>
-				{args.children}
-			</Button>
-			<Button size='md' variant='ghost' {...args}>
+			<Button>Hello</Button>
+
+			{/* <Button size='md' variant='ghost' {...args}>
 				{args.children}
 			</Button>
 			<Button size='lg' notification variant='ghost' {...args}>
@@ -40,38 +39,38 @@ const Template: ComponentStory<typeof Button> = (args) => {
 			</Button>
 			<Button variant='shadow' block {...args}>
 				{args.children}
-			</Button>
+			</Button> */}
 		</div>
 	)
 }
 
 export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-	children: 'Settings',
-	icon: <AiOutlineSetting />,
-}
+// Primary.args = {
+// 	children: 'Settings',
+// 	icon: <AiOutlineSetting />,
+// }
 
-export const Secondary = Template.bind({})
-Secondary.args = {
-	children: 'Secondary',
-	type: 'secondary',
-}
+// export const Secondary = Template.bind({})
+// Secondary.args = {
+// 	children: 'Secondary',
+// 	type: 'secondary',
+// }
 
-export const Success = Template.bind({})
-Success.args = {
-	children: 'Success',
-	type: 'success',
-}
+// export const Success = Template.bind({})
+// Success.args = {
+// 	children: 'Success',
+// 	type: 'success',
+// }
 
-export const Error = Template.bind({})
-Error.args = {
-	children: 'Error',
-	type: 'error',
-}
+// export const Error = Template.bind({})
+// Error.args = {
+// 	children: 'Error',
+// 	type: 'error',
+// }
 
-export const Warning = Template.bind({})
-Warning.args = {
-	children: 'Warning',
-	type: 'warning',
-}
+// export const Warning = Template.bind({})
+// Warning.args = {
+// 	children: 'Warning',
+// 	type: 'warning',
+// }

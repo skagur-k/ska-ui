@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const skaui = require('./src/core')
+
 module.exports = {
 	darkMode: 'class',
 	content: ['./src/**/*.{ts,tsx}'],
@@ -26,5 +29,13 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [],
+	variants: {
+		extend: {},
+	},
+	plugins: [
+		skaui({
+			colors: ['red', 'blue'],
+			cssBase: true,
+		}),
+	],
 }
