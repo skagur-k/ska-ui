@@ -7,28 +7,19 @@ import { ButtonProps } from './Button.types'
 import classNames from 'classnames'
 import { mergeRefs } from 'react-merge-refs'
 import { BeatLoader } from 'react-spinners'
+import { useButtonClass } from './styles'
 
-const Button = ({ color, children, className }: any) => {
-	return (
-		<div className='flex flex-col gap-4'>
-			<button data-color={color} className={className}>
-				{children}
-				{/* <span className='btn-notification' /> */}
-			</button>
-		</div>
-	)
-}
-
-const _Button: React.ComponentType<ButtonProps> = forwardRef<
+const Button: React.ComponentType<ButtonProps> = forwardRef<
 	HTMLButtonElement,
 	PropsWithChildren<ButtonProps>
 >((btnProps: ButtonProps, extRef: React.Ref<HTMLButtonElement | null>) => {
 	const {
-		size = 'md',
-		shape = 'square',
-		variant = 'shadow',
-		type = 'primary',
+		size,
+		shape,
+		variant = 'solid',
+		type,
 		block,
+		color,
 		focusafterclick = true,
 		icon,
 		notification,
@@ -42,23 +33,6 @@ const _Button: React.ComponentType<ButtonProps> = forwardRef<
 	const buttonRef = useRef<HTMLButtonElement>(null)
 	const ctxDisabled = useContext(DisabledContext)
 	const isDisabled = disabled ?? ctxDisabled
-
-	const loaderColor: any = {
-		ghost: {
-			primary: '#000000',
-			secondary: '#000000',
-			success: '#0761d1',
-			warning: '#ab570a',
-			error: '#c50000',
-		},
-		shadow: {
-			primary: '#ffffff',
-			secondary: '#ffffff',
-			success: '#d3e5ff',
-			warning: '#ab570d',
-			error: '#ffffff',
-		},
-	}
 
 	const [isFocused, setFocused] = useState(false)
 	const { hoverProps, isHovered } = useHover({
@@ -96,6 +70,13 @@ const _Button: React.ComponentType<ButtonProps> = forwardRef<
 		buttonRef
 	)
 
+	const classes = useButtonClass({
+		variant,
+		size,
+		type,
+		disabled,
+	})
+
 	return (
 		<button
 			{...buttonProps}
@@ -104,77 +85,29 @@ const _Button: React.ComponentType<ButtonProps> = forwardRef<
 			data-active={isPressed ? '' : null}
 			data-hover={isHovered ? '' : null}
 			data-loading={loading ? '' : null}
+			data-color={color}
 			className={classNames(
-				[
-					'button_base',
-					{ button: variant !== 'unstyled' },
-					{ block: block },
-					size && !block && 'size',
-					{
-						ghost: variant === 'ghost',
-						shadow: variant === 'shadow',
-					},
-					{
-						rounded: shape === 'rounded',
-						square: shape === 'square',
-					},
-					type === 'primary' && [
-						'primary',
-						'geist-themed',
-						'geist-primary',
-					],
-					type === 'secondary' && ['geist-themed', 'geist-secondary'],
-					type === 'success' && ['geist-themed', 'geist-success'],
-					type === 'warning' && ['geist-themed', 'geist-warning'],
-					type === 'alert' && ['geist-themed', 'geist-alert'],
-					type === 'error' && ['geist-themed', 'geist-error'],
-					!!icon ? (!!children ? 'icon' : 'icononly') : '',
-					'btn-solid',
-				],
+				[classes, !!icon ? (!!children ? '' : 'icononly') : ''],
 				className
 			)}
 			{...rest}
 			ref={mergeRefs([buttonRef, extRef])}>
-			{loading && children && (
-				<span>
-					<BeatLoader
-						size={5}
-						speedMultiplier={0.6}
-						color={
-							variant === 'ghost'
-								? loaderColor['ghost'][type]
-								: loaderColor['shadow'][type]
-						}
-						className={classNames(
-							`${
-								loading
-									? 'opacity-100 translate-y-0'
-									: 'opacity-0 -translate-y-10'
-							}`,
-							'loader'
-						)}
-					/>
+			{loading && children && <span>Loading</span>}
+
+			{icon && <span className={classNames('btn-icon')}>{icon}</span>}
+			{children && (
+				<span
+					className={classNames(
+						`${
+							loading
+								? 'opacity-0 translate-y-10'
+								: 'opacity-100 translate-y-0'
+						}`,
+						'content'
+					)}>
+					{children}
 				</span>
 			)}
-			{
-				<div className={'contentwrapper'}>
-					{icon && <span className={classNames('icon')}>{icon}</span>}
-					{children && (
-						<span
-							className={classNames(
-								`${
-									loading
-										? 'opacity-0 translate-y-10'
-										: 'opacity-100 translate-y-0'
-								}`,
-								'content'
-							)}>
-							{children}
-						</span>
-					)}
-				</div>
-			}
-			{notification && !isFocused && <span className={'notification'} />}
 		</button>
 	)
 })

@@ -1,7 +1,9 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import Button from './Button'
-import { AiOutlineSetting } from 'react-icons/ai'
+import { AiOutlineSetting, AiOutlineUser } from 'react-icons/ai'
+import { FaHome, FaGithub } from 'react-icons/fa'
+import { IoLogoVercel } from 'react-icons/io5'
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
 	title: 'ska-ui/Button',
@@ -12,14 +14,100 @@ export default {
 const Template = (args: any) => {
 	return (
 		<div className='flex flex-col gap-4'>
-			<Button className='btn'>Hello</Button>
-			<Button className='btn btn-xs btn-solid'>Hello</Button>
-			<Button className='btn btn-sm btn-solid'>Hello</Button>
-			<Button color='red' className='btn btn-md btn-solid'>
-				Hello
+			<Button disabled shape={'rounded'} icon={<AiOutlineSetting />}>
+				Settings
 			</Button>
-			<Button color='blue' className='btn btn-lg btn-solid'>
-				Hello
+			<Button shape={'rounded'} icon={<AiOutlineSetting />}>
+				This is a Button!
+			</Button>
+			<Button icon={<AiOutlineSetting />} size='xs'></Button>
+			<Button icon={<AiOutlineSetting />} size='sm'>
+				Settings
+			</Button>
+			<Button icon={<AiOutlineSetting />} size='lg'>
+				Settings
+			</Button>
+			<Button icon={<AiOutlineSetting />} size='block'>
+				Settings
+			</Button>
+			<Button icon={<IoLogoVercel />} type='secondary' size='sm'>
+				Vercel
+			</Button>
+			<Button disabled icon={<IoLogoVercel />} type='secondary' size='sm'>
+				Vercel
+			</Button>
+
+			<div className='flex gap-4'>
+				<Button icon={<AiOutlineSetting />} size='xs'></Button>
+				<Button icon={<AiOutlineSetting />} size='sm'></Button>
+				<Button disabled icon={<AiOutlineSetting />} size='md'></Button>
+				<Button icon={<AiOutlineSetting />} size='lg'></Button>
+				<Button
+					icon={<AiOutlineSetting />}
+					color='red'
+					size='xs'></Button>
+				<Button
+					icon={<AiOutlineSetting />}
+					color='red'
+					size='sm'></Button>
+				<Button
+					icon={<AiOutlineSetting />}
+					color='red'
+					size='md'></Button>
+				<Button
+					icon={<AiOutlineSetting />}
+					color='red'
+					size='lg'></Button>
+			</div>
+
+			<div className='flex gap-4'>
+				<Button icon={<FaHome />} size='xs'></Button>
+				<Button icon={<FaHome />} size='sm'></Button>
+				<Button disabled icon={<FaHome />} size='md'></Button>
+				<Button icon={<FaHome />} size='lg'></Button>
+				<Button icon={<FaHome />} color='sky' size='xs'></Button>
+				<Button icon={<FaHome />} color='sky' size='sm'></Button>
+				<Button
+					disabled
+					icon={<FaHome />}
+					color='sky'
+					size='md'></Button>
+				<Button icon={<FaHome />} color='sky' size='lg'></Button>
+			</div>
+			<div className='flex gap-4'>
+				<Button icon={<FaGithub />} size='xs'></Button>
+				<Button icon={<FaGithub />} size='sm'></Button>
+				<Button disabled icon={<FaGithub />} size='md'></Button>
+				<Button icon={<FaGithub />} size='lg'></Button>
+			</div>
+			<div className='flex gap-4'>
+				<Button icon={<AiOutlineUser />} size='xs'></Button>
+				<Button icon={<AiOutlineUser />} size='sm'></Button>
+				<Button icon={<AiOutlineUser />} size='md'></Button>
+				<Button icon={<AiOutlineUser />} size='lg'></Button>
+			</div>
+
+			<Button icon={<AiOutlineSetting />}>Normal</Button>
+			<Button
+				icon={<AiOutlineSetting />}
+				variant='ghost'
+				size='sm'
+				color='red'>
+				SM RED
+			</Button>
+			<Button
+				icon={<AiOutlineSetting />}
+				variant='ghost'
+				size='md'
+				color='blue'>
+				MD RED
+			</Button>
+			<Button
+				icon={<AiOutlineSetting />}
+				variant='ghost'
+				size='lg'
+				color='blue'>
+				LG BLUE
 			</Button>
 
 			{/* <Button size='sm' notification icon={<AiOutlineSetting />} />

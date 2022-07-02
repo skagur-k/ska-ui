@@ -19,10 +19,10 @@ const skaui = plugin.withOptions(
 		}) {
 			const optionColors = [...defaultColors, ...(options.colors || [])]
 
-			active({ addVariant, e, variants, theme, addUtilities })
-			focus({ addVariant, e, variants, theme, addUtilities })
 			loading({ addVariant, e, variants, theme, addUtilities })
+			focus({ addVariant, e, variants, theme, addUtilities })
 			hover({ addVariant, e, variants, theme, addUtilities })
+			active({ addVariant, e, variants, theme, addUtilities })
 			// disabled({ addVariant, e, variants, theme, addUtilities })
 
 			addComponents(

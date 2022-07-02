@@ -1,6 +1,7 @@
 import React from 'react'
 export interface ButtonOwnProps {
-	size?: 'sm' | 'md' | 'lg'
+	size?: 'xs' | 'sm' | 'md' | 'lg' | 'block'
+	color?: string
 	block?: boolean
 	type?: 'secondary' | 'success' | 'error' | 'warning' | 'alert'
 	shape?: 'rounded' | 'square'
@@ -8,11 +9,12 @@ export interface ButtonOwnProps {
 	notification?: boolean
 	focusafterclick?: boolean
 	iconRight?: boolean
-	variant?: 'shadow' | 'ghost' | 'unstyled'
+	variant?: 'solid' | 'ghost'
 	disabled?: boolean
 	loading?: boolean
 }
 
-export interface NativeAttrs extends Omit<React.ButtonHTMLAttributes<any>, keyof ButtonOwnProps> {}
+export interface NativeAttrs
+	extends Omit<React.ButtonHTMLAttributes<any>, keyof ButtonOwnProps> {}
 
 export interface ButtonProps extends NativeAttrs, ButtonOwnProps {}
