@@ -17,17 +17,23 @@ const Template = (args: any) => {
 			<Button disabled shape={'rounded'} icon={<AiOutlineSetting />}>
 				Settings
 			</Button>
-			<Button shape={'rounded'} icon={<AiOutlineSetting />}>
+			<Button loading shape={'rounded'} icon={<AiOutlineSetting />}>
 				This is a Button!
 			</Button>
-			<Button icon={<AiOutlineSetting />} size='xs'></Button>
-			<Button icon={<AiOutlineSetting />} size='sm'>
+			<Button notification icon={<AiOutlineSetting />} size='xs'></Button>
+			<Button icon={<AiOutlineSetting />} size='xs'>
 				Settings
 			</Button>
-			<Button icon={<AiOutlineSetting />} size='lg'>
+			<Button notification icon={<AiOutlineSetting />} size='sm'>
 				Settings
 			</Button>
-			<Button icon={<AiOutlineSetting />} size='block'>
+			<Button icon={<AiOutlineSetting />} size='md'>
+				Settings
+			</Button>
+			<Button loading icon={<AiOutlineSetting />} size='lg'>
+				Settings
+			</Button>
+			<Button loading icon={<AiOutlineSetting />} size='block'>
 				Settings
 			</Button>
 			<Button icon={<IoLogoVercel />} type='secondary' size='sm'>
@@ -40,33 +46,49 @@ const Template = (args: any) => {
 			<div className='flex gap-4'>
 				<Button icon={<AiOutlineSetting />} size='xs'></Button>
 				<Button icon={<AiOutlineSetting />} size='sm'></Button>
-				<Button disabled icon={<AiOutlineSetting />} size='md'></Button>
+				<Button icon={<AiOutlineSetting />} size='md'></Button>
 				<Button icon={<AiOutlineSetting />} size='lg'></Button>
 				<Button
 					icon={<AiOutlineSetting />}
 					color='red'
+					loading
 					size='xs'></Button>
 				<Button
 					icon={<AiOutlineSetting />}
 					color='red'
+					loading
 					size='sm'></Button>
 				<Button
 					icon={<AiOutlineSetting />}
 					color='red'
+					loading
 					size='md'></Button>
 				<Button
 					icon={<AiOutlineSetting />}
 					color='red'
+					loading
 					size='lg'></Button>
 			</div>
 
 			<div className='flex gap-4'>
-				<Button icon={<FaHome />} size='xs'></Button>
-				<Button icon={<FaHome />} size='sm'></Button>
-				<Button disabled icon={<FaHome />} size='md'></Button>
-				<Button icon={<FaHome />} size='lg'></Button>
-				<Button icon={<FaHome />} color='sky' size='xs'></Button>
-				<Button icon={<FaHome />} color='sky' size='sm'></Button>
+				<Button
+					notification
+					loading
+					icon={<FaHome />}
+					size='xs'></Button>
+				<Button loading icon={<FaHome />} size='sm'></Button>
+				<Button loading icon={<FaHome />} size='md'></Button>
+				<Button loading icon={<FaHome />} size='lg'></Button>
+				<Button
+					loading
+					icon={<FaHome />}
+					color='sky'
+					size='xs'></Button>
+				<Button
+					loading
+					icon={<FaHome />}
+					color='sky'
+					size='sm'></Button>
 				<Button
 					disabled
 					icon={<FaHome />}
@@ -78,7 +100,11 @@ const Template = (args: any) => {
 				<Button icon={<FaGithub />} size='xs'></Button>
 				<Button icon={<FaGithub />} size='sm'></Button>
 				<Button disabled icon={<FaGithub />} size='md'></Button>
-				<Button icon={<FaGithub />} size='lg'></Button>
+				<Button
+					notification
+					loading
+					icon={<FaGithub />}
+					size='lg'></Button>
 			</div>
 			<div className='flex gap-4'>
 				<Button icon={<AiOutlineUser />} size='xs'></Button>
@@ -87,7 +113,9 @@ const Template = (args: any) => {
 				<Button icon={<AiOutlineUser />} size='lg'></Button>
 			</div>
 
-			<Button icon={<AiOutlineSetting />}>Normal</Button>
+			<Button icon={<AiOutlineSetting />} variant='ghost' size='sm'>
+				SM RED
+			</Button>
 			<Button
 				icon={<AiOutlineSetting />}
 				variant='ghost'

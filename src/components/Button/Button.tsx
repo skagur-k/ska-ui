@@ -75,6 +75,7 @@ const Button: React.ComponentType<ButtonProps> = forwardRef<
 		size,
 		type,
 		disabled,
+		loading,
 	})
 
 	return (
@@ -92,22 +93,22 @@ const Button: React.ComponentType<ButtonProps> = forwardRef<
 			)}
 			{...rest}
 			ref={mergeRefs([buttonRef, extRef])}>
-			{loading && children && <span>Loading</span>}
-
-			{icon && <span className={classNames('btn-icon')}>{icon}</span>}
-			{children && (
-				<span
-					className={classNames(
-						`${
-							loading
-								? 'opacity-0 translate-y-10'
-								: 'opacity-100 translate-y-0'
-						}`,
-						'content'
-					)}>
-					{children}
-				</span>
-			)}
+			<span>
+				{
+					<div
+						className={`btn-spinner ${
+							loading ? 'opacity-100' : 'opacity-0'
+						}`}></div>
+				}
+			</span>
+			<span
+				className={`btn-content ${
+					loading ? 'opacity-0' : 'opacity-100'
+				}`}>
+				{icon && <span className={classNames('btn-icon')}>{icon}</span>}
+				{children}
+			</span>
+			{notification && <div className='btn-notification' />}
 		</button>
 	)
 })

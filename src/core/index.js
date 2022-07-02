@@ -23,7 +23,7 @@ const skaui = plugin.withOptions(
 			focus({ addVariant, e, variants, theme, addUtilities })
 			hover({ addVariant, e, variants, theme, addUtilities })
 			active({ addVariant, e, variants, theme, addUtilities })
-			// disabled({ addVariant, e, variants, theme, addUtilities })
+			disabled({ addVariant, e, variants, theme, addUtilities })
 
 			addComponents(
 				components.map((component) => component(optionColors)),
@@ -35,8 +35,8 @@ const skaui = plugin.withOptions(
 			if (options.cssBase) {
 				addBase({
 					html: {
-						'@apply antialiased border-gray-200': {},
-						lineHeight: '1.5',
+						'@apply antialiased border-gray-200 leading-5': {},
+						fontSize: '14px',
 					},
 					body: {
 						position: 'relative',
@@ -50,6 +50,9 @@ const skaui = plugin.withOptions(
 		return {
 			theme: {
 				extend: {
+					animation: {
+						'spin-slow': 'spin 1.5s linear infinite',
+					},
 					// colors,
 					variants: {
 						extend: {
@@ -79,7 +82,7 @@ function active({ addVariant, e }) {
 }
 
 function disabled({ addVariant, e }) {
-	addVariant('active', ({ modifySelectors, separator }) => {
+	addVariant('disabled', ({ modifySelectors, separator }) => {
 		modifySelectors(({ className }) => {
 			return `.${e(`disabled${separator}${className}`)}:disabled`
 		})
