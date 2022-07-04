@@ -1,25 +1,22 @@
 function buttonGroup() {
 	return {
 		'.btn-group': {
-			'@apply inline-block whitespace-nowrap': {},
+			'@apply inline-flex whitespace-nowrap items-center': {},
 
 			'& > .btn': {
 				'@apply mr-4': {},
 			},
 
 			'&.btn-group-attached': {
-				'> .btn, .btn[data-color], .btn-solid': {
-					'@apply ring-0': {},
-				},
 				'> .btn': {
-					'@apply rounded-none mr-0': {},
+					'@apply rounded-none mr-0 focus:z-50 focus:ring-2': {},
 				},
 
 				'> .btn:not(:last-child)': {
 					'@apply border-r-0': {},
 				},
 			},
-			'&.btn-grou-rounded': {
+			'&.btn-group-rounded': {
 				'> .btn:first-child': {
 					'@apply rounded-l-3xl': {},
 				},

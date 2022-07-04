@@ -1,4 +1,5 @@
 import React from 'react'
+
 interface IButtonProps {
 	size?: 'xs' | 'sm' | 'md' | 'lg' | 'block'
 	color?: string
@@ -27,7 +28,13 @@ interface IButtonGroupProps {
 	children?: React.ReactNode
 }
 
+interface ButtonGroupNativeAttrs
+	extends Omit<
+		React.HTMLAttributes<HTMLDivElement>,
+		keyof IButtonGroupProps
+	> {}
+
 export interface ButtonProps extends ButtonNativeAttrs, IButtonProps {}
 export interface ButtonGroupProps
-	extends React.HTMLAttributes<HTMLDivElement>,
+	extends ButtonGroupNativeAttrs,
 		IButtonGroupProps {}

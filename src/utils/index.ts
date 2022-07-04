@@ -1,1 +1,4 @@
-export { default as isBrowser } from './isBrowser'
+import isBrowser from './isBrowser'
+import getValidChildren from './getValidChildren'
+
+export { isBrowser, getValidChildren }

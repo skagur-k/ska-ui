@@ -9,7 +9,7 @@ import { mergeRefs } from 'react-merge-refs'
 import { useButtonClass } from './styles'
 
 const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
-	(btnProps: ButtonProps, extRef: React.Ref<HTMLButtonElement | null>) => {
+	(props: ButtonProps, extRef: React.Ref<HTMLButtonElement | null>) => {
 		const {
 			size,
 			rounded,
@@ -26,7 +26,7 @@ const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
 			loading,
 			onClick,
 			...rest
-		} = btnProps
+		} = props
 		const buttonRef = useRef<HTMLButtonElement>(null)
 		const ctxDisabled = useContext(DisabledContext)
 		const isDisabled = disabled ?? ctxDisabled
