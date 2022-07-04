@@ -1,4 +1,3 @@
-import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import Button from './Button'
 import { AiOutlineSetting, AiOutlineUser } from 'react-icons/ai'
@@ -140,37 +139,11 @@ const Template = (args: any) => {
 				color='blue'>
 				LG BLUE
 			</Button>
-
-			{/* <Button size='sm' notification icon={<AiOutlineSetting />} />
-			<Button size='md' icon={<AiOutlineSetting />} />
-			<Button size='lg' focusafterclick icon={<AiOutlineSetting />} /> */}
-			{/* <Button size='md' variant='ghost' {...args}>
-				{args.children}
-			</Button>
-			<Button size='lg' notification variant='ghost' {...args}>
-				{args.children}
-			</Button>
-			<Button variant='ghost' block {...args}>
-				{args.children}
-			</Button>
-
-			<Button size='sm' notification variant='shadow' {...args}>
-				{args.children}
-			</Button>
-			<Button size='md' variant='shadow' {...args}>
-				{args.children}
-			</Button>
-			<Button size='lg' variant='shadow' {...args}>
-				{args.children}
-			</Button>
-			<Button variant='shadow' block {...args}>
-				{args.children}
-			</Button> */}
 		</div>
 	)
 }
 
-export const Primary = Template.bind({})
+export const Buttons = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 // Primary.args = {
 // 	children: 'Settings',

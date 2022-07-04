@@ -1,8 +1,9 @@
 const plugin = require(`tailwindcss/plugin`)
 
 const Button = require('./components/button')
+const ButtonGroup = require('./components/button-group')
 
-const components = [Button]
+const components = [ButtonGroup, Button]
 
 const defaultColors = ['gray']
 
