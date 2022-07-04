@@ -15,7 +15,7 @@ const Button: React.ComponentType<ButtonProps> = forwardRef<
 >((btnProps: ButtonProps, extRef: React.Ref<HTMLButtonElement | null>) => {
 	const {
 		size,
-		shape,
+		rounded,
 		variant = 'solid',
 		type,
 		block,
@@ -76,6 +76,7 @@ const Button: React.ComponentType<ButtonProps> = forwardRef<
 		type,
 		disabled,
 		loading,
+		rounded,
 	})
 
 	return (
@@ -93,14 +94,16 @@ const Button: React.ComponentType<ButtonProps> = forwardRef<
 			)}
 			{...rest}
 			ref={mergeRefs([buttonRef, extRef])}>
-			<span>
-				{
-					<div
-						className={`btn-spinner ${
-							loading ? 'opacity-100' : 'opacity-0'
-						}`}></div>
-				}
-			</span>
+			{loading && (
+				<span>
+					{
+						<div
+							className={`btn-spinner ${
+								loading ? 'opacity-100' : 'opacity-0'
+							}`}></div>
+					}
+				</span>
+			)}
 			<span
 				className={`btn-content ${
 					loading ? 'opacity-0' : 'opacity-100'

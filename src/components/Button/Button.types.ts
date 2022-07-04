@@ -4,7 +4,7 @@ export interface ButtonOwnProps {
 	color?: string
 	block?: boolean
 	type?: 'secondary' | 'success' | 'error' | 'warning' | 'alert'
-	shape?: 'rounded' | 'square'
+	rounded?: boolean
 	icon?: JSX.Element | string
 	notification?: boolean
 	focusafterclick?: boolean

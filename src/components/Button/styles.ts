@@ -7,6 +7,7 @@ interface btnClassProps {
 	size: ButtonProps['size']
 	disabled: ButtonProps['disabled']
 	loading: ButtonProps['loading']
+	rounded: ButtonProps['rounded']
 }
 
 export const useButtonClass = ({
@@ -15,6 +16,7 @@ export const useButtonClass = ({
 	size,
 	disabled,
 	loading,
+	rounded,
 }: btnClassProps) => {
 	const variants = {
 		solid: 'btn-solid',
@@ -44,6 +46,7 @@ export const useButtonClass = ({
 		size && sizes[size],
 		disabled && 'btn-disabled',
 		loading && 'btn-loading',
+		rounded && 'btn-rounded',
 	])
 
 	return classes

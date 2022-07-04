@@ -14,20 +14,24 @@ export default {
 const Template = (args: any) => {
 	return (
 		<div className='flex flex-col gap-4'>
-			<Button disabled shape={'rounded'} icon={<AiOutlineSetting />}>
+			<Button disabled rounded icon={<AiOutlineSetting />}>
 				Settings
 			</Button>
-			<Button loading shape={'rounded'} icon={<AiOutlineSetting />}>
+			<Button loading rounded icon={<AiOutlineSetting />}>
 				This is a Button!
 			</Button>
-			<Button notification icon={<AiOutlineSetting />} size='xs'></Button>
+			<Button
+				focusafterclick={false}
+				notification
+				icon={<AiOutlineSetting />}
+				size='xs'></Button>
 			<Button icon={<AiOutlineSetting />} size='xs'>
 				Settings
 			</Button>
 			<Button notification icon={<AiOutlineSetting />} size='sm'>
 				Settings
 			</Button>
-			<Button icon={<AiOutlineSetting />} size='md'>
+			<Button rounded icon={<AiOutlineSetting />} size='md'>
 				Settings
 			</Button>
 			<Button loading icon={<AiOutlineSetting />} size='lg'>
@@ -36,7 +40,7 @@ const Template = (args: any) => {
 			<Button loading icon={<AiOutlineSetting />} size='block'>
 				Settings
 			</Button>
-			<Button icon={<IoLogoVercel />} type='secondary' size='sm'>
+			<Button rounded icon={<IoLogoVercel />} type='secondary' size='sm'>
 				Vercel
 			</Button>
 			<Button disabled icon={<IoLogoVercel />} type='secondary' size='sm'>
@@ -49,6 +53,7 @@ const Template = (args: any) => {
 				<Button icon={<AiOutlineSetting />} size='md'></Button>
 				<Button icon={<AiOutlineSetting />} size='lg'></Button>
 				<Button
+					rounded
 					icon={<AiOutlineSetting />}
 					color='red'
 					loading
@@ -61,12 +66,10 @@ const Template = (args: any) => {
 				<Button
 					icon={<AiOutlineSetting />}
 					color='red'
-					loading
 					size='md'></Button>
 				<Button
 					icon={<AiOutlineSetting />}
 					color='red'
-					loading
 					size='lg'></Button>
 			</div>
 

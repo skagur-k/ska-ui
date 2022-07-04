@@ -18,7 +18,7 @@ function buttonBase() {
 		},
 
 		'&-disabled, &-loading': {
-			'@apply disabled:shadow-none disabled:cursor-not-allowed disabled:opacity-[0.85]':
+			'@apply disabled:shadow-none disabled:cursor-not-allowed disabled:opacity-50':
 				{},
 		},
 
@@ -34,10 +34,10 @@ function buttonSecondary() {
 			'@apply text-neutral-100 bg-neutral-800': {},
 
 			// Hover
-			'@apply hover:border-neutral-400': {},
+			'@apply hover:bg-neutral-600 hover:border-neutral-800': {},
 
 			// Focus
-			'@apply focus:ring-[1px] focus:ring-neutral-400 focus:ring-offset-2':
+			'@apply focus:ring-[1px] focus:ring-neutral-700 focus:ring-offset-0':
 				{},
 
 			// Active
@@ -45,6 +45,8 @@ function buttonSecondary() {
 
 			// Disabled
 			'@apply disabled:active:bg-neutral-800 disabled:hover:border-neutral-800 disabled:shadow-none':
+				{},
+			'@apply dark:disabled:active:bg-neutral-800 dark:disabled:hover:bg-neutral-800 dark:disabled:shadow-none':
 				{},
 		},
 	}
@@ -59,10 +61,14 @@ function buttonSolid(colors) {
 
 			// Hover
 			'@apply hover:border-neutral-400 hover:bg-neutral-100': {},
+			'@apply dark:hover:border-neutral-500 dark:hover:bg-neutral-200':
+				{},
 
 			// Focus
-			'@apply focus:ring-[1px] focus:ring-neutral-700 focus:ring-offset-1':
+			'@apply focus:ring-[1px] focus:ring-neutral-700 focus:ring-offset-0':
 				{},
+			'@apply dark:focus:ring-neutral-100': {},
+
 			// Active
 			'@apply active:bg-neutral-300': {},
 
@@ -82,12 +88,11 @@ function buttonSolid(colors) {
 							{},
 
 						// Focus
-						[`@apply focus:ring-[1px] focus:ring-${color}-500 focus:ring-offset-2`]:
+						[`@apply focus:ring-[1px] focus:ring-${color}-600 focus:ring-offset-0`]:
 							{},
 
 						// Active
-						[`@apply active:bg-${color}-500 active:ring-offset-2`]:
-							{},
+						[`@apply active:bg-${color}-300`]: {},
 
 						[`@apply disabled:active:bg-${color}-500 disabled:hover:bg-${color}-500 disabled:hover:border-${color}-400 disabled:shadow-none`]:
 							{},
@@ -115,11 +120,11 @@ function buttonGhost(colors) {
 				{},
 
 			// Focus
-			'@apply focus:ring-[1px] focus:ring-neutral-100 focus:ring-offset-0':
+			'@apply focus:ring-[1px] focus:ring-neutral-800 focus:ring-offset-0':
 				{},
 
 			// Active
-			'@apply active:bg-neutral-300 active:ring-offset-1': {},
+			'@apply active:bg-neutral-600': {},
 			'@apply dark:active:bg-neutral-200': {},
 
 			// Disabled
@@ -130,22 +135,21 @@ function buttonGhost(colors) {
 				(styles, color) => ({
 					...styles,
 					[`&[data-color="${color}"]`]: {
-						[`@apply text-${color}-500 bg-none`]: {},
-						[`@apply border-${color}-500`]: {},
+						[`@apply text-${color}-600 bg-none`]: {},
+						[`@apply border-${color}-600`]: {},
 
 						// Hover
-						[`@apply hover:text-white hover:border-${color}-500 hover:bg-${color}-500`]:
+						[`@apply hover:text-white hover:border-${color}-600 hover:bg-${color}-600`]:
 							{},
 
 						// Focus
-						[`@apply focus:ring-[1px] focus:ring-${color}-500 focus:ring-offset-0`]:
+						[`@apply focus:ring-[1px] focus:ring-${color}-600 focus:ring-offset-0`]:
 							{},
 
 						// Active
-						[`@apply active:bg-${color}-400 active:ring-offset-1`]:
-							{},
+						[`@apply active:bg-${color}-500`]: {},
 
-						[`@apply disabled:active:bg-${color}-500 disabled:hover:bg-${color}-500 disabled:hover:border-${color}-400 disabled:shadow-none`]:
+						[`@apply disabled:active:bg-${color}-600 disabled:hover:bg-${color}-600 disabled:hover:border-${color}-400 disabled:shadow-none`]:
 							{},
 					},
 				}),
@@ -160,9 +164,6 @@ function buttonShape() {
 		'&-rounded': {
 			'@apply rounded-3xl': {},
 		},
-		'&-squared': {
-			'@apply rounded-md': {},
-		},
 	}
 }
 
@@ -172,13 +173,13 @@ function buttonSize() {
 			'@apply text-xs px-2 p-1': {},
 		},
 		'&-sm': {
-			'@apply text-sm px-2 py-1': {},
+			'@apply text-sm px-3 py-1': {},
 		},
 		'&-md': {
-			'@apply text-base px-3 py-2': {},
+			'@apply text-base px-4 py-2': {},
 		},
 		'&-lg': {
-			'@apply text-base px-3 py-3': {},
+			'@apply text-base px-5 py-2': {},
 		},
 		'&-block': {
 			'@apply text-lg flex justify-center max-w-full py-2': {},
@@ -195,6 +196,7 @@ function buttonSize() {
 		'&-lg.icononly': {
 			'@apply inline-flex h-12 w-12 justify-center items-center': {},
 		},
+		...buttonIconSize(),
 	}
 }
 
@@ -302,7 +304,6 @@ module.exports = Button = (colors) => ({
 		...buttonBase(),
 		// Sizes
 		...buttonSize(),
-		...buttonIconSize(),
 
 		// Shapes
 		...buttonShape(),
