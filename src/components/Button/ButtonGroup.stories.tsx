@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { AiFillAlert, AiFillAndroid, AiOutlineUser } from 'react-icons/ai'
-import { Button, ButtonGroup } from './'
+import { Button, ButtonGroup } from '.'
 export default {
 	title: 'ska-ui/Button',
 	component: ButtonGroup,

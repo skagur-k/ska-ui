@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { AriaRole } from 'react'
 
 interface ICheckboxProps {
 	color?: string
 	size?: 'sm' | 'md' | 'lg'
+	rounded?: boolean
 	value?: string
 	required?: boolean
 	invalid?: boolean

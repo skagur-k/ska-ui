@@ -3,7 +3,7 @@ import { CheckboxGroupProps } from './Checkbox.types'
 import React, { forwardRef } from 'react'
 import getValidChildren from '../../utils/getValidChildren'
 
-const ButtonGroup = forwardRef<HTMLDivElement, CheckboxGroupProps>(
+const CheckboxGroup = forwardRef<HTMLDivElement, CheckboxGroupProps>(
 	(props, ref) => {
 		const { size, color, disabled, children, className, ...rest } = props
 
@@ -28,6 +28,6 @@ const ButtonGroup = forwardRef<HTMLDivElement, CheckboxGroupProps>(
 		)
 	}
 )
-ButtonGroup.displayName = 'ButtonGroup'
+CheckboxGroup.displayName = 'CheckboxGroup'
 
-export default ButtonGroup
+export default CheckboxGroup
