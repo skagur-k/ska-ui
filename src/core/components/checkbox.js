@@ -1,9 +1,15 @@
+function checkboxWrapper(colors) {
+	return {
+		'@apply inline-flex items-baseline': {},
+	}
+}
+
 function checkbox(colors) {
 	return {
 		'@apply cursor-pointer relative select-none': {},
 		'@apply text-white bg-neutral-100 border-2 rounded': {},
 		'@apply w-5 h-5 flex flex-shrink-0': {},
-		'@apply justify-center items-center mr-2': {},
+		'@apply flex justify-center items-center mr-2': {},
 		'@apply transition ease-in-out duration-150': {},
 
 		'@apply border-neutral-400 group-active:border-neutral-700': {},
@@ -109,8 +115,10 @@ function checkboxSizes() {
 	}
 }
 
-function checkboxLabelSizes() {
+function checkboxLabel() {
 	return {
+		'@apply flex flex-col items-start': {},
+
 		'&-sm': {
 			'@apply text-base': {},
 		},
@@ -119,6 +127,10 @@ function checkboxLabelSizes() {
 		},
 		'&-lg': {
 			'@apply text-base': {},
+		},
+
+		'& .checkbox-caption': {
+			'@apply text-xs text-neutral-400': {},
 		},
 	}
 }
@@ -129,15 +141,32 @@ function checkboxGroup() {
 		[`@apply text-base`]: {},
 
 		[`&-label`]: {
-			[`@apply text-base font-semibold`]: {},
+			[`@apply text-sm font-semibold`]: {},
+		},
+		[`&-caption`]: {
+			[`@apply text-xs font-medium text-neutral-500`]: {},
 		},
 		[`&-items`]: {
-			[`@apply flex flex-col gap-2 text-base`]: {},
+			[`@apply flex flex-row gap-2 text-base`]: {},
+
+			'&-col': {
+				[`@apply flex-col gap-2`]: {},
+			},
+		},
+		[`&-label-left`]: {
+			[`@apply flex flex-row items-start gap-2`]: {},
+			'& .checkbox-group-label': {
+				'@apply max-w-[240px]': {},
+			},
 		},
 	}
 }
 
 module.exports = Checkbox = (colors) => ({
+	'.checkbox-wrapper': {
+		...checkboxWrapper(colors),
+	},
+
 	'.checkbox': {
 		...checkbox(colors),
 		...checkboxSelected(colors),
@@ -149,7 +178,7 @@ module.exports = Checkbox = (colors) => ({
 		},
 	},
 	'.checkbox-label': {
-		...checkboxLabelSizes(),
+		...checkboxLabel(),
 	},
 	'.checkbox-group': {
 		...checkboxGroup(),

@@ -1,15 +1,19 @@
 import cx from 'classnames'
-import { CheckboxProps } from './Checkbox.types'
+import { CheckboxGroupProps, CheckboxProps } from './Checkbox.types'
 
-interface checboxClassProps {
+interface checkboxClassProps {
 	isSelected?: boolean
 	disabled?: boolean
 	isFocused?: boolean
 	size?: CheckboxProps['size']
 	rounded?: CheckboxProps['rounded']
 }
-interface checboxLabelClassProps {
+interface checkboxLabelClassProps {
 	size: CheckboxProps['size']
+}
+
+interface checkboxGroupClassProps {
+	labelLeft: CheckboxGroupProps['labelLeft']
 }
 
 export const useCheckboxClass = ({
@@ -18,7 +22,7 @@ export const useCheckboxClass = ({
 	isFocused,
 	size,
 	rounded,
-}: checboxClassProps) => {
+}: checkboxClassProps) => {
 	const sizes = {
 		sm: 'checkbox-sm',
 		md: 'checbox-md',
@@ -36,7 +40,7 @@ export const useCheckboxClass = ({
 
 	return classes
 }
-export const useCheckboxLabelClass = ({ size }: checboxLabelClassProps) => {
+export const useCheckboxLabelClass = ({ size }: checkboxLabelClassProps) => {
 	const sizes = {
 		sm: 'checkbox-label-sm',
 		md: 'checbox-label-md',
@@ -44,6 +48,16 @@ export const useCheckboxLabelClass = ({ size }: checboxLabelClassProps) => {
 	}
 
 	const classes = cx(['checkbox-label', size && sizes[size]])
+
+	return classes
+}
+
+export const useCheckboxGroupClass = ({
+	labelLeft,
+}: checkboxGroupClassProps) => {
+	const classes = cx('checkbox-group', [
+		labelLeft && 'checkbox-group-label-left',
+	])
 
 	return classes
 }

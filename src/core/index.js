@@ -37,7 +37,8 @@ const skaui = plugin.withOptions(
 			if (options.cssBase) {
 				addBase({
 					html: {
-						'@apply antialiased border-gray-200 leading-5': {},
+						'@apply selection:bg-neutral-600 selection:text-white':
+							{},
 						fontSize: '14px',
 					},
 					body: {

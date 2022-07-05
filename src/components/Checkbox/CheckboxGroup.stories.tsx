@@ -8,11 +8,9 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args: any) => {
 	return (
-		<div className='flex gap-5'>
+		<div className='flex flex-col gap-5'>
 			<CheckboxGroup setValue={['one']} label='Choose one:'>
-				<CheckboxGroupItem label='Checkbox One' value='one'>
-					One
-				</CheckboxGroupItem>
+				<CheckboxGroupItem value='one'>One</CheckboxGroupItem>
 				<CheckboxGroupItem rounded selected color='red' value='two'>
 					Two
 				</CheckboxGroupItem>
@@ -22,9 +20,7 @@ const Template = (args: any) => {
 				<CheckboxGroupItem value='four'>Four</CheckboxGroupItem>
 			</CheckboxGroup>
 			<CheckboxGroup color='red' label='Choose one:'>
-				<CheckboxGroupItem label='Checkbox One' value='one'>
-					One
-				</CheckboxGroupItem>
+				<CheckboxGroupItem value='one'>One</CheckboxGroupItem>
 				<CheckboxGroupItem rounded selected color='red' value='two'>
 					Two
 				</CheckboxGroupItem>
@@ -33,17 +29,32 @@ const Template = (args: any) => {
 				</CheckboxGroupItem>
 				<CheckboxGroupItem value='four'>Four</CheckboxGroupItem>
 			</CheckboxGroup>
-			<CheckboxGroup rounded label='Choose one:'>
-				<CheckboxGroupItem label='Checkbox One' value='one'>
+			<CheckboxGroup
+				column
+				labelLeft
+				caption='This is caption 1 Please choose your number. Width is limited to xs'
+				rounded
+				label='Choose your favorite number'>
+				<CheckboxGroupItem caption='Select one' value='one'>
 					One
 				</CheckboxGroupItem>
-				<CheckboxGroupItem rounded selected color='red' value='two'>
+				<CheckboxGroupItem
+					caption='Select two'
+					rounded
+					selected
+					color='red'
+					value='two'>
 					Two
 				</CheckboxGroupItem>
-				<CheckboxGroupItem disabled value='three'>
+				<CheckboxGroupItem
+					caption='Select three'
+					disabled
+					value='three'>
 					Three
 				</CheckboxGroupItem>
-				<CheckboxGroupItem value='four'>Four</CheckboxGroupItem>
+				<CheckboxGroupItem caption='Select four' value='four'>
+					Four
+				</CheckboxGroupItem>
 			</CheckboxGroup>
 		</div>
 	)

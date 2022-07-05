@@ -1,19 +1,39 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useEffect } from 'react'
 import { useCheckboxGroup, useCheckboxGroupItem } from '@react-aria/checkbox'
 import { useCheckboxGroupState } from '@react-stately/checkbox'
 import classNames from 'classnames'
 import { useFocusRing } from 'react-aria'
 import { mergeRefs } from 'react-merge-refs'
-import { useCheckboxClass, useCheckboxLabelClass } from './styles'
+import {
+	useCheckboxClass,
+	useCheckboxGroupClass,
+	useCheckboxLabelClass,
+} from './styles'
 import { CheckboxGroupProps, CheckboxProps } from './Checkbox.types'
 import { getValidChildren } from '../../utils'
 
 const CheckboxGroupContext = React.createContext<any>(null)
 
 export const CheckboxGroup = (props: CheckboxGroupProps) => {
-	const { children, label, color, disabled, rounded } = props
+	const {
+		children,
+		label,
+		color,
+		column,
+		disabled,
+		rounded,
+		setValue,
+		labelLeft,
+		caption,
+	} = props
 	const state = useCheckboxGroupState(props)
 	const { groupProps, labelProps } = useCheckboxGroup(props, state)
+
+	useEffect(() => {
+		if (setValue!!) state.setValue(setValue)
+	}, [])
+
+	const checkboxGroupClasses = useCheckboxGroupClass({ labelLeft })
 
 	const validChildren = getValidChildren(children)
 	const copies = validChildren.map((child) => {
@@ -25,12 +45,23 @@ export const CheckboxGroup = (props: CheckboxGroupProps) => {
 	})
 
 	return (
-		<div data-color={color} className='checkbox-group' {...groupProps}>
-			<span {...labelProps} className={'checkbox-group-label'}>
-				{label}
-			</span>
+		<div
+			data-color={color}
+			className={checkboxGroupClasses}
+			{...groupProps}>
+			<div {...labelProps} className={'checkbox-group-label'}>
+				<div>{label}</div>
+				<div className={'checkbox-group-caption'}>
+					{caption && caption}
+				</div>
+			</div>
 			<CheckboxGroupContext.Provider value={state}>
-				<div className='checkbox-group-items'>{copies}</div>
+				<div
+					className={`checkbox-group-items ${
+						column && 'checkbox-group-items-col'
+					}`}>
+					{copies}
+				</div>
 			</CheckboxGroupContext.Provider>
 		</div>
 	)
@@ -41,6 +72,7 @@ export const CheckboxGroupItem = forwardRef((props: CheckboxProps, extRef) => {
 		name,
 		value,
 		defaultSelected,
+		caption,
 		selected,
 		size,
 		color,
@@ -78,7 +110,7 @@ export const CheckboxGroupItem = forwardRef((props: CheckboxProps, extRef) => {
 	return (
 		<label
 			className={classNames(
-				'group inline-flex items-center',
+				'checkbox-wrapper group',
 				disabled && 'cursor-not-allowed',
 				readOnly || disabled ? 'opacity-60' : 'opacity-100'
 			)}>
@@ -106,16 +138,17 @@ export const CheckboxGroupItem = forwardRef((props: CheckboxProps, extRef) => {
 						fill='none'
 						strokeWidth={4}
 						strokeDasharray={22}
-						strokeDashoffset={state.isSelected ? 44 : 66}
+						strokeDashoffset={state.isSelected(value) ? 44 : 66}
 						style={{
 							transition: 'all 400ms',
 						}}
 					/>
 				</svg>
 			</div>
-			<span className={classNames(checkboxLabelClasses, className)}>
-				{children}
-			</span>
+			<div className={classNames(checkboxLabelClasses, className)}>
+				<span>{children}</span>
+				<div className={classNames('checkbox-caption')}>{caption}</div>
+			</div>
 		</label>
 	)
 })
