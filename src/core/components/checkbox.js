@@ -10,11 +10,14 @@ function checkbox(colors) {
 		'@apply group-hover:border-neutral-700': {},
 
 		'&-check': {
-			'@apply w-3 h-3': {},
+			'@apply w-3 h-3 transition-all': {},
 		},
 
 		'&-rounded': {
-			'@apply rounded-xl': {},
+			'@apply rounded-full': {},
+		},
+		'&-focused': {
+			'@apply ring-2 ring-offset-2 ring-neutral-500': {},
 		},
 
 		...colors.reduce(
@@ -34,6 +37,9 @@ function checkbox(colors) {
 						[`@apply border-${color}-100 group-hover:border-${color}-100 group-hover:bg-white`]:
 							{},
 					},
+					'&.checkbox-focused': {
+						[`@apply ring-2 ring-offset-2 ring-${color}-500`]: {},
+					},
 				},
 			}),
 			{}
@@ -43,9 +49,6 @@ function checkbox(colors) {
 
 function checkboxSelected(colors) {
 	return {
-		'&-focused': {
-			'@apply border-neutral-700 group-active:border-neutral-700': {},
-		},
 		'&-selected': {
 			'@apply bg-neutral-700 group-active:bg-neutral-500': {},
 			'@apply border-neutral-700 group-active:border-neutral-500': {},
@@ -60,13 +63,18 @@ function checkboxSelected(colors) {
 						// Hover
 						[`@apply group-hover:border-${color}-500 group-hover:bg-${color}-500`]:
 							{},
-						[`@apply group-focus:ring-2`]: {},
+						[`@apply group-focus:ring-4`]: {},
 
 						// Active
 						[`@apply group-active:bg-${color}-400`]: {},
-
-						[`@apply disabled:active:bg-${color}-500 disabled:hover:bg-${color}-500 disabled:hover:border-${color}-400 disabled:shadow-none`]:
-							{},
+						'&.checkbox-disabled': {
+							[`@apply border-${color}-500 group-hover:border-${color}-500 group-hover:bg-${color}-500`]:
+								{},
+						},
+						'&.checkbox-focused': {
+							[`@apply ring-2 ring-offset-2 ring-${color}-500`]:
+								{},
+						},
 					},
 				}),
 				{}
@@ -96,7 +104,7 @@ function checkboxSizes() {
 			'@apply w-6 h-6': {},
 		},
 		'&-lg &-check': {
-			'@apply w-5 h-5': {},
+			'@apply w-4 h-4': {},
 		},
 	}
 }
@@ -115,6 +123,20 @@ function checkboxLabelSizes() {
 	}
 }
 
+function checkboxGroup() {
+	return {
+		[`@apply flex flex-col gap-2`]: {},
+		[`@apply text-base`]: {},
+
+		[`&-label`]: {
+			[`@apply text-base font-semibold`]: {},
+		},
+		[`&-items`]: {
+			[`@apply flex flex-col gap-2 text-base`]: {},
+		},
+	}
+}
+
 module.exports = Checkbox = (colors) => ({
 	'.checkbox': {
 		...checkbox(colors),
@@ -128,5 +150,8 @@ module.exports = Checkbox = (colors) => ({
 	},
 	'.checkbox-label': {
 		...checkboxLabelSizes(),
+	},
+	'.checkbox-group': {
+		...checkboxGroup(),
 	},
 })

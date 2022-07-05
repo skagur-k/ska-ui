@@ -1,5 +1,5 @@
 import { mergeRefs } from 'react-merge-refs'
-import React, { forwardRef, PropsWithChildren, useRef } from 'react'
+import React, { forwardRef, PropsWithChildren, useEffect, useRef } from 'react'
 import { CheckboxProps } from './Checkbox.types'
 import { useCheckbox, useFocusRing } from 'react-aria'
 import { useToggleState } from '@react-stately/toggle'
@@ -7,34 +7,45 @@ import { useCheckboxClass, useCheckboxLabelClass } from './styles'
 import classNames from 'classnames'
 
 const Checkbox = forwardRef<HTMLInputElement, PropsWithChildren<CheckboxProps>>(
-	(props, extRef: React.Ref<HTMLInputElement | null>) => {
+	(props, extRef: React.Ref<HTMLInputElement>) => {
 		const {
+			name,
+			value,
+			defaultSelected,
+			selected,
 			size,
 			color,
-			value,
 			rounded,
 			invalid,
 			readOnly,
 			required,
 			disabled,
-			defaultChecked,
-			isIndeterminate,
-			checked,
-			onChange,
+			indeterminate,
 			className,
 			children,
+			onChange,
 			...rest
 		} = props
 
 		const ref = useRef<HTMLInputElement>(null)
-		const state = useToggleState(props)
+		const state = useToggleState({
+			name,
+			value,
+			isReadOnly: readOnly,
+			isRequired: required,
+			isSelected: selected,
+			defaultSelected,
+			children,
+			onChange,
+			...rest,
+		})
 		const { inputProps } = useCheckbox(props, state, ref)
-		const { focusProps, isFocusVisible } = useFocusRing()
+		const { focusProps, isFocused } = useFocusRing()
 
 		const checkboxClasses = useCheckboxClass({
 			isSelected: state.isSelected,
 			disabled,
-			isFocusVisible,
+			isFocused,
 			size,
 			rounded,
 		})
@@ -43,8 +54,7 @@ const Checkbox = forwardRef<HTMLInputElement, PropsWithChildren<CheckboxProps>>(
 		return (
 			<label
 				className={classNames(
-					'checkbox-wrapper group',
-					'inline-flex items-center',
+					'group inline-flex items-center',
 					disabled && 'cursor-not-allowed',
 					readOnly || disabled ? 'opacity-60' : 'opacity-100'
 				)}>
@@ -52,22 +62,10 @@ const Checkbox = forwardRef<HTMLInputElement, PropsWithChildren<CheckboxProps>>(
 					{...inputProps}
 					{...focusProps}
 					type='checkbox'
-					value={value}
-					data-isSelected={state.isSelected ? state.isSelected : null}
 					readOnly={readOnly}
-					aria-readonly={readOnly}
 					disabled={disabled}
+					aria-readonly={readOnly}
 					aria-disabled={disabled}
-					data-disabled={disabled}
-					defaultChecked={readOnly ? undefined : defaultChecked}
-					checked={
-						readOnly
-							? checked
-							: defaultChecked
-							? undefined
-							: checked
-					}
-					aria-checked={isIndeterminate ? 'mixed' : checked}
 					className={classNames('sr-only')}
 					ref={mergeRefs([ref, extRef])}
 					{...rest}
@@ -91,7 +89,7 @@ const Checkbox = forwardRef<HTMLInputElement, PropsWithChildren<CheckboxProps>>(
 						/>
 					</svg>
 				</div>
-				<span className={classNames(checkboxLabelClasses)}>
+				<span className={classNames(checkboxLabelClasses, className)}>
 					{children}
 				</span>
 			</label>

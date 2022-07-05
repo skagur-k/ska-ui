@@ -10,16 +10,21 @@ export default {
 const Template = (args: any) => {
 	return (
 		<div className='flex flex-col gap-5'>
-			<Checkbox size='sm'>Checkbox</Checkbox>
-			<Checkbox size='md'>Checkbox</Checkbox>
-			<Checkbox color='red' size='lg' disabled>
+			<Checkbox defaultSelected size='sm' className='text-2xl'>
 				Checkbox
 			</Checkbox>
-			<Checkbox rounded color={'red'}>
+			<Checkbox rounded defaultSelected size='sm'>
 				Checkbox
+			</Checkbox>
+			<Checkbox size='md'>Checkbox</Checkbox>
+			<Checkbox selected color='red' size='lg'>
+				Checkbox
+			</Checkbox>
+			<Checkbox rounded readOnly color={'red'}>
+				Checkbox Read Only
 			</Checkbox>
 			<Checkbox>Checkbox</Checkbox>
-			<Checkbox rounded size='sm' disabled>
+			<Checkbox rounded size='lg' disabled>
 				Checkbox
 			</Checkbox>
 			<Checkbox size='md' disabled>

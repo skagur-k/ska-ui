@@ -1,23 +1,37 @@
-import React, { AriaRole } from 'react'
+import React from 'react'
 
 interface ICheckboxProps {
+	value: string
+	label?: string
+	name?: string
 	color?: string
 	size?: 'sm' | 'md' | 'lg'
 	rounded?: boolean
-	value?: string
 	required?: boolean
+	readonly?: boolean
 	invalid?: boolean
-	defaultChecked?: boolean
-	isIndeterminate?: boolean
+	defaultSelected?: boolean
+	indeterminate?: boolean
 	disabled?: boolean
-	checked?: boolean
+	selected?: boolean
+	ref?: React.RefObject<HTMLInputElement>
 	onChange?: () => {}
 }
 
 interface ICheckboxGroupProps {
 	color?: string
+	value?: string[]
 	size?: 'sm' | 'md' | 'lg'
 	disabled?: boolean
+	rounded?: boolean
+	label?: string
+	defaultValue?: string[]
+	onChange?: (value: string[]) => void
+	isSelected?: string
+	setValue?: string[]
+	addValue?: string
+	removeValue?: string
+	toggleValue?: string
 }
 
 interface CheckboxNativeAttrs

@@ -1,11 +1,10 @@
-import { ToggleState } from '@react-stately/toggle'
 import cx from 'classnames'
 import { CheckboxProps } from './Checkbox.types'
 
 interface checboxClassProps {
 	isSelected?: boolean
 	disabled?: boolean
-	isFocusVisible?: boolean
+	isFocused?: boolean
 	size?: CheckboxProps['size']
 	rounded?: CheckboxProps['rounded']
 }
@@ -16,7 +15,7 @@ interface checboxLabelClassProps {
 export const useCheckboxClass = ({
 	isSelected,
 	disabled,
-	isFocusVisible,
+	isFocused,
 	size,
 	rounded,
 }: checboxClassProps) => {
@@ -30,7 +29,7 @@ export const useCheckboxClass = ({
 		'checkbox',
 		size && sizes[size],
 		disabled && 'checkbox-disabled',
-		isFocusVisible && 'checkbox-focused',
+		isFocused && 'checkbox-focused',
 		isSelected && 'checkbox-selected',
 		rounded && 'checkbox-rounded',
 	])
