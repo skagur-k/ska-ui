@@ -1,5 +1,3 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { AiFillAlert, AiFillAndroid, AiOutlineUser } from 'react-icons/ai'
 import Checkbox from './Checkbox'
 export default {
 	title: 'ska-ui/Checkbox',
@@ -10,45 +8,24 @@ export default {
 const Template = (args: any) => {
 	return (
 		<div className='flex flex-col gap-5'>
-			<Checkbox defaultSelected size='sm' className='text-2xl'>
+			<Checkbox
+				value='one'
+				caption='Hello World'
+				defaultSelected
+				size='sm'>
 				Checkbox
 			</Checkbox>
-			<Checkbox rounded defaultSelected size='sm'>
-				Checkbox
-			</Checkbox>
-			<Checkbox size='md'>Checkbox</Checkbox>
-			<Checkbox selected color='red' size='lg'>
-				Checkbox
-			</Checkbox>
-			<Checkbox rounded readOnly color={'red'}>
-				Checkbox Read Only
-			</Checkbox>
-			<Checkbox>Checkbox</Checkbox>
-			<Checkbox rounded size='lg' disabled>
-				Checkbox
-			</Checkbox>
-			<Checkbox size='md' disabled>
-				Checkbox
-			</Checkbox>
-			<Checkbox rounded color='red' size='lg' disabled>
-				Checkbox
-			</Checkbox>
-			<Checkbox rounded color={'red'} disabled>
-				Checkbox
-			</Checkbox>
-			<Checkbox>Checkbox</Checkbox>
 
-			<Checkbox size='md'>Checkbox</Checkbox>
-			<Checkbox size='md' color='red'>
+			<Checkbox
+				caption='Hello World'
+				value='one'
+				rounded
+				defaultSelected
+				size='sm'>
 				Checkbox
 			</Checkbox>
-			<Checkbox size='md' color='blue'>
-				Checkbox
-			</Checkbox>
-			<Checkbox size='md' rounded>
-				Checkbox
-			</Checkbox>
-			<Checkbox size='md' disabled>
+
+			<Checkbox caption='Hello World' value='one' size='md'>
 				Checkbox
 			</Checkbox>
 		</div>

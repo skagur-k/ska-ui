@@ -2,7 +2,7 @@ import React from 'react'
 
 interface ICheckboxProps {
 	value: string
-	label?: string
+	caption?: string
 	name?: string
 	color?: string
 	size?: 'sm' | 'md' | 'lg'
@@ -22,6 +22,9 @@ interface ICheckboxGroupProps {
 	color?: string
 	value?: string[]
 	size?: 'sm' | 'md' | 'lg'
+	column?: boolean
+	labelLeft?: boolean
+	caption?: string
 	disabled?: boolean
 	rounded?: boolean
 	label?: string

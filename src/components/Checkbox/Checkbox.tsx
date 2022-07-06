@@ -11,6 +11,7 @@ const Checkbox = forwardRef<HTMLInputElement, PropsWithChildren<CheckboxProps>>(
 		const {
 			name,
 			value,
+			caption,
 			defaultSelected,
 			selected,
 			size,
@@ -51,10 +52,11 @@ const Checkbox = forwardRef<HTMLInputElement, PropsWithChildren<CheckboxProps>>(
 		})
 
 		const checkboxLabelClasses = useCheckboxLabelClass({ size })
+
 		return (
 			<label
 				className={classNames(
-					'group inline-flex items-center',
+					'checkbox-wrapper group',
 					disabled && 'cursor-not-allowed',
 					readOnly || disabled ? 'opacity-60' : 'opacity-100'
 				)}>
@@ -89,9 +91,12 @@ const Checkbox = forwardRef<HTMLInputElement, PropsWithChildren<CheckboxProps>>(
 						/>
 					</svg>
 				</div>
-				<span className={classNames(checkboxLabelClasses, className)}>
-					{children}
-				</span>
+				<div className={classNames(checkboxLabelClasses, className)}>
+					<span>{children}</span>
+					<div className={classNames('checkbox-caption')}>
+						{caption}
+					</div>
+				</div>
 			</label>
 		)
 	}
