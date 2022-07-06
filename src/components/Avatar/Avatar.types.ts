@@ -1,13 +1,15 @@
 import React from 'react'
+import { IconType } from 'react-icons/lib'
 
 interface IAvatarProps {
 	name?: string
 	src?: string
 	srcSet?: string
+	icon?: any
 	bordered?: boolean
 	onError?: () => void
 	loading?: 'eager' | 'lazy'
-	size?: number
+	size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl'
 	getInitials?: (name: string) => string
 	children?: React.ReactNode
 	isFullName?: boolean
@@ -32,4 +34,19 @@ interface AvatarProps
 	iconLabel?: string
 }
 
-export { AvatarNameProps, AvatarProps, AvatarPlaceholderProps }
+interface IAvatarGroupProps {
+	children: React.ReactNode
+	max?: number
+	size?: AvatarProps['size']
+}
+
+interface AvatarGroupProps
+	extends IAvatarGroupProps,
+		Omit<React.HTMLAttributes<HTMLDivElement>, 'children'> {}
+
+export {
+	AvatarNameProps,
+	AvatarProps,
+	AvatarPlaceholderProps,
+	AvatarGroupProps,
+}

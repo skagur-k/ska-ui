@@ -9,7 +9,6 @@ export default function useImage(props: UseImageProps) {
 		props
 
 	const [status, setStatus] = useState<Status>('pending')
-	console.log('Status in [useImage]: ' + status)
 
 	useEffect(() => {
 		setStatus(src ? 'loading' : 'pending')
@@ -70,7 +69,6 @@ export default function useImage(props: UseImageProps) {
 			flush()
 		}
 	}, [status, load, ignoreFallback])
-	console.log('Status at the End [useImage]: ' + status)
 
 	return ignoreFallback ? 'loaded' : status
 }

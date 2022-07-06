@@ -45,14 +45,17 @@ const Image = forwardRef<unknown, ImageProps>((props, ref) => {
 
 	if (status !== 'loaded') {
 		if (fallback) return fallback
-		return <Comp src={fallbackSrc} {...sharedProps} />
+		return (
+			<Comp src={fallbackSrc} {...sharedProps} className='rounded-xl' />
+		)
 	}
 
 	return (
 		<Comp
 			src={src}
-			corssOrigin={crossOrigin}
+			crossOrigin={crossOrigin}
 			loading={loading}
+			className='rounded-xl'
 			{...sharedProps}
 		/>
 	)

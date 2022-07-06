@@ -1,10 +1,11 @@
 const plugin = require(`tailwindcss/plugin`)
 
+const Avatar = require('./components/avatar')
 const Button = require('./components/button')
 const ButtonGroup = require('./components/button-group')
 const Checkbox = require('./components/checkbox')
 
-const components = [ButtonGroup, Button, Checkbox]
+const components = [Avatar, Button, ButtonGroup, Checkbox]
 
 const defaultColors = ['gray']
 
@@ -37,8 +38,7 @@ const skaui = plugin.withOptions(
 			if (options.cssBase) {
 				addBase({
 					html: {
-						'@apply selection:bg-neutral-600 selection:text-white':
-							{},
+						'@apply selection:bg-sky-700 selection:text-white': {},
 						fontSize: '14px',
 					},
 					body: {
