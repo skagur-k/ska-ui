@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { isBrowser } from 'utils'
+import { isBrowser } from '../utils'
 
 interface ScrollPosition {
 	x: number
@@ -7,11 +7,15 @@ interface ScrollPosition {
 }
 
 function getScrollPosition(): ScrollPosition {
-	return isBrowser() ? { x: window.scrollX, y: window.scrollY } : { x: 0, y: 0 }
+	return isBrowser()
+		? { x: window.scrollX, y: window.scrollY }
+		: { x: 0, y: 0 }
 }
 
 const useScrollPosition = (): ScrollPosition => {
-	const [position, setScrollPosition] = useState<ScrollPosition>(getScrollPosition())
+	const [position, setScrollPosition] = useState<ScrollPosition>(
+		getScrollPosition()
+	)
 
 	useEffect(() => {
 		function handleScroll() {

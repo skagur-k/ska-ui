@@ -1,4 +1,4 @@
-import { isBrowser } from 'utils'
+import { isBrowser } from '../../utils'
 import { ThemeContext } from './ThemeContext'
 import { useState, useEffect } from 'react'
 import { useMediaQuery } from 'hooks'
@@ -27,7 +27,11 @@ const ThemeContextProvider = ({ children }: any) => {
 		localStorage.setItem(STORAGE_KEY, val)
 	}
 
-	return <ThemeContext.Provider value={{ isDarkMode, mode, selectTheme }}>{children}</ThemeContext.Provider>
+	return (
+		<ThemeContext.Provider value={{ isDarkMode, mode, selectTheme }}>
+			{children}
+		</ThemeContext.Provider>
+	)
 }
 
 export default ThemeContextProvider
