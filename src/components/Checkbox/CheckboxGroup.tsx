@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useEffect } from 'react'
 import { useCheckboxGroup, useCheckboxGroupItem } from '@react-aria/checkbox'
 import { useCheckboxGroupState } from '@react-stately/checkbox'
 import classNames from 'classnames'
@@ -23,6 +23,10 @@ export const CheckboxGroup = (props: CheckboxGroupProps) => {
 			rounded: child.props.rounded || rounded,
 		})
 	})
+
+	useEffect(() => {
+		state.setValue(['one', 'four'])
+	}, [])
 
 	return (
 		<div data-color={color} className='checkbox-group' {...groupProps}>
