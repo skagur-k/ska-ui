@@ -1,6 +1,7 @@
 import React from 'react'
 
 interface ICheckboxProps {
+	id?: string
 	value: string
 	caption?: string
 	name?: string

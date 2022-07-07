@@ -24,10 +24,17 @@ const Template = (args: any) => {
 				<CheckboxGroupItem rounded selected color='red' value='two'>
 					Two
 				</CheckboxGroupItem>
-				<CheckboxGroupItem disabled value='three'>
+				<CheckboxGroupItem
+					caption='This is a caption for three'
+					name='cb-three'
+					value='three'>
 					Three
 				</CheckboxGroupItem>
-				<CheckboxGroupItem value='four'>Four</CheckboxGroupItem>
+				<CheckboxGroupItem
+					caption='This is a caption for four'
+					value='four'>
+					Four
+				</CheckboxGroupItem>
 			</CheckboxGroup>
 			<CheckboxGroup
 				column
@@ -56,6 +63,7 @@ const Template = (args: any) => {
 					Four
 				</CheckboxGroupItem>
 			</CheckboxGroup>
+			<p id='result'></p>
 		</div>
 	)
 }

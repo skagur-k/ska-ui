@@ -1,5 +1,11 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { AiFillAlert, AiFillAndroid, AiOutlineUser } from 'react-icons/ai'
+import {
+	AiFillAlert,
+	AiFillAmazonCircle,
+	AiFillAndroid,
+	AiFillChrome,
+	AiOutlineUser,
+} from 'react-icons/ai'
 import { Button, ButtonGroup } from '.'
 export default {
 	title: 'ska-ui/Button',
@@ -47,6 +53,15 @@ const Template = (args: any) => {
 					Ghost Button
 				</Button>
 				<Button icon={<AiFillAndroid />} size='md'></Button>
+			</Button.Group>{' '}
+			<Button.Group attached size='md'>
+				<Button variant='ghost' icon={<AiFillAlert />} size='sm' />
+				<Button
+					variant='ghost'
+					icon={<AiFillAmazonCircle />}
+					size='sm'
+				/>
+				<Button variant='ghost' icon={<AiFillChrome />} size='sm' />
 			</Button.Group>{' '}
 		</div>
 	)

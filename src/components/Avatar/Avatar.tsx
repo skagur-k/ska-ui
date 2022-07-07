@@ -8,6 +8,7 @@ import {
 } from './Avatar.types'
 import Image from '../Image'
 import { useAvatarClass, useAvatarNameClass } from './styles'
+import type { Badge } from 'components/Badge/Badge.types'
 
 const getInitials = (name: string) => {
 	const [firstName, lastName] = name.split(' ')
@@ -25,7 +26,7 @@ const AvatarPlaceholder = ({
 	return (
 		<div
 			className={classNames(
-				'w-full h-full fill-neutral-700 relative',
+				'w-full h-full fill-neutral-600 relative',
 				className
 			)}
 			{...props}>
@@ -66,6 +67,7 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
 			bordered = false,
 			name,
 			icon,
+			badge,
 			src,
 			srcSet,
 			onError,
@@ -125,14 +127,17 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
 		}
 
 		return (
-			<div className='relative'>
-				<div
-					ref={ref}
-					className={classNames(avatarClasses, className)}
-					{...rest}>
-					{renderChildren()}
+			<div className='inline-flex'>
+				<div className='relative'>
+					<div
+						ref={ref}
+						className={classNames(avatarClasses, className)}
+						{...rest}>
+						{renderChildren()}
+					</div>
+					{icon && <Icon className='avatar-icon' />}
+					{badge && <div className='avatar-badge'>{badge}</div>}
 				</div>
-				{icon && <Icon className='avatar-icon' />}
 			</div>
 		)
 	}

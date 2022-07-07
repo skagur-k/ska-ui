@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import { Badge } from '../Badge'
 import React from 'react'
 import { getValidChildren } from '../../utils'
 import Avatar from './Avatar'
@@ -14,10 +15,7 @@ export const AvatarGroup = ({
 	const validChildren = getValidChildren(children)
 	const displayChildren = max ? validChildren.slice(0, max) : validChildren
 
-	console.log(displayChildren.length)
-
 	const excess = max != null && validChildren.length - max
-	console.log(excess)
 
 	const clones = displayChildren.map((child, index) => {
 		return React.cloneElement(child, {
@@ -33,7 +31,9 @@ export const AvatarGroup = ({
 	return (
 		<div role='group' className={classNames('avatar-group', className)}>
 			{clones}
-			{excess > 0 && <div className='avatar-group-excess'>+{excess}</div>}
+			{excess > 0 && (
+				<Badge className='avatar-group-excess'>+{excess}</Badge>
+			)}
 		</div>
 	)
 }

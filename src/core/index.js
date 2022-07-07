@@ -1,11 +1,11 @@
 const plugin = require(`tailwindcss/plugin`)
 
 const Avatar = require('./components/avatar')
+const Badge = require('./components/badge')
 const Button = require('./components/button')
-const ButtonGroup = require('./components/button-group')
 const Checkbox = require('./components/checkbox')
 
-const components = [Avatar, Button, ButtonGroup, Checkbox]
+const components = [Avatar, Badge, Button, Checkbox]
 
 const defaultColors = ['gray']
 

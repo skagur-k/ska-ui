@@ -11,6 +11,7 @@ const Checkbox = forwardRef<HTMLInputElement, PropsWithChildren<CheckboxProps>>(
 		const {
 			name,
 			value,
+			id,
 			caption,
 			defaultSelected,
 			selected,
@@ -64,6 +65,7 @@ const Checkbox = forwardRef<HTMLInputElement, PropsWithChildren<CheckboxProps>>(
 					{...inputProps}
 					{...focusProps}
 					type='checkbox'
+					id={id}
 					readOnly={readOnly}
 					disabled={disabled}
 					aria-readonly={readOnly}
