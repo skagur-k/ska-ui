@@ -10,7 +10,8 @@ const Template = (args: any) => {
 		<div className='flex flex-col gap-5'>
 			<Description
 				title='Section Title'
-				tooltip='This is tooltip content. Also this is long tooltip message'>
+				tooltip='This is tooltip content. Also this is long tooltip message'
+				tooltipPosition='right'>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit.
 				Aliquam, a necessitatibus. Dicta eum consectetur eligendi nobis,
 				sapiente praesentium quia minima odio perferendis quos dolore

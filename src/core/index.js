@@ -6,6 +6,8 @@ const Button = require('./components/button')
 const Checkbox = require('./components/checkbox')
 const Description = require('./components/description')
 const Input = require('./components/forms/input')
+const Snippet = require('./components/snippet')
+const TextArea = require('./components/textarea')
 const Tooltip = require('./components/tooltip')
 
 const components = [
@@ -15,6 +17,8 @@ const components = [
 	Checkbox,
 	Description,
 	Input,
+	Snippet,
+	TextArea,
 	Tooltip,
 ]
 
@@ -56,6 +60,12 @@ const skaui = plugin.withOptions(
 						position: 'relative',
 						minHeight: '100%',
 					},
+					h1: { '@apply text-4xl': {} },
+					h2: { '@apply text-3xl': {} },
+					h3: { '@apply text-2xl': {} },
+					h4: { '@apply text-xl': {} },
+					h5: { '@apply text-lg': {} },
+					p: { '@apply text-base': {} },
 				})
 			}
 		}
@@ -63,10 +73,10 @@ const skaui = plugin.withOptions(
 	function () {
 		return {
 			theme: {
-				fontFamily: {
-					sans: ['Inter', ...defaultTheme.fontFamily.sans],
-				},
 				extend: {
+					fontFamily: {
+						sans: ['Inter', ...defaultTheme.fontFamily.sans],
+					},
 					fontSize: {
 						tiny: [
 							'0.5rem',

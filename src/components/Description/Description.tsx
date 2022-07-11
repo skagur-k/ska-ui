@@ -3,9 +3,10 @@ import { Tooltip } from '../Tooltip'
 import { FaInfo } from 'react-icons/fa'
 import { Description, DescriptionProps } from './Description.types'
 
-const Badge = ({
+const Description = ({
 	title,
 	tooltip,
+	tooltipPosition,
 	children,
 	className,
 	...rest
@@ -18,6 +19,7 @@ const Badge = ({
 					<Tooltip
 						delay={100}
 						message={tooltip}
+						position={tooltipPosition}
 						className='description-tooltip'>
 						<FaInfo className='bg-neutral-300 text-neutral-500 w-4 h-4 p-1 rounded-full ' />
 					</Tooltip>
@@ -28,4 +30,4 @@ const Badge = ({
 	)
 }
 
-export default Badge
+export default Description
