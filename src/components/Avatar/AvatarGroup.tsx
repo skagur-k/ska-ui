@@ -2,7 +2,6 @@ import classNames from 'classnames'
 import { Badge } from '../Badge'
 import React from 'react'
 import { getValidChildren } from '../../utils'
-import Avatar from './Avatar'
 import { AvatarGroupProps } from './Avatar.types'
 
 export const AvatarGroup = ({

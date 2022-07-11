@@ -1,0 +1,3 @@
+interface DefaultProps {
+	className?: string
+}

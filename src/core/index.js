@@ -1,11 +1,13 @@
 const plugin = require(`tailwindcss/plugin`)
-
+const defaultTheme = require('tailwindcss/defaultTheme')
 const Avatar = require('./components/avatar')
 const Badge = require('./components/badge')
 const Button = require('./components/button')
 const Checkbox = require('./components/checkbox')
+const Description = require('./components/description')
+const Input = require('./components/forms/input')
 
-const components = [Avatar, Badge, Button, Checkbox]
+const components = [Avatar, Badge, Button, Checkbox, Description, Input]
 
 const defaultColors = ['gray']
 
@@ -52,7 +54,18 @@ const skaui = plugin.withOptions(
 	function () {
 		return {
 			theme: {
+				fontFamily: {
+					sans: ['Inter', ...defaultTheme.fontFamily.sans],
+				},
 				extend: {
+					fontSize: {
+						tiny: [
+							'0.5rem',
+							{
+								lineHeight: '1rem',
+							},
+						],
+					},
 					animation: {
 						'spin-slow': 'spin 1.5s linear infinite',
 					},

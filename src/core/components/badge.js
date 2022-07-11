@@ -4,7 +4,7 @@ function badge(colors) {
 		'@apply inline-flex items-center justify-start': {},
 		'@apply bg-neutral-800 text-neutral-100 shadow-sm': {},
 		'@apply cursor-pointer': {},
-		'@apply font-bold': {},
+		'@apply font-medium': {},
 		'@apply ring-1 ring-white': {},
 
 		'&-contrast': {
@@ -40,13 +40,13 @@ function badge(colors) {
 function badgeSizes() {
 	return {
 		'&-sm': {
-			'@apply text-xs leading-4 px-1 py-0': {},
+			'@apply text-tiny leading-4 px-1 py-0 rounded-sm': {},
 		},
 		'&-md': {
-			'@apply text-sm leading-5 px-2 py-0': {},
+			'@apply text-xs leading-4 px-2 py-[2px] rounded-md': {},
 		},
 		'&-lg': {
-			'@apply text-base leading-6 px-3 py-0': {},
+			'@apply text-sm leading-4 px-2 py-[2px] rounded-md': {},
 		},
 	}
 }

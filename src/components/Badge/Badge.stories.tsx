@@ -10,6 +10,7 @@ const Template = (args: any) => {
 		<div className='flex flex-col gap-5'>
 			<div className='flex gap-5 items-center'>
 				<Badge contrast>Badge</Badge>
+				<Badge outline>Badge</Badge>
 				<Badge>New</Badge>
 				<Badge color='gray'>Badge</Badge>
 				<Badge color='red'>Badge</Badge>

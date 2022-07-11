@@ -1,7 +1,7 @@
 function buttonBase() {
 	return {
 		'@apply cursor-pointer select-none relative': {},
-		'@apply text-sm font-semibold max-w-fit': {},
+		'@apply text-sm font-medium max-w-fit': {},
 
 		'@apply transition-all duration-100 ease-linear': {},
 		'@apply px-2 py-1 rounded-md': {},
