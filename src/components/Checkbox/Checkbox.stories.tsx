@@ -1,3 +1,4 @@
+import { Tooltip } from '../Tooltip'
 import Checkbox from './Checkbox'
 export default {
 	title: 'ska-ui/Checkbox',
@@ -13,9 +14,8 @@ const Template = (args: any) => {
 				caption='Hello World'
 				defaultSelected
 				size='sm'>
-				Checkbox
+				Hello
 			</Checkbox>
-
 			<Checkbox
 				caption='Hello World'
 				value='one'
@@ -24,7 +24,6 @@ const Template = (args: any) => {
 				size='sm'>
 				Checkbox
 			</Checkbox>
-
 			<Checkbox caption='Hello World' value='one' size='md'>
 				Checkbox
 			</Checkbox>

@@ -19,9 +19,7 @@ const Badge = ({
 						delay={100}
 						message={tooltip}
 						className='description-tooltip'>
-						{
-							<FaInfo className='bg-neutral-300 text-neutral-500 w-4 h-4 p-1 rounded-full ' />
-						}
+						<FaInfo className='bg-neutral-300 text-neutral-500 w-4 h-4 p-1 rounded-full ' />
 					</Tooltip>
 				)}
 			</div>

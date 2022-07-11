@@ -38,7 +38,7 @@ const Tooltip = (props: ToolTipProps) => {
 	})
 
 	return (
-		<span className={classNames('relative inline-block', className)}>
+		<span className={classNames('relative', className)}>
 			{copies}
 			{state.isOpen && (
 				<_Tooltip state={state} {...tooltipProps} message={message} />

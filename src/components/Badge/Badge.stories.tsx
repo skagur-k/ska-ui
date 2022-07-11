@@ -1,3 +1,4 @@
+import { Tooltip } from '../Tooltip'
 import Badge from './Badge'
 export default {
 	title: 'ska-ui/Badge',
@@ -9,7 +10,9 @@ const Template = (args: any) => {
 	return (
 		<div className='flex flex-col gap-5'>
 			<div className='flex gap-5 items-center'>
-				<Badge contrast>Badge</Badge>
+				<Tooltip message='Tooltip for checkbox' delay={100}>
+					<Badge contrast>Badge</Badge>
+				</Tooltip>
 				<Badge outline>Badge</Badge>
 				<Badge>New</Badge>
 				<Badge color='gray'>Badge</Badge>

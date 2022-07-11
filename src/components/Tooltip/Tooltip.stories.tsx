@@ -11,7 +11,7 @@ const Template = (args: any) => {
 		<div className='flex flex-col gap-5'>
 			<Tooltip
 				delay={500}
-				message='This is tooltip. This is a long tooltip message'>
+				message='This is tooltip. This is a long tooltip messageThis is tooltip. This is a long tooltip messageThis is tooltip. This is a long tooltip messageThis is tooltip. This is a long tooltip messageThis is tooltip. This is a long tooltip messageThis is tooltip. This is a long tooltip messageThis is tooltip. This is a long tooltip message'>
 				<Button>Hello</Button>
 			</Tooltip>
 		</div>
