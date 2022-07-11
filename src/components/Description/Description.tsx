@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import { Tooltip } from '../Tooltip'
 import { FaInfo } from 'react-icons/fa'
 import { Description, DescriptionProps } from './Description.types'
 
@@ -11,14 +12,17 @@ const Badge = ({
 }: DescriptionProps): Description => {
 	return (
 		<div {...rest} className={classNames('description', className)}>
-			<div className='description-title'>
-				{title}
+			<div className='flex items-center gap-2 mb-2'>
+				{<div className='description-title'>{title}</div>}
 				{tooltip && (
-					<span>
+					<Tooltip
+						delay={100}
+						message={tooltip}
+						className='description-tooltip'>
 						{
 							<FaInfo className='bg-neutral-300 text-neutral-500 w-4 h-4 p-1 rounded-full ' />
 						}
-					</span>
+					</Tooltip>
 				)}
 			</div>
 			<div className='description-content'>{children}</div>

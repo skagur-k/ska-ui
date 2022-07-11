@@ -34,7 +34,9 @@ interface ButtonGroupNativeAttrs
 		keyof IButtonGroupProps
 	> {}
 
-export interface ButtonProps extends ButtonNativeAttrs, IButtonProps {}
+export interface ButtonProps extends ButtonNativeAttrs, IButtonProps {
+	ref?: any
+}
 export interface ButtonGroupProps
 	extends ButtonGroupNativeAttrs,
 		IButtonGroupProps {}

@@ -6,7 +6,6 @@ function description() {
 		'&-title': {
 			'@apply flex items-center gap-2': {},
 			'@apply font-light text-base text-neutral-700': {},
-			'@apply uppercase mb-2': {},
 		},
 		'&-content': {
 			'@apply text-base leading-6': {},

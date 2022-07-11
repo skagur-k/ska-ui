@@ -6,8 +6,17 @@ const Button = require('./components/button')
 const Checkbox = require('./components/checkbox')
 const Description = require('./components/description')
 const Input = require('./components/forms/input')
+const Tooltip = require('./components/tooltip')
 
-const components = [Avatar, Badge, Button, Checkbox, Description, Input]
+const components = [
+	Avatar,
+	Badge,
+	Button,
+	Checkbox,
+	Description,
+	Input,
+	Tooltip,
+]
 
 const defaultColors = ['gray']
 
