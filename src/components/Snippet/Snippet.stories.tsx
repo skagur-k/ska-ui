@@ -8,7 +8,13 @@ export default {
 const Template = (args: any) => {
 	return (
 		<div className='flex flex-col gap-5'>
-			<Snippet width='50%' text={['npm init next-app', 'cd dev']} />
+			<Snippet
+				width='600px'
+				text={[
+					'skagur @ Ubuntu in ~/dev/react-ska-ui on git:twcss o [10:01:56]',
+					'cd dev',
+				]}
+			/>
 			<Snippet prompt={false} text={['npm init next-app', 'cd dev']} />
 			<Snippet prompt={false} text={['npm init next-app']} />
 			<Snippet dark text={['npm init next-app']} />

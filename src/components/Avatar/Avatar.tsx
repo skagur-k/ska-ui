@@ -6,7 +6,7 @@ import {
 	AvatarPlaceholderProps,
 	AvatarProps,
 } from './Avatar.types'
-import Image from '../Image'
+import { Image } from '../Image'
 import { useAvatarClass, useAvatarNameClass } from './styles'
 import type { Badge } from 'components/Badge/Badge.types'
 

@@ -15,4 +15,8 @@ interface UseImageProps {
 type Status = 'loading' | 'failed' | 'pending' | 'loaded'
 type ImageEvent = React.SyntheticEvent<HTMLImageElement, Event>
 
-export type { UseImageProps, Status, ImageEvent }
+interface UseToastProps {
+	position?: TOAST_POSITION
+}
+
+export type { UseImageProps, Status, ImageEvent, UseToastProps }

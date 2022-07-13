@@ -10,16 +10,21 @@ const Snippet = ({
 	dark,
 	className,
 }: SnippetProps): Snippet => {
+	const copyText = text.reduce((current, t) => current + '\n' + t)
+	function copyToClipboard() {
+		navigator.clipboard.writeText(copyText)
+	}
+
 	const snippetClasses = useSnippetClass({ width, dark })
 	return (
 		<div className={classNames(snippetClasses, className)}>
-			{text?.map((text) => (
-				<pre>
+			{text?.map((text, index) => (
+				<pre key={index}>
 					{prompt && <span className='snippet-prompt'>$</span>}
 					<span className='snippet-text'>{text}</span>
 				</pre>
 			))}
-			<BiCopy className='snippet-copy' />
+			<BiCopy className='snippet-copy' onClick={copyToClipboard} />
 		</div>
 	)
 }

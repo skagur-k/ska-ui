@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FaSearch } from 'react-icons/fa'
 import { FiSettings } from 'react-icons/fi'
-import { Input } from './Input'
+import Input from './Input'
 export default {
 	title: 'ska-ui/Input',
 	component: Input,

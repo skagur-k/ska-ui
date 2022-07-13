@@ -1,7 +1,7 @@
 interface SnippetProps extends DefaultProps {
 	width?: string
 	prompt?: boolean
-	text?: string[]
+	text: string[]
 	dark?: boolean
 }
 

@@ -1,7 +1,7 @@
 function badge(colors) {
 	return {
 		'@apply relative rounded-md box-content truncate max-w-[20ch]': {},
-		'@apply inline-flex items-center justify-start': {},
+		'@apply inline-flex shrink-0 items-center justify-start': {},
 		'@apply bg-neutral-800 text-neutral-100 shadow-sm': {},
 		'@apply cursor-pointer': {},
 		'@apply font-medium': {},

@@ -1,6 +1,6 @@
 function tooltip() {
 	return {
-		'@apply inline-block box-border absolute bg-neutral-100/100 text-neutral-800':
+		'@apply inline-block shrink-0 box-border absolute bg-neutral-100/100 text-neutral-800':
 			{},
 		'@apply px-4 py-2 shadow-sm z-50': {},
 		'@apply w-max max-w-sm rounded-md': {},

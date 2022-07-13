@@ -8,6 +8,7 @@ const Description = require('./components/description')
 const Input = require('./components/forms/input')
 const Snippet = require('./components/snippet')
 const TextArea = require('./components/textarea')
+const Toast = require('./components/toast')
 const Tooltip = require('./components/tooltip')
 
 const components = [
@@ -19,6 +20,7 @@ const components = [
 	Input,
 	Snippet,
 	TextArea,
+	Toast,
 	Tooltip,
 ]
 
