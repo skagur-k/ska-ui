@@ -19,31 +19,29 @@ function toastManager() {
 
 function toastContainer() {
 	return {
-		'@apply flex flex-col gap-3': {},
-		'@apply min-w-[400px] max-w-2xl': {},
-		'@apply transition-all duration-300': {},
+		'@apply flex flex-col gap-3 justify-end overflow-hidden': {},
+		'@apply min-w-[500px] max-w-2xl': {},
 	}
 }
 
 function toast() {
 	return {
-		'@apply relative p-6 shadow-md': {},
+		'@apply relative px-6 py-4 shadow-md': {},
 		'@apply ring-1 ring-inset': {},
-		'@apply rounded-sm hover:rounded-md': {},
-		'@apply transition-all duration-200': {},
+		'@apply rounded-md': {},
+		'@apply w-[500px]': {},
+		'@apply flex justify-between items-center gap-3': {},
+
+		'@apply animate-fadeIn': {},
+		'@apply transition-all duration-500': {},
+
 		'&-x': {
 			'@apply absolute top-1/2 -translate-y-1/2 right-4': {},
 			'@apply w-4 h-4 text-neutral-100': {},
-			'@apply transition-all duration-300': {},
+			'@apply transition-all duration-500': {},
 			'@apply opacity-0 cursor-pointer': {},
 		},
 		'&:hover &-x': {
-			'@apply opacity-100': {},
-		},
-		'&-no-show': {
-			'@apply opacity-0': {},
-		},
-		'&-show': {
 			'@apply opacity-100': {},
 		},
 	}
@@ -53,6 +51,7 @@ function toastText() {
 	return {
 		'&-text': {
 			'@apply text-base font-light': {},
+			'@apply select-none': {},
 		},
 	}
 }
@@ -60,15 +59,15 @@ function toastText() {
 function toastMode() {
 	return {
 		'&-info': {
-			'@apply bg-neutral-50': {},
-			'@apply ring-neutral-200 hover:ring-neutral-500': {},
+			'@apply bg-white': {},
+			'@apply ring-neutral-200': {},
 			'& .toast-x': {
 				'@apply text-neutral-800': {},
 			},
 		},
 		'&-success': {
 			'@apply bg-blue-600': {},
-			'@apply ring-blue-600 hover:ring-blue-800': {},
+			'@apply ring-blue-600': {},
 			'& .toast-x': {
 				'@apply text-blue-100': {},
 			},
@@ -78,7 +77,7 @@ function toastMode() {
 		},
 		'&-warning': {
 			'@apply bg-amber-400': {},
-			'@apply ring-amber-400 hover:ring-amber-800': {},
+			'@apply ring-amber-400': {},
 			'& .toast-x': {
 				'@apply text-amber-800': {},
 			},
@@ -86,7 +85,7 @@ function toastMode() {
 		},
 		'&-error': {
 			'@apply bg-red-600': {},
-			'@apply ring-red-600 hover:ring-red-800': {},
+			'@apply ring-red-600': {},
 			'& .toast-x': {
 				'@apply text-red-100': {},
 			},

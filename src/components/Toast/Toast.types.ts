@@ -1,16 +1,18 @@
+type ToastTypes = 'info' | 'success' | 'warning' | 'error'
 interface Toast extends DefaultProps {
-	id: string
-	mode?: 'info' | 'success' | 'warning' | 'error'
+	id?: string
+	type?: ToastTypes
 	onClose?: () => void
 	message?: string
-	show?: boolean
-	duration?: number
+	action?: string
+	cancelAction?: string
 }
 
 interface ToastManager {
 	autoClose?: boolean
 	autoCloseTime?: number
 	position?: TOAST_POSITION
+	maxToasts?: number
 }
 
 interface ToastManagerHandle {

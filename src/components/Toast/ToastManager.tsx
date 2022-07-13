@@ -1,40 +1,23 @@
 import { useToast } from '../../hooks'
 import ReactDOM from 'react-dom'
-import { forwardRef, useEffect, useImperativeHandle, useState } from 'react'
+import { forwardRef, useImperativeHandle, useState } from 'react'
 import { Toast } from './Toast'
 import { nanoid } from '../../utils'
+import { Badge } from '../Badge'
 
 export const ToastManager = forwardRef<ToastManagerHandle, ToastManager>(
 	(
-		{ autoClose, autoCloseTime, position = 'TOP_RIGHT' }: ToastManager,
+		{
+			autoClose = false,
+			autoCloseTime = 4000,
+			position = 'TOP_RIGHT',
+			maxToasts = 3,
+		}: ToastManager,
 		ref
 	) => {
-		const [toasts, setToasts] = useState<Toast[]>([
-			{
-				id: nanoid(8),
-				mode: 'success',
-				message: 'Success Message',
-			},
-			{
-				id: nanoid(8),
-				mode: 'info',
-				message: 'Info Message',
-			},
-			{
-				id: nanoid(8),
-				mode: 'warning',
-				message: 'Warning Message',
-			},
-			{
-				id: nanoid(8),
-				mode: 'error',
-				message: 'Error Message',
-			},
-		])
+		const [toasts, setToasts] = useState<Toast[]>([])
 		const { loaded, portalId } = useToast({ position })
 		const portal = document.getElementById(portalId) as HTMLElement
-		console.log(portalId)
-
 		const removeToast = (id: Toast['id']) => {
 			setToasts(toasts.filter((t) => t.id !== id))
 		}
@@ -47,18 +30,28 @@ export const ToastManager = forwardRef<ToastManagerHandle, ToastManager>(
 			addMessage,
 		}))
 
-		return loaded ? (
+		return loaded && toasts.length !== 0 ? (
 			ReactDOM.createPortal(
-				<div className='toast-container'>
-					{toasts.map((toast) => (
-						<Toast
-							onClose={() => removeToast(toast.id)}
-							key={toast.id}
-							id={toast.id}
-							mode={toast.mode}
-							message={toast.message}
-						/>
-					))}
+				<div className='flex flex-col items-end'>
+					{toasts.length > maxToasts + 1 && (
+						<Badge className='mb-2'>
+							+{toasts.length - maxToasts - 1}
+						</Badge>
+					)}
+					<div className='toast-container'>
+						{toasts.slice(-4).map((toast) => (
+							<Toast
+								key={toast.id}
+								id={toast.id}
+								type={toast.type}
+								message={toast.message}
+								action={toast.action}
+								cancelAction={toast.cancelAction}
+								onClose={() => removeToast(toast.id)}
+							/>
+						))}
+						{/* <p>{toasts.length}</p> */}
+					</div>
 				</div>,
 				portal
 			)

@@ -1,11 +1,11 @@
 import classNames from 'classnames'
 import { useMemo } from 'react'
-interface ToastClassProps extends Omit<Toast, 'id'> {}
+interface ToastClassProps extends Partial<Toast> {}
 
 function useToastClass(props: ToastClassProps) {
-	const { mode } = props
+	const { type } = props
 
-	const modes = {
+	const types = {
 		info: 'toast-info',
 		success: 'toast-success',
 		warning: 'toast-warning',
@@ -13,8 +13,8 @@ function useToastClass(props: ToastClassProps) {
 	}
 
 	const classes = useMemo(
-		() => classNames('toast', [mode && modes[mode]]),
-		[mode]
+		() => classNames('toast', [type && types[type]]),
+		[type]
 	)
 	return classes
 }

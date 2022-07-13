@@ -2,41 +2,36 @@ import classNames from 'classnames'
 import { useToastClass } from './styles'
 import { BsXLg } from 'react-icons/bs'
 import { useEffect, useRef, useState } from 'react'
+import useMountTransition from '../../hooks/useMountTransition'
+import { Button } from '../Button'
 export const Toast = ({
-	mode = 'info',
+	type = 'info',
 	onClose,
 	message,
-	show,
-	duration,
+	action,
+	cancelAction,
 	...rest
 }: Toast) => {
-	const [showToast, setShowToast] = useState(show)
-	const [hideToast, setHideToast] = useState(!show)
-	const timeoutRef: { current: NodeJS.Timeout | undefined } =
-		useRef(undefined)
-
-	useEffect(() => {
-		if (show) {
-			setShowToast(true)
-			setHideToast(false)
-			if (timeoutRef != null) clearTimeout(timeoutRef.current)
-		} else {
-			setShowToast(false)
-			timeoutRef.current = setTimeout(
-				() => setHideToast(true),
-				duration || 1000
-			)
-		}
-	}, [show])
-
-	useEffect(() => () => clearTimeout(timeoutRef.current), [])
-
-	const toastClasses = useToastClass({ mode })
+	const toastClasses = useToastClass({ type })
 
 	return (
-		<div className={classNames(toastClasses)} {...rest}>
-			<div className='toast-text'>{message}</div>
-			<BsXLg onClick={onClose} className='toast-x' />
+		<div>
+			<div className={classNames(toastClasses)} {...rest}>
+				<div className='toast-text'>{message}</div>
+				<div className='flex gap-2'>
+					{cancelAction && (
+						<Button onClick={onClose}>{cancelAction}</Button>
+					)}
+					{action && (
+						<Button onClick={onClose} type='secondary'>
+							{action}
+						</Button>
+					)}
+				</div>
+				{!action && !cancelAction && (
+					<BsXLg onClick={onClose} className='toast-x' />
+				)}
+			</div>
 		</div>
 	)
 }

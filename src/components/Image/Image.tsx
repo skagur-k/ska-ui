@@ -28,6 +28,7 @@ const Image = forwardRef<unknown, ImageProps>((props, ref) => {
 		ignoreFallback,
 		crossOrigin,
 		as: Comp = NativeImage,
+		caption,
 		...rest
 	} = props
 
@@ -51,13 +52,18 @@ const Image = forwardRef<unknown, ImageProps>((props, ref) => {
 	}
 
 	return (
-		<Comp
-			src={src}
-			crossOrigin={crossOrigin}
-			loading={loading}
-			className='rounded-xl'
-			{...sharedProps}
-		/>
+		<div className='flex flex-col items-center'>
+			<Comp
+				src={src}
+				crossOrigin={crossOrigin}
+				loading={loading}
+				className='rounded-xl'
+				{...sharedProps}
+			/>
+			<div className='image-caption text-right text-sm mt-4 text-gray-500 font-light'>
+				{caption && caption}
+			</div>
+		</div>
 	)
 })
 

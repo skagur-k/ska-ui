@@ -8,6 +8,7 @@ function buttonBase() {
 
 		'@apply outline-none': {},
 		'@apply border border-neutral-200': {},
+		'@apply w-fit h-fit': {},
 
 		'&-content': {
 			[`@apply flex items-center justify-center`]: {},
@@ -173,13 +174,13 @@ function buttonSize() {
 			'@apply text-xs px-2 p-1': {},
 		},
 		'&-sm': {
-			'@apply text-sm px-3 py-1': {},
+			'@apply text-xs px-3 py-1': {},
 		},
 		'&-md': {
-			'@apply text-base px-4 py-2': {},
+			'@apply text-sm px-3 py-2': {},
 		},
 		'&-lg': {
-			'@apply text-base px-5 py-2': {},
+			'@apply text-sm px-5 py-2': {},
 		},
 		'&-block': {
 			'@apply text-lg flex justify-center max-w-full py-2': {},

@@ -1,6 +1,36 @@
 const plugin = require(`tailwindcss/plugin`)
 const defaultTheme = require('tailwindcss/defaultTheme')
+<<<<<<< HEAD
 const components = require('./components')
+=======
+const Avatar = require('./components/avatar')
+const Badge = require('./components/badge')
+const Button = require('./components/button')
+const Checkbox = require('./components/checkbox')
+const Description = require('./components/description')
+const Input = require('./components/forms/input')
+const KBD = require('./components/kbd')
+const Note = require('./components/note')
+const Snippet = require('./components/snippet')
+const TextArea = require('./components/textarea')
+const Toast = require('./components/toast')
+const Tooltip = require('./components/tooltip')
+
+const components = [
+	Avatar,
+	Badge,
+	Button,
+	Checkbox,
+	Description,
+	Input,
+	KBD,
+	Note,
+	Snippet,
+	TextArea,
+	Toast,
+	Tooltip,
+]
+>>>>>>> c503d6f (components/container,note,kbd)
 
 const defaultColors = ['gray']
 
@@ -34,7 +64,7 @@ const skaui = plugin.withOptions(
 				addBase({
 					html: {
 						'@apply selection:bg-sky-700 selection:text-white': {},
-						fontSize: '14px',
+						fontSize: '16px',
 					},
 					body: {
 						position: 'relative',
@@ -67,6 +97,22 @@ const skaui = plugin.withOptions(
 					},
 					animation: {
 						'spin-slow': 'spin 1.5s linear infinite',
+						fadeIn: 'fadeIn 0.2s ease-in-out',
+						fadeOut: 'fadeOut 0.5s ease-in-out',
+					},
+					keyframes: {
+						fadeIn: {
+							'0%': { transform: 'scale(0.75)' },
+							'100%': {
+								transform: 'scale(1)',
+							},
+						},
+						fadeOut: {
+							'0%': { opacity: 1 },
+							'100%': {
+								opacity: 0,
+							},
+						},
 					},
 					// colors,
 					variants: {

@@ -15,10 +15,44 @@ const Template = (args: any) => {
 			<Button
 				onClick={() =>
 					toast.current?.addMessage({
+						action: 'Undo',
 						message: 'Hello World!',
 					})
 				}>
-				Notification
+				Info
+			</Button>
+			<Button
+				onClick={() =>
+					toast.current?.addMessage({
+						message: 'Success!',
+						action: 'Undo',
+						type: 'success',
+					})
+				}>
+				Success
+			</Button>
+			<Button
+				onClick={() =>
+					toast.current?.addMessage({
+						message:
+							'This is an Error message, and it can be pretty long. what would happen if it spans multiple lines?!',
+						type: 'error',
+						cancelAction: 'Cancel',
+						action: 'Undo',
+					})
+				}>
+				Error
+			</Button>
+			<Button
+				onClick={() =>
+					toast.current?.addMessage({
+						message: 'Warning!',
+						action: 'Undo',
+						cancelAction: 'Cancel',
+						type: 'warning',
+					})
+				}>
+				Warning
 			</Button>
 			<ToastManager position='BOTTOM_RIGHT' ref={toast} />
 		</div>

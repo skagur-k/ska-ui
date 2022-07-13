@@ -15,6 +15,7 @@ interface IImageProps extends Omit<NativeImageProps, 'onError'> {
 	fallback?: React.ReactElement
 	loading?: 'eager' | 'lazy'
 	ignoreFallback?: boolean
+	caption?: string
 	as?: React.ElementType
 }
 

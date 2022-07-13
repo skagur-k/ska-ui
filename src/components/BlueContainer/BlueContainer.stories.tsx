@@ -8,17 +8,19 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args: any) => {
 	return (
-		<div className='flex'>
-			<BlueContainer style={{ height: 100 }}>
+		<div className='flex gap-2'>
+			<div>
+				<BlueContainer>
+					<Text size='sm'>Container</Text>
+				</BlueContainer>
+				<BlueContainer flex={2}>
+					<Text size='sm'>Container</Text>
+				</BlueContainer>
+			</div>
+			<BlueContainer flex={3}>
 				<Text size='sm'>Container</Text>
 			</BlueContainer>
-			<BlueContainer style={{ alignSelf: 'flex-start' }}>
-				<Text size='sm'>Container</Text>
-			</BlueContainer>
-			<BlueContainer style={{ alignSelf: 'center' }}>
-				<Text size='sm'>Container</Text>
-			</BlueContainer>
-			<BlueContainer textAlign='center' style={{ alignSelf: 'flex-end' }}>
+			<BlueContainer flex={'0 0 50px'}>
 				<Text size='sm'>Container</Text>
 			</BlueContainer>
 		</div>
