@@ -9,11 +9,14 @@ export default {
 const Template = (args: any) => {
 	return (
 		<div>
-			<RadioGroup label='Choose your animal'>
+			<RadioGroup rounded>
 				<Radio caption='Choose this if you want dogs' value='dogs'>
 					Dogs
 				</Radio>
-				<Radio caption='Choose this if you want cats' value='cats'>
+				<Radio
+					disabled={false}
+					caption='Choose this if you want cats'
+					value='cats'>
 					Cats
 				</Radio>
 				<Radio caption='Choose this if you want ducks' value='ducks'>
@@ -26,8 +29,12 @@ const Template = (args: any) => {
 				</Radio>
 			</RadioGroup>
 			<RadioGroup row label='Choose your animal'>
-				<Radio value='dogs'>Dogs</Radio>
-				<Radio value='cats'>Cats</Radio>
+				<Radio disabled value='dogs'>
+					Dogs
+				</Radio>
+				<Radio caption='Choose this if you want dogs' value='cats'>
+					Cats
+				</Radio>
 				<Radio value='ducks'>Ducks</Radio>
 				<Radio value='chicken'>Chickens</Radio>
 				<Radio value='rabbit'>Rabbit</Radio>

@@ -4,7 +4,7 @@ const skaui = require('./src/core')
 
 module.exports = {
 	darkMode: 'class',
-	content: ['./src/**/*.{ts,tsx}'],
+	content: ['./src/**/*.{js, jsx, ts,tsx}'],
 	plugins: [
 		skaui({
 			colors: ['red', 'blue', 'sky'],

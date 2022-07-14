@@ -6,29 +6,36 @@ import React from 'react'
 import { RadioContext } from './RadioGroup'
 
 const Radio = (props: RadioProps): Radio => {
-	const { children, className, caption, ...rest } = props
+	const { children, rounded, className, disabled, caption, ...rest } = props
 	const state = React.useContext(RadioContext)
 	const ref = React.useRef(null)
 	const { inputProps } = useRadio(props, state, ref)
 
 	const { isFocused, focusProps } = useFocusRing()
 
-	let isSelected = state.selectedValue === props.value
+	const isSelected = state.selectedValue === props.value
 
 	return (
-		<label className={classNames('radio group')}>
+		<label
+			className={classNames('radio group', [
+				disabled && 'radio-disabled',
+				{ ...rest },
+			])}>
 			<input
 				{...inputProps}
 				{...focusProps}
+				disabled={disabled}
 				className={classNames('sr-only')}
-				{...rest}
 			/>
 			<div
 				className={classNames('radio-button', [
 					isFocused && 'radio-button-focused',
+					isSelected && 'radio-button-selected',
+					disabled && 'radio-button-disabled',
+					rounded && 'radio-button-rounded',
 				])}>
 				<svg
-					className='stroke-current checkbox-check'
+					className='stroke-current radio-button-check'
 					viewBox='0 0 18 18'>
 					<polyline
 						points='1 9 7 14 15 4'
