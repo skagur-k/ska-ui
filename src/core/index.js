@@ -4,6 +4,7 @@ const Avatar = require('./components/avatar')
 const Badge = require('./components/badge')
 const Button = require('./components/button')
 const Checkbox = require('./components/checkbox')
+const Container = require('./components/container')
 const Description = require('./components/description')
 const Input = require('./components/forms/input')
 const Snippet = require('./components/snippet')
@@ -16,6 +17,7 @@ const components = [
 	Badge,
 	Button,
 	Checkbox,
+	Container,
 	Description,
 	Input,
 	Snippet,
