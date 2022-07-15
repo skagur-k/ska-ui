@@ -7,7 +7,7 @@ import { useRadioGroupState } from '@react-stately/radio'
 import React from 'react'
 
 import { RadioGroupState } from '@react-stately/radio'
-import { getValidChildren } from '../../utils'
+import { getValidChildren } from '../../../utils'
 
 const RadioContext = React.createContext<RadioGroupState>({} as RadioGroupState)
 

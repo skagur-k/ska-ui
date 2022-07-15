@@ -11,13 +11,17 @@
 -   [x] Container x
 -   [x] KBD x
 -   [x] Input x
+-   [x] Radio o
+-   [x] Select o
+-   [x] Popover o
+-   [x] ListBox o
+-   [ ] ComboBox
+-   [ ] SearchBox
+-   [ ] Tag
 -   [ ] Progress
 -   [ ] Spacer
 -   [ ] Switch
 -   [ ] Tabs
--   [ ] Tag
 -   [ ] Toggle
 -   [ ] Window
 -   [ ] Skeleton
--   [ ] Select o
--   [ ] Radio o

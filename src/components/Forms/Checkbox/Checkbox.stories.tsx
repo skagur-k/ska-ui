@@ -1,4 +1,4 @@
-import { Tooltip } from '../Tooltip'
+import { Tooltip } from '../../Tooltip'
 import Checkbox from './Checkbox'
 export default {
 	title: 'ska-ui/Checkbox',

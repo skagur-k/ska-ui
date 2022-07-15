@@ -37,10 +37,10 @@ function radioComponents() {
 
 		'&-content': {
 			'.radio-text': {
-				'@apply text-base': {},
+				'@apply text-sm': {},
 			},
 			'.radio-caption': {
-				'@apply text-sm text-neutral-400': {},
+				'@apply text-xs text-neutral-400': {},
 				'@apply max-w-prose': {},
 			},
 		},
@@ -69,6 +69,10 @@ function radioGroup() {
 			'& .radio .radio-button': {
 				'@apply mr-2': {},
 			},
+		},
+
+		'&-row &-radios .radio-caption': {
+			'@apply hidden': {},
 		},
 
 		'&-label': {

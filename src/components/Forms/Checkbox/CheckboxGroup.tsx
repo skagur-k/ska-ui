@@ -10,7 +10,7 @@ import {
 	useCheckboxLabelClass,
 } from './styles'
 import { CheckboxGroupProps, CheckboxProps } from './Checkbox.types'
-import { getValidChildren } from '../../utils'
+import { getValidChildren } from '../../../utils'
 
 const CheckboxGroupContext = React.createContext<any>(null)
 

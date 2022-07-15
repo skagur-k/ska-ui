@@ -1,36 +1,6 @@
 const plugin = require(`tailwindcss/plugin`)
 const defaultTheme = require('tailwindcss/defaultTheme')
-<<<<<<< HEAD
 const components = require('./components')
-=======
-const Avatar = require('./components/avatar')
-const Badge = require('./components/badge')
-const Button = require('./components/button')
-const Checkbox = require('./components/checkbox')
-const Description = require('./components/description')
-const Input = require('./components/forms/input')
-const KBD = require('./components/kbd')
-const Note = require('./components/note')
-const Snippet = require('./components/snippet')
-const TextArea = require('./components/textarea')
-const Toast = require('./components/toast')
-const Tooltip = require('./components/tooltip')
-
-const components = [
-	Avatar,
-	Badge,
-	Button,
-	Checkbox,
-	Description,
-	Input,
-	KBD,
-	Note,
-	Snippet,
-	TextArea,
-	Toast,
-	Tooltip,
-]
->>>>>>> c503d6f (components/container,note,kbd)
 
 const defaultColors = ['gray']
 
