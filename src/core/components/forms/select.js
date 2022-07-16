@@ -1,9 +1,13 @@
 function select() {
 	return {
-		'@apply inline-flex flex-col relative w-full outline-none': {},
+		'@apply inline-flex flex-col relative min-w-[200px] grow-0 outline-none':
+			{},
 
 		'&-label': {
 			'@apply mb-2': {},
+			'&-disabled': {
+				'@apply text-neutral-400': {},
+			},
 		},
 	}
 }
@@ -16,13 +20,26 @@ function selectButton() {
 			'@apply rounded-md overflow-hidden cursor-default': {},
 			'@apply shadow-sm outline-none': {},
 			'@apply ring-1 ring-neutral-300 ring-inset': {},
+			'@apply transition-all duration-200': {},
 
+			'&-content': {
+				'@apply flex items-center gap-2': {},
+			},
 			'&-focusvisible': {
-				'@apply ring-2 ring-neutral-800': {},
+				'@apply ring-2 ring-neutral-500': {},
+			},
+			'&-hovered': {
+				'@apply ring-neutral-500': {},
+			},
+
+			'&-disabled': {
+				'@apply bg-neutral-50 ring-neutral-200': {},
+				'@apply text-neutral-400': {},
+				'@apply cursor-not-allowed': {},
 			},
 		},
 		'&-opened-button': {
-			'@apply bg-neutral-100': {},
+			'@apply bg-neutral-50 ring-neutral-500': {},
 		},
 	}
 }

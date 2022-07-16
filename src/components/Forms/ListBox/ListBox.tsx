@@ -5,11 +5,11 @@ import type {
 	ListBoxProps,
 	OptionProps,
 	SectionProps,
+	OptionContextValue,
 } from './ListBox.types'
 import { useListBox, useListBoxSection, useOption } from '@react-aria/listbox'
 import classNames from 'classnames'
 import React from 'react'
-import { useFocusRing } from 'react-aria'
 import { useListBoxOptionClass } from './styles'
 import { FaCheck } from 'react-icons/fa'
 
@@ -74,9 +74,21 @@ const ListBoxSection = ({
 	)
 }
 
+const OptionContext = React.createContext<OptionContextValue>({
+	labelProps: {},
+	descriptionProps: {},
+})
+
 const ListBoxOption = ({ item, state }: OptionProps): ListBoxOptionType => {
 	const ref = React.useRef<HTMLLIElement>(null)
-	const { optionProps, isDisabled, isSelected, isFocused } = useOption(
+	const {
+		optionProps,
+		isDisabled,
+		isSelected,
+		isFocused,
+		labelProps,
+		descriptionProps,
+	} = useOption(
 		{
 			key: item.key,
 		},
@@ -91,14 +103,38 @@ const ListBoxOption = ({ item, state }: OptionProps): ListBoxOptionType => {
 	})
 	return (
 		<li {...optionProps} ref={ref} className={optionClasses}>
-			{item.rendered}
+			<div className='listbox-content'>
+				<OptionContext.Provider
+					value={{ labelProps, descriptionProps }}>
+					{item.rendered}
+				</OptionContext.Provider>
+			</div>
 			{isSelected && (
 				<FaCheck
 					aria-hidden='true'
-					className='w-5 h-5 text-neutral-600'
+					className='w-4 h-4 text-neutral-600'
 				/>
 			)}
 		</li>
+	)
+}
+
+export const Label = ({ children }: { children: React.ReactNode }) => {
+	let { labelProps } = React.useContext(OptionContext)
+	return (
+		<div {...labelProps} className='listbox-option-label'>
+			{children}
+		</div>
+	)
+}
+
+export const Description = ({ children }: { children: React.ReactNode }) => {
+	let { descriptionProps } = React.useContext(OptionContext)
+
+	return (
+		<div {...descriptionProps} className='listbox-option-description'>
+			{children}
+		</div>
 	)
 }
 

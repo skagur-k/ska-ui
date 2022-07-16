@@ -1,6 +1,10 @@
 function listbox() {
 	return {
 		'@apply flex flex-col outline-none': {},
+
+		'&-content': {
+			'@apply flex items-center gap-2': {},
+		},
 	}
 }
 
@@ -16,9 +20,9 @@ function listboxOption() {
 	return {
 		'@apply flex items-center justify-between': {},
 		'@apply px-2 py-1': {},
-		'@apply text-base': {},
 		'@apply text-neutral-700': {},
 		'@apply outline-none rounded-md': {},
+		'@apply transition-all duration-300': {},
 
 		'&-disabled': {
 			'@apply text-neutral-200': {},
@@ -28,6 +32,12 @@ function listboxOption() {
 		},
 		'&-selected': {
 			'@apply text-neutral-800 font-bold': {},
+		},
+		'&-label': {
+			'@apply text-sm': {},
+		},
+		'&-description': {
+			'@apply text-xs': {},
 		},
 	}
 }

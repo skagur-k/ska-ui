@@ -19,6 +19,11 @@ interface OptionProps {
 	state: ListState<unknown>
 }
 
+interface OptionContextValue {
+	labelProps: React.HTMLAttributes<HTMLElement>
+	descriptionProps: React.HTMLAttributes<HTMLElement>
+}
+
 type ListBoxType = JSX.Element
 type ListBoxOptionType = JSX.Element
 type ListBoxSectionType = JSX.Element
@@ -30,4 +35,5 @@ export {
 	ListBoxProps,
 	SectionProps,
 	OptionProps,
+	OptionContextValue,
 }
