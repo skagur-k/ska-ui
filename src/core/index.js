@@ -67,14 +67,13 @@ const skaui = plugin.withOptions(
 					},
 					animation: {
 						'spin-slow': 'spin 1.5s linear infinite',
-						fadeIn: 'fadeIn 0.2s ease-in-out',
-						fadeOut: 'fadeOut 0.5s ease-in-out',
+						fadeIn: 'fadeIn 0.3s ease-in-out',
 					},
 					keyframes: {
 						fadeIn: {
-							'0%': { transform: 'scale(0.75)' },
+							'0%': { opacity: 0 },
 							'100%': {
-								transform: 'scale(1)',
+								opacity: 1,
 							},
 						},
 						fadeOut: {

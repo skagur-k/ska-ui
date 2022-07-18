@@ -9,8 +9,10 @@ const ListBox = require('./listbox')
 const Snippet = require('./snippet')
 const Radio = require('./forms/radio')
 const Select = require('./forms/select')
+const Tabs = require('./tabs')
 const TextArea = require('./forms/textarea')
 const Toast = require('./toast')
+const Toggle = require('./toggle')
 const Tooltip = require('./tooltip')
 
 module.exports = [
@@ -25,7 +27,9 @@ module.exports = [
 	Snippet,
 	Radio,
 	Select,
+	Tabs,
 	TextArea,
 	Toast,
+	Toggle,
 	Tooltip,
 ]

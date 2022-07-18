@@ -1,4 +1,6 @@
-## SKA UI Todo List
+# SKA UI Todo List
+
+## Done
 
 -   [x] Tooltip x
 -   [x] Grid x
@@ -6,7 +8,6 @@
 -   [x] Text x
 -   [x] Text Area x
 -   [x] Snippet x
--   [x] Toast x
 -   [x] Note x
 -   [x] Container x
 -   [x] KBD x
@@ -15,13 +16,26 @@
 -   [x] Select o
 -   [x] Popover o
 -   [x] ListBox o
--   [ ] ComboBox
+
+## 7/15/2022
+
+-   [x] ComboBox
 -   [ ] SearchBox
+
+## 7/18/2022
+
+-   [ ] Toggle
+-   [ ] Switch
+-   [x] Tabs
+
+## TODO
+
 -   [ ] Tag
 -   [ ] Progress
 -   [ ] Spacer
--   [ ] Switch
--   [ ] Tabs
--   [ ] Toggle
 -   [ ] Window
 -   [ ] Skeleton
+
+## TOFIX
+
+-   [x] Toast x
