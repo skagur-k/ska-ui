@@ -1,15 +1,35 @@
 import { Item, Section } from '../../Shared'
-import { Description, Label } from '../ListBox/ListBox'
-import Select from './Select'
+import { Label, Description } from '../ListBox/ListBox'
+import { Select } from '../Select'
+import ComboBox from './ComboBox'
 export default {
-	title: 'ska-ui/Select',
-	component: Select,
+	title: 'ska-ui/ComboBox',
+	component: ComboBox,
 }
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args: any) => {
 	return (
 		<div className='flex flex-col gap-5'>
+			<ComboBox placeholder='Placeholder' label='Combobox'>
+				<Item key='option1'>
+					<Label>Option 1</Label>
+				</Item>
+				<Section title='Category 2'>
+					<Item key='option2'>
+						<Label>Option 2</Label>
+						<Description>Description</Description>
+					</Item>
+					<Item key='option3'>
+						<Label>Option 3</Label>
+						<Description>Description</Description>
+					</Item>
+					<Item key='option4'>
+						<Label>Option 4</Label>
+						<Description>Description</Description>
+					</Item>
+				</Section>
+			</ComboBox>
 			<Select placeholder='Choose One!' label='Favorite Animal'>
 				<Item key='option1'>
 					<Label>Option 1</Label>
@@ -28,43 +48,6 @@ const Template = (args: any) => {
 						<Description>Description</Description>
 					</Item>
 				</Section>
-			</Select>
-			<Select placeholder='Choose One!' label='Favorite Animal'>
-				<Section title='Category 1'>
-					<Item avatar='x' key='option1'>
-						<Label>Option 1</Label>
-					</Item>
-					<Item avatar='x' key='option2'>
-						<Label>Option 2</Label>
-					</Item>
-				</Section>
-				<Section title='Category 2'>
-					<Item avatar='x' key='option3'>
-						<Label>Option 3</Label>
-						<Description>Description</Description>
-					</Item>
-					<Item avatar='x' key='option4'>
-						<Label>Option 4</Label>
-						<Description>Description</Description>
-					</Item>
-				</Section>
-			</Select>
-			<Select placeholder='Choose One!' label='Favorite Animal'>
-				<Item key='option1'>
-					<Label>Option 1</Label>
-				</Item>
-				<Item key='option2'>
-					<Label>Option 2</Label>
-					<Description>Description</Description>
-				</Item>
-				<Item key='option3'>
-					<Label>Option 3</Label>
-					<Description>Description</Description>
-				</Item>
-				<Item key='option4'>
-					<Label>Option 4</Label>
-					<Description>Description</Description>
-				</Item>
 			</Select>
 		</div>
 	)

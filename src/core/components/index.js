@@ -2,6 +2,7 @@ const Avatar = require('./avatar')
 const Badge = require('./badge')
 const Button = require('./button')
 const Checkbox = require('./forms/checkbox')
+const ComboBox = require('./forms/combobox')
 const Container = require('./container')
 const Description = require('./description')
 const Input = require('./forms/input')
@@ -20,6 +21,7 @@ module.exports = [
 	Badge,
 	Button,
 	Checkbox,
+	ComboBox,
 	Container,
 	Description,
 	Input,

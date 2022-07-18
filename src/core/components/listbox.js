@@ -23,6 +23,7 @@ function listboxOption() {
 		'@apply text-neutral-700': {},
 		'@apply outline-none rounded-md': {},
 		'@apply transition-all duration-300': {},
+		'@apply cursor-pointer': {},
 
 		'&-disabled': {
 			'@apply text-neutral-200': {},

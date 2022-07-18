@@ -91,6 +91,7 @@ const ListBoxOption = ({ item, state }: OptionProps): ListBoxOptionType => {
 	} = useOption(
 		{
 			key: item.key,
+
 		},
 		state,
 		ref

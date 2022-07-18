@@ -13,10 +13,11 @@ import { ListBox } from '../ListBox'
 import classNames from 'classnames'
 import { HiSelector } from 'react-icons/hi'
 import type { SelectItemProps, SelectProps } from './Select.types'
+import type { ItemElement } from '@react-types/shared'
 import { Avatar } from '../../Avatar'
 
 const Select = <T extends object>(props: SelectProps<T>): JSX.Element => {
-	const { placeholder, width, disabled, ...rest } = props
+	const { placeholder, disabled, ...rest } = props
 	const state = useSelectState(props)
 	const ref = React.useRef(null)
 	const { labelProps, triggerProps, valueProps, menuProps } = useSelect(
@@ -45,7 +46,6 @@ const Select = <T extends object>(props: SelectProps<T>): JSX.Element => {
 				name={props.name}
 			/>
 			<button
-				{...mergeProps(buttonProps, focusProps, hoverProps)}
 				ref={ref}
 				disabled={disabled}
 				className={classNames('select-button', [
@@ -54,7 +54,8 @@ const Select = <T extends object>(props: SelectProps<T>): JSX.Element => {
 					isHovered && 'select-button-hovered',
 					disabled && 'select-button-disabled',
 					state.isOpen && 'select-opened-button',
-				])}>
+				])}
+				{...mergeProps(buttonProps, focusProps, hoverProps)}>
 				<div {...valueProps} className='select-button-content'>
 					{state.selectedItem
 						? state.selectedItem.rendered
@@ -75,34 +76,6 @@ const Select = <T extends object>(props: SelectProps<T>): JSX.Element => {
 			)}
 		</div>
 	)
-}
-
-export const SelectItem = <T extends object>(
-	props: SelectItemProps<T>
-): JSX.Element => {
-	const { children, avatar, ...rest } = props
-	return (
-		<Item {...rest}>
-			<div className='select-item-wrapper'>{children}</div>
-		</Item>
-	)
-}
-
-SelectItem.getCollectionNode = function* <T extends object>(
-	props: SelectItemProps<T>
-) {
-	const { children, avatar, ...rest } = props
-
-	yield {
-		element: (
-			<Item {...rest}>
-				{avatar && <Avatar size='xs' src={avatar}></Avatar>}
-				<div className='flex flex-col items-start'>
-					{props.children}
-				</div>
-			</Item>
-		),
-	}
 }
 
 export default Select
