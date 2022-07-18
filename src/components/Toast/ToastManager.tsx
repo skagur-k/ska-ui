@@ -50,7 +50,6 @@ export const ToastManager = forwardRef<ToastManagerHandle, ToastManager>(
 								onClose={() => removeToast(toast.id)}
 							/>
 						))}
-						{/* <p>{toasts.length}</p> */}
 					</div>
 				</div>,
 				portal

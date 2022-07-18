@@ -24,8 +24,7 @@
 
 ## 7/18/2022
 
--   [ ] Toggle
--   [ ] Switch
+-   [x] Toggle
 -   [x] Tabs
 
 ## TODO

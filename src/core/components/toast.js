@@ -2,16 +2,16 @@ function toastManager() {
 	return {
 		'@apply fixed z-50': {},
 
-		'&--top-right': {
+		'&.toast-manager--top-right': {
 			'@apply top-5 right-5': {},
 		},
-		'&--top-left': {
+		'&.toast-manager--top-left': {
 			'@apply top-5 left-5': {},
 		},
-		'&--bottom-right': {
+		'&.toast-manager--bottom-right': {
 			'@apply bottom-5 right-5': {},
 		},
-		'&--bottom-left': {
+		'&.toast-manager--bottom-left': {
 			'@apply bottom-5 left-5': {},
 		},
 	}
@@ -58,14 +58,14 @@ function toastText() {
 
 function toastMode() {
 	return {
-		'&-info': {
+		'&.toast-info': {
 			'@apply bg-white': {},
 			'@apply ring-neutral-200': {},
 			'& .toast-x': {
 				'@apply text-neutral-800': {},
 			},
 		},
-		'&-success': {
+		'&.toast-success': {
 			'@apply bg-blue-600': {},
 			'@apply ring-blue-600': {},
 			'& .toast-x': {
@@ -75,7 +75,7 @@ function toastMode() {
 				'@apply text-white': {},
 			},
 		},
-		'&-warning': {
+		'&.toast-warning': {
 			'@apply bg-amber-400': {},
 			'@apply ring-amber-400': {},
 			'& .toast-x': {
@@ -83,7 +83,7 @@ function toastMode() {
 			},
 			'& .toast-text': {},
 		},
-		'&-error': {
+		'&.toast-error': {
 			'@apply bg-red-600': {},
 			'@apply ring-red-600': {},
 			'& .toast-x': {

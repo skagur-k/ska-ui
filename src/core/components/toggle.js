@@ -87,7 +87,7 @@ function toggleSizes() {
 		},
 		'&-md': {
 			'& .toggle-switch': {
-				'@apply min-w-[42px] min-h-[22px]': {},
+				'@apply min-w-[42px] min-h-[20px]': {},
 				'&-switch': {
 					'@apply min-w-[14px] min-h-[14px]': {},
 				},
@@ -95,7 +95,7 @@ function toggleSizes() {
 		},
 		'&-lg': {
 			'& .toggle-switch': {
-				'@apply min-w-[48px] min-h-[24px]': {},
+				'@apply min-w-[48px] min-h-[22px]': {},
 				'&-switch': {
 					'@apply min-w-[16px] min-h-[16px]': {},
 				},

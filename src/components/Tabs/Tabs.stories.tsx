@@ -10,7 +10,7 @@ export default {
 const Template = (args: any) => {
 	return (
 		<div className='flex flex-col gap-5'>
-			<Tabs aria-label='History of Ancient Rome'>
+			<Tabs aria-label='History of Ancient Rome' disabledKeys={['Emp']}>
 				<Item key='FoR' title={'Tab Title'}>
 					Arma virumque cano, Troiae qui primus ab oris.
 				</Item>

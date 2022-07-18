@@ -6,6 +6,7 @@ const ComboBox = require('./forms/combobox')
 const Container = require('./container')
 const Description = require('./description')
 const Input = require('./forms/input')
+const KBD = require('./kbd')
 const ListBox = require('./listbox')
 const Snippet = require('./snippet')
 const Radio = require('./forms/radio')
@@ -25,6 +26,7 @@ module.exports = [
 	Container,
 	Description,
 	Input,
+	KBD,
 	ListBox,
 	Snippet,
 	Radio,

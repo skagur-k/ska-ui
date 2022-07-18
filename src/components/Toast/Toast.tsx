@@ -1,8 +1,6 @@
 import classNames from 'classnames'
 import { useToastClass } from './styles'
 import { BsXLg } from 'react-icons/bs'
-import { useEffect, useRef, useState } from 'react'
-import useMountTransition from '../../hooks/useMountTransition'
 import { Button } from '../Button'
 export const Toast = ({
 	type = 'info',
