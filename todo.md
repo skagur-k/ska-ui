@@ -27,6 +27,10 @@
 -   [x] Toggle
 -   [x] Tabs
 
+## 7/19/2022
+
+-   [ ] Table
+
 ## TODO
 
 -   [ ] Tag
