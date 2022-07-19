@@ -44,6 +44,7 @@
 -   [ ] Spacer
 -   [ ] Window
 -   [ ] Skeleton
+-   [ ] Modal
 
 ## TOFIX
 
