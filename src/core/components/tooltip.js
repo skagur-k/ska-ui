@@ -28,7 +28,7 @@ function tooltipPosition() {
 			'@apply top-1/2 -translate-y-1/2 right-[120%]': {},
 		},
 		'&--right': {
-			'@apply top-1/2 -translate-y-1/2 left-[120%]': {},
+			'@apply top-1/2 -translate-y-1/2 left-[150%]': {},
 		},
 	}
 }
