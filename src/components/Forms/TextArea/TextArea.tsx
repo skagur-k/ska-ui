@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import { useFocusRing } from 'react-aria'
 import { useTextAreaClass } from './styles'
 import { TextArea, TextAreaProps } from './TextArea.types'
 
@@ -14,8 +15,13 @@ const TextArea = (props: TextAreaProps): TextArea => {
 		...rest
 	} = props
 
-	const textAreaClasses = useTextAreaClass({ disabled, error, resize })
-
+	const { focusProps, isFocused } = useFocusRing()
+	const textAreaClasses = useTextAreaClass({
+		disabled,
+		error,
+		resize,
+		isFocused,
+	})
 	return (
 		<textarea
 			className={classNames(textAreaClasses, className)}
@@ -24,6 +30,7 @@ const TextArea = (props: TextAreaProps): TextArea => {
 			disabled={disabled}
 			rows={rows}
 			{...rest}
+			{...focusProps}
 		/>
 	)
 }

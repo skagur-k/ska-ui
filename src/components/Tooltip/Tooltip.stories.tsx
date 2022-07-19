@@ -11,7 +11,6 @@ const Template = (args: any) => {
 		<div className='flex flex-col justify-center items-center h-screen'>
 			<Tooltip
 				position='right'
-				isOpen={true}
 				arrow={true}
 				delay={500}
 				message='This is tooltip. This is a long tooltip messageThis is tooltip. This is a long tooltip messageThis is tooltip. This is a long tooltip messageThis is tooltip. This is a long tooltip messageThis is tooltip. This is a long tooltip messageThis is tooltip. This is a long tooltip messageThis is tooltip. This is a long tooltip message'>

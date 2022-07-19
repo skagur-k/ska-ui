@@ -21,11 +21,8 @@ const Template = (args: any) => {
 				<Button color={'red'}>Button 2</Button>
 				<Button>Button 3</Button>
 				<Button
-					rounded
-					variant='ghost'
 					color={'blue'}
-					icon={<AiOutlineUser />}
-					size='xs'>
+					icon={<AiOutlineUser className='w-5 h-5' />}>
 					User
 				</Button>
 			</Button.Group>{' '}
