@@ -29,10 +29,11 @@
 
 ## 7/19/2022
 
--   [ ] Table
+-   [ ] Table -> Use @react-table
 
 ## TODO
 
+-   [ ] FileTree
 -   [ ] Tag
 -   [ ] Progress
 -   [ ] Spacer
