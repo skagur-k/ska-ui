@@ -1,8 +1,8 @@
 import classNames from 'classnames'
-import { Container, ContainerProps } from './Container.types'
+import { ContainerProps } from './Container.types'
 import { useContainerClass } from './style'
 
-const Container = (props: ContainerProps): Container => {
+const Container = (props: ContainerProps): JSX.Element => {
 	const {
 		style,
 		row,

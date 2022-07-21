@@ -35,14 +35,17 @@
 
 -   [x] Progress
 -   [x] Meter
--   [ ] IllustratedMessage https://react-spectrum.adobe.com/react-spectrum/IllustratedMessage.html
+-   [x] Tag
+
+## 7/22/2022
+
 -   [ ] Collapsible
+-   [ ] IllustratedMessage https://react-spectrum.adobe.com/react-spectrum/IllustratedMessage.html
+-   [ ] Spacer
 
 ## TODO
 
 -   [ ] FileTree
--   [ ] Tag
--   [ ] Spacer
 -   [ ] Window
 -   [ ] Skeleton
 -   [ ] Modal

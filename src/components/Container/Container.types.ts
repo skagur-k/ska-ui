@@ -8,6 +8,4 @@ interface ContainerProps extends DefaultProps {
 	direction?: [sm: flexDirection, md: flexDirection, lg: flexDirection]
 }
 
-type Container = JSX.Element
-
-export { Container, ContainerProps, flexDirection }
+export { ContainerProps, flexDirection }

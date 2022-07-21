@@ -3,7 +3,7 @@ function statusdot() {
 		'@apply flex gap-2 p-1 items-center': {},
 
 		'&-dot': {
-			'@apply w-[6px] h-[6px] rounded-full': {},
+			'@apply w-[8px] h-[8px] rounded-full': {},
 		},
 		'&-label': {
 			'@apply text-sm font-light': {},

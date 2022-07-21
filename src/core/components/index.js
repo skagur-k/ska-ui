@@ -16,6 +16,7 @@ const Radio = require('./forms/radio')
 const Select = require('./forms/select')
 const StatusDot = require('./statusdot')
 const Tabs = require('./tabs')
+const Tag = require('./tag')
 const TextArea = require('./forms/textarea')
 const Toast = require('./toast')
 const Toggle = require('./toggle')
@@ -40,6 +41,7 @@ module.exports = [
 	StatusDot,
 	Progress,
 	Tabs,
+	Tag,
 	TextArea,
 	Toast,
 	Toggle,

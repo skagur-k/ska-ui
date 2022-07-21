@@ -28,3 +28,12 @@ export function omit<T extends Dict, K extends keyof T>(object: T, keys: K[]) {
 
 	return result as Omit<T, K>
 }
+
+export const clamp = (
+	value: number,
+	min: number = -Infinity,
+	max: number = Infinity
+): number => {
+	let newValue = Math.min(Math.max(value, min), max)
+	return newValue
+}

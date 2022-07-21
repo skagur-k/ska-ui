@@ -1,6 +1,6 @@
 function container() {
 	return {
-		'@apply flex': {},
+		'@apply flex min-h-[50px]': {},
 	}
 }
 
