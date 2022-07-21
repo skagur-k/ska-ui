@@ -21,6 +21,10 @@ const Template = (args: any) => {
 		<div className='flex flex-col gap-5'>
 			<Meter label='Label' value={value} width='400px' colors={colors} />
 			<Meter label='Label' value={value} width='400px' />
+			<Meter label='Label' value={value} width='400px' type='success' />
+			<Meter label='Label' value={value} width='400px' type='error' />
+			<Meter label='Label' value={value} width='400px' type='warning' />
+			<Meter label='Label' value={value} width='400px' type='secondary' />
 			<Button
 				onClick={() => {
 					if (value < 100) setValue(value + 10)

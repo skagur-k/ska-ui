@@ -1,6 +1,6 @@
-import { AriaMeterProps } from '@react-types/meter'
+import { AriaProgressBarProps } from '@react-types/progress'
 
-interface MeterProps extends AriaMeterProps {
+interface MeterProps extends AriaProgressBarProps {
 	type?: 'success' | 'error' | 'warning' | 'secondary'
 	width?: string
 	colors?: {

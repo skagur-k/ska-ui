@@ -11,12 +11,20 @@ const Meter = (props: MeterProps) => {
 		minValue = 0,
 		maxValue = 100,
 		width = '300px',
+		type,
 		colors,
 	} = props
 
 	const { meterProps, labelProps } = useMeter(props)
 	let percentage = (value - minValue) / (maxValue - minValue)
 	let barWidth = `${Math.round(percentage * 100)}%`
+
+	const types = {
+		success: 'meter-success',
+		warning: 'meter-warning',
+		error: 'meter-error',
+		secondary: 'meter-secondary',
+	}
 
 	function getColor(value: number) {
 		let color: string = ''
@@ -33,7 +41,7 @@ const Meter = (props: MeterProps) => {
 	return (
 		<div
 			{...meterProps}
-			className={classNames('meter')}
+			className={classNames('meter', [type && types[type]])}
 			style={{ width: width }}>
 			<div className='meter-labels'>
 				{label && (

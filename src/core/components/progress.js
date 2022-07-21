@@ -1,4 +1,4 @@
-function meter() {
+function progress() {
 	return {
 		'@apply flex flex-col gap-2': {},
 		'&-labels': {
@@ -11,7 +11,7 @@ function meter() {
 			'@apply text-sm': {},
 		},
 		'&-bar': {
-			'@apply overflow-hidden rounded-md': {},
+			'@apply relative overflow-hidden rounded-md': {},
 		},
 		'&-bar-track': {
 			'@apply h-2 bg-neutral-100': {},
@@ -23,34 +23,45 @@ function meter() {
 	}
 }
 
-function meterThemed() {
+function progressThemed() {
 	return {
 		'&-success': {
-			'& .meter-bar-fill': {
+			'& .progress-bar-fill,.progress-bar-indeterminate': {
 				'@apply bg-blue-500': {},
 			},
 		},
 		'&-warning': {
-			'& .meter-bar-fill': {
+			'& .progress-bar-fill,.progress-bar-indeterminate': {
 				'@apply bg-yellow-500': {},
 			},
 		},
 		'&-error': {
-			'& .meter-bar-fill': {
+			'& .progress-bar-fill,.progress-bar-indeterminate': {
 				'@apply bg-red-500': {},
 			},
 		},
 		'&-secondary': {
-			'& .meter-bar-fill': {
+			'& .progress-bar-fill,.progress-bar-indeterminate': {
 				'@apply bg-neutral-500': {},
 			},
 		},
 	}
 }
 
-module.exports = Meter = (colors) => ({
-	'.meter': {
-		...meter(),
-		...meterThemed(),
+function progressIndeterminate() {
+	return {
+		'&-bar-indeterminate': {
+			'@apply h-2 bg-neutral-800': {},
+			'@apply absolute animate-ltr': {},
+			'@apply opacity-70': {},
+		},
+	}
+}
+
+module.exports = Progress = (colors) => ({
+	'.progress': {
+		...progress(),
+		...progressIndeterminate(),
+		...progressThemed(),
 	},
 })

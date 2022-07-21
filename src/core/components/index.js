@@ -10,6 +10,7 @@ const KBD = require('./kbd')
 const ListBox = require('./listbox')
 const Meter = require('./meter')
 const Note = require('./note')
+const Progress = require('./progress')
 const Snippet = require('./snippet')
 const Radio = require('./forms/radio')
 const Select = require('./forms/select')
@@ -34,6 +35,7 @@ module.exports = [
 	Note,
 	Snippet,
 	Radio,
+	Progress,
 	Select,
 	Tabs,
 	TextArea,
