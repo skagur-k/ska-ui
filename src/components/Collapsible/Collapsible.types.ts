@@ -1,3 +1,6 @@
-interface CollapsibleProps extends DefaultProps {}
+interface CollapsibleProps extends DefaultProps {
+	open?: boolean
+	title: string
+}
 
 export { CollapsibleProps }

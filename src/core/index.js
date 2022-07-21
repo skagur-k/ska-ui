@@ -68,7 +68,7 @@ const skaui = plugin.withOptions(
 					animation: {
 						'spin-slow': 'spin 1.5s linear infinite',
 						fadeIn: 'fadeIn 0.3s ease-in-out',
-						ltr: 'ltr 1.5s ease-out infinite',
+						ltr: 'ltr 2s ease infinite',
 					},
 					keyframes: {
 						fadeIn: {

@@ -31,11 +31,16 @@
 
 -   [ ] Table -> Use @react-table
 
+## 7/21/2022
+
+-   [ ] Progress
+-   [ ] Meter
+-   [ ]
+
 ## TODO
 
 -   [ ] FileTree
 -   [ ] Tag
--   [ ] Progress
 -   [ ] Spacer
 -   [ ] Window
 -   [ ] Skeleton

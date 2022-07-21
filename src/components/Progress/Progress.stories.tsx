@@ -26,22 +26,34 @@ const Template = (args: any) => {
 				width='400px'
 				colors={colors}
 			/>
-			<Progress label='Label' value={value} width='400px' />
-			<Progress label='Label' width='400px' type='success' />
+			<Progress
+				label='Label'
+				value={value}
+				width='400px'
+				formatOptions={{
+					style: 'currency',
+					currency: 'USD',
+					minimumFractionDigits: 2,
+				}}
+			/>
+			<Progress
+				label='Label'
+				value={value}
+				width='400px'
+				type='success'
+			/>
 			<Progress label='Label' value={value} width='400px' type='error' />
 			<Progress
 				label='Label'
 				value={value}
 				width='400px'
 				type='warning'
-				isIndeterminate
 			/>
 			<Progress
 				label='Label'
 				value={value}
 				width='400px'
 				type='secondary'
-				isIndeterminate
 			/>
 			<Progress label='Indeterminate' value={value} isIndeterminate />
 			<Button
