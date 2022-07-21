@@ -8,6 +8,7 @@ const Description = require('./description')
 const Input = require('./forms/input')
 const KBD = require('./kbd')
 const ListBox = require('./listbox')
+const Meter = require('./meter')
 const Note = require('./note')
 const Snippet = require('./snippet')
 const Radio = require('./forms/radio')
@@ -29,6 +30,7 @@ module.exports = [
 	Input,
 	KBD,
 	ListBox,
+	Meter,
 	Note,
 	Snippet,
 	Radio,
