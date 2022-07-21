@@ -14,7 +14,7 @@ const Progress = require('./progress')
 const Snippet = require('./snippet')
 const Radio = require('./forms/radio')
 const Select = require('./forms/select')
-const Progress = require('./progress')
+const StatusDot = require('./statusdot')
 const Tabs = require('./tabs')
 const TextArea = require('./forms/textarea')
 const Toast = require('./toast')
@@ -36,8 +36,8 @@ module.exports = [
 	Note,
 	Snippet,
 	Radio,
-	Progress,
 	Select,
+	StatusDot,
 	Progress,
 	Tabs,
 	TextArea,

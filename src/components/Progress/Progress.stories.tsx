@@ -55,7 +55,31 @@ const Template = (args: any) => {
 				width='400px'
 				type='secondary'
 			/>
-			<Progress label='Indeterminate' value={value} isIndeterminate />
+			<Progress
+				label='Indeterminate'
+				value={value}
+				isIndeterminate
+				type='success'
+			/>
+			<Progress
+				label='Indeterminate'
+				value={value}
+				isIndeterminate
+				type='error'
+			/>
+			<Progress
+				label='Indeterminate'
+				value={value}
+				isIndeterminate
+				type='warning'
+			/>
+			<Progress
+				label='Indeterminate'
+				value={value}
+				isIndeterminate
+				type='secondary'
+			/>
+
 			<Button
 				onClick={() => {
 					if (value < 100) setValue(value + 10)

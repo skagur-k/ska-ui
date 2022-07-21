@@ -53,7 +53,7 @@ function progressIndeterminate() {
 		'&-bar-indeterminate': {
 			'@apply h-2 bg-neutral-800': {},
 			'@apply absolute animate-ltr': {},
-			'@apply opacity-70 rounded-full': {},
+			'@apply opacity-80 rounded-full': {},
 		},
 	}
 }

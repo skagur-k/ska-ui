@@ -33,9 +33,10 @@
 
 ## 7/21/2022
 
--   [ ] Progress
--   [ ] Meter
--   [ ]
+-   [x] Progress
+-   [x] Meter
+-   [ ] IllustratedMessage https://react-spectrum.adobe.com/react-spectrum/IllustratedMessage.html
+-   [ ] Collapsible
 
 ## TODO
 
