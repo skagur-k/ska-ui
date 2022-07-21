@@ -56,7 +56,15 @@ const Template = (args: any) => {
 				}}>
 				Decrease
 			</Button>
-			<Input onChange={(e) => setValue(Number(e.valueOf()))} />
+			<Input
+				prefix={'Value'}
+				description='Input Number'
+				size='sm'
+				onChange={(e) => setValue(Number(e.valueOf()))}
+				id={'baek'}
+				className='max-w-lg'
+				type='number'
+			/>
 		</div>
 	)
 }
