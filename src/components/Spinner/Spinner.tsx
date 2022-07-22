@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React from 'react'
 import { useProgressBar } from 'react-aria'
-import { clamp } from 'utils'
+import { clamp } from '../../utils'
 import { SpinnerProps } from './Spinner.types'
 
 const Spinner = (props: SpinnerProps, ref: React.Ref<HTMLDivElement>) => {

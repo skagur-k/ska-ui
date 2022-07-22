@@ -1,24 +1,23 @@
 import classNames from 'classnames'
 import React from 'react'
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
-import { CollapsibleProps } from './Collapsible.types'
+import { AccordionItemProps } from './Accordion.types'
 
-const Collapsible = (props: CollapsibleProps): JSX.Element => {
-	const { className, children, open: _open = false, title, ...rest } = props
-	const [open, setOpen] = React.useState<boolean>(_open)
+const AccordionItem = (props: AccordionItemProps): JSX.Element => {
+	const { className, children, open, title, onToggle, ...rest } = props
+	// const [open, setOpen] = React.useState<boolean>(_open!)
 	const [height, setHeight] = React.useState<number | undefined>(
 		open ? undefined : 0
 	)
-	function handleToggle() {
-		setOpen(!open)
-	}
+
+	console.log(open)
 
 	const ref = React.useRef<HTMLDivElement>(null)
 
 	React.useEffect(() => {
 		if (!height || !open || !ref.current) return undefined
 		const resizeObserver = new ResizeObserver((el) => {
-			setHeight(el[0].contentRect.height + 32)
+			setHeight(el[0].contentRect.height + 48)
 		})
 
 		resizeObserver.observe(ref.current)
@@ -34,8 +33,8 @@ const Collapsible = (props: CollapsibleProps): JSX.Element => {
 	}, [open])
 
 	return (
-		<div className={classNames('collapsible', className)} {...rest}>
-			<div onClick={handleToggle} className='collapsible-title'>
+		<div className={classNames('accordion-item', className)} {...rest}>
+			<div onClick={onToggle} className='accordion-item-title'>
 				<span>{title}</span>
 				<span>
 					<FiChevronDown
@@ -47,9 +46,9 @@ const Collapsible = (props: CollapsibleProps): JSX.Element => {
 				</span>
 			</div>
 			<div
-				className={classNames('collapsible-content-wrapper')}
+				className={classNames('accordion-item-content-wrapper')}
 				style={{ height }}>
-				<div ref={ref} className='collapsible-content-content'>
+				<div ref={ref} className='accordion-item-content-content'>
 					{children}
 				</div>
 			</div>
@@ -57,4 +56,4 @@ const Collapsible = (props: CollapsibleProps): JSX.Element => {
 	)
 }
 
-export default Collapsible
+export default AccordionItem

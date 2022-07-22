@@ -41,7 +41,7 @@
 
 -   [ ] Collapsible
 -   [ ] IllustratedMessage https://react-spectrum.adobe.com/react-spectrum/IllustratedMessage.html
--   [ ] Spacer
+-   [x] Spacer
 
 ## TODO
 

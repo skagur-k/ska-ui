@@ -1,7 +1,9 @@
+const Accordion = require('./accordion')
 const Avatar = require('./avatar')
 const Badge = require('./badge')
 const Button = require('./button')
 const Checkbox = require('./forms/checkbox')
+const Collapsible = require('./collapsible')
 const ComboBox = require('./forms/combobox')
 const Container = require('./container')
 const Description = require('./description')
@@ -23,10 +25,12 @@ const Toggle = require('./toggle')
 const Tooltip = require('./tooltip')
 
 module.exports = [
+	Accordion,
 	Avatar,
 	Badge,
 	Button,
 	Checkbox,
+	Collapsible,
 	ComboBox,
 	Container,
 	Description,
