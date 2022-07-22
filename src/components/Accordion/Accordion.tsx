@@ -4,8 +4,10 @@ import type { IAccordionItem, AccordionProps } from './Accordion.types'
 import AccordionItem from './AccordionItem'
 
 const Accordian = (props: AccordionProps): JSX.Element => {
-	const { items: _items, children } = props
-	const [selected, setSelected] = React.useState<number | null>(null)
+	const { items: _items, defaultExpanded } = props
+	const [selected, setSelected] = React.useState<number | null>(
+		defaultExpanded || null
+	)
 
 	const handleToggle = (index: number) => {
 		console.log('selected: ' + selected + ' index: ' + index)

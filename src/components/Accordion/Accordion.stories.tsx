@@ -31,7 +31,7 @@ const Template = (args: any) => {
 
 	return (
 		<div className='flex flex-col gap-5'>
-			<Accordian items={items} />
+			<Accordian defaultExpanded={2} items={items} />
 		</div>
 	)
 }

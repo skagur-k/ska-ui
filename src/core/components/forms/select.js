@@ -20,14 +20,14 @@ function selectButton() {
 			'@apply text-sm': {},
 			'@apply rounded-md overflow-hidden cursor-default': {},
 			'@apply shadow-sm outline-none': {},
-			'@apply ring-2 ring-neutral-200 ring-inset': {},
+			'@apply ring-1 ring-neutral-200 ring-inset': {},
 			'@apply transition-all duration-200': {},
 
 			'&-content': {
 				'@apply flex items-center gap-2': {},
 			},
 			'&-focusvisible': {
-				'@apply ring-2 ring-neutral-500': {},
+				'@apply ring-1 ring-neutral-500': {},
 			},
 			'&-hovered': {
 				'@apply ring-neutral-500': {},

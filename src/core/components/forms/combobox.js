@@ -1,12 +1,8 @@
 function combobox() {
 	return {
-		'@apply inline-flex flex-col relative min-w-[300px] w-fit': {},
+		'@apply inline-flex flex-col gap-2 relative min-w-[300px] w-fit': {},
 
 		// Label for the ComboBox
-		'&-label': {
-			'@apply block text-sm text-left text-neutral-700': {},
-		},
-
 		'&-label': {
 			'@apply block text-sm text-left text-neutral-700': {},
 		},
@@ -19,8 +15,8 @@ function comboboxButton() {
 		'&-button': {
 			'@apply inline-flex relative items-center grow-0': {},
 			'@apply rounded-md overflow-hidden': {},
-			'@apply border-2 border-neutral-200': {},
-			'@apply transition-all duration-300': {},
+			'@apply border border-neutral-200': {},
+			'@apply transition-all duration-200': {},
 
 			// Combobox Input
 			'&-input': {
@@ -34,9 +30,10 @@ function comboboxButton() {
 
 			// Combobx Button Icon on the right
 			'&-icon': {
-				'@apply p-1 border-l-2 border-l-neutral-200': {},
-				'@apply bg-neutral-50 text-neutral-500': {},
-				'@apply transition-all duration-300': {},
+				'@apply p-1': {},
+				// '@apply border-l border-l-neutral-200 bg-neutral-50': {},
+				'@apply text-neutral-500': {},
+				'@apply transition-all duration-200': {},
 			},
 
 			'&-hovered': {

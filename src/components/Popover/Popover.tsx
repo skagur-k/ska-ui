@@ -20,7 +20,7 @@ const Popover = (props: PopoverProps): Popover => {
 	const popoverClasses = classNames(
 		'shadow-lg bg-white outline-none rounded-md ring-2 ring-inset ring-neutral-200',
 		'p-2 mt-2',
-		'absolute z-10 w-full top-full',
+		'absolute z-10 w-full top-full animate-fadeIn',
 		className
 	)
 

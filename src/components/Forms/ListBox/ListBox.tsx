@@ -91,7 +91,6 @@ const ListBoxOption = ({ item, state }: OptionProps): ListBoxOptionType => {
 	} = useOption(
 		{
 			key: item.key,
-
 		},
 		state,
 		ref
@@ -113,7 +112,7 @@ const ListBoxOption = ({ item, state }: OptionProps): ListBoxOptionType => {
 			{isSelected && (
 				<FaCheck
 					aria-hidden='true'
-					className='w-4 h-4 text-neutral-600'
+					className='w-3 h-3 text-neutral-500'
 				/>
 			)}
 		</li>

@@ -39,7 +39,8 @@
 
 ## 7/22/2022
 
--   [ ] Collapsible
+-   [x] Accordion
+-   [x] Collapsible
 -   [ ] IllustratedMessage https://react-spectrum.adobe.com/react-spectrum/IllustratedMessage.html
 -   [x] Spacer
 

@@ -8,6 +8,7 @@ export type IAccordionItem = {
 export interface AccordionProps {
 	items: IAccordionItem[]
 	children?: React.ReactNode
+	defaultExpanded?: number
 }
 
 export interface AccordionItemProps

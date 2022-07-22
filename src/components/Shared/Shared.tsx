@@ -5,19 +5,15 @@ import { ItemProps, SectionProps } from './Shared.types'
 
 export const Item = <T extends object>(props: ItemProps<T>): ItemElement<T> => {
 	const { children, avatar, ...rest } = props
-	return (
-		<_Item {...rest}>
-			<div className='item-wrapper'>{children}</div>
-		</_Item>
-	)
+	return <_Item {...rest}>{children}</_Item>
 }
 
 Item.getCollectionNode = function* <T extends object>(props: ItemProps<T>) {
-	const { children, avatar, ...rest } = props
+	const { children, avatar, label, ...rest } = props
 
 	yield {
 		element: (
-			<_Item textValue={'key'} {...rest}>
+			<_Item title={label} {...rest}>
 				{avatar && <Avatar size='xs' src={avatar}></Avatar>}
 				<div className='flex flex-col items-start'>
 					{props.children}

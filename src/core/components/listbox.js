@@ -1,6 +1,7 @@
 function listbox() {
 	return {
 		'@apply flex flex-col outline-none': {},
+		'@apply text-sm': {},
 
 		'&-content': {
 			'@apply flex items-center gap-2': {},

@@ -1,25 +1,21 @@
 import classNames from 'classnames'
-import { Item, Section, useComboBoxState } from 'react-stately'
-import { ListBox } from '../ListBox'
+import { useComboBoxState } from 'react-stately'
 import { Popover } from '../../Popover'
+import { ListBox } from '../ListBox'
 
-import { ComboBox, ComboBoxProps } from './ComboBox.types'
-import {
-	useButton,
-	useComboBox,
-	useFilter,
-	useFocus,
-	useFocusRing,
-	useHover,
-} from 'react-aria'
-import React, { useEffect } from 'react'
-import { AiOutlineDown } from 'react-icons/ai'
+import React from 'react'
+import { useButton, useComboBox, useFilter, useHover } from 'react-aria'
 import { FiChevronDown } from 'react-icons/fi'
+import { ComboBox, ComboBoxProps } from './ComboBox.types'
 
 const ComboBox = <T extends object>(props: ComboBoxProps<T>): ComboBox => {
 	const { label } = props
 	const { contains } = useFilter({ sensitivity: 'base' })
-	const state = useComboBoxState({ ...props, defaultFilter: contains })
+	const state = useComboBoxState({
+		...props,
+		defaultFilter: contains,
+		menuTrigger: 'focus',
+	})
 
 	const buttonRef = React.useRef<HTMLButtonElement>(null)
 	const inputRef = React.useRef<HTMLInputElement>(null)
@@ -65,7 +61,12 @@ const ComboBox = <T extends object>(props: ComboBoxProps<T>): ComboBox => {
 					{...buttonProps}
 					ref={buttonRef}
 					className='combobox-button-icon'>
-					<FiChevronDown className='w-5 h-5' />
+					<FiChevronDown
+						className={classNames(
+							'w-5 h-5 transition-transform duration-300',
+							[state.isOpen && '-rotate-180']
+						)}
+					/>
 				</button>
 			</div>
 			{state.isOpen && (

@@ -12,19 +12,19 @@ const Template = (args: any) => {
 	return (
 		<div className='flex flex-col gap-5'>
 			<ComboBox placeholder='Placeholder' label='Combobox'>
-				<Item key='option1'>
-					<Label>Option 1</Label>
+				<Item key='option1' label='Option 1'>
+					Hello
 				</Item>
 				<Section title='Category 2'>
-					<Item key='option2'>
+					<Item key='option2' label='Option 2'>
 						<Label>Option 2</Label>
 						<Description>Description</Description>
 					</Item>
-					<Item key='option3'>
+					<Item label='Option 3' key='option3'>
 						<Label>Option 3</Label>
 						<Description>Description</Description>
 					</Item>
-					<Item key='option4'>
+					<Item key='option4' label='Option 4'>
 						<Label>Option 4</Label>
 						<Description>Description</Description>
 					</Item>
