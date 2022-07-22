@@ -28,6 +28,58 @@ const Template = (args: any) => {
 						<Label>Option 4</Label>
 						<Description>Description</Description>
 					</Item>
+					<Item key='option4' label='Option 4'>
+						<Label>Option 4</Label>
+						<Description>Description</Description>
+					</Item>
+					<Item key='option4' label='Option 4'>
+						<Label>Option 4</Label>
+						<Description>Description</Description>
+					</Item>
+					<Item key='option4' label='Option 4'>
+						<Label>Option 4</Label>
+						<Description>Description</Description>
+					</Item>
+					<Item key='option4' label='Option 4'>
+						<Label>Option 4</Label>
+						<Description>Description</Description>
+					</Item>
+					<Item key='option4' label='Option 4'>
+						<Label>Option 4</Label>
+						<Description>Description</Description>
+					</Item>
+					<Item key='option4' label='Option 4'>
+						<Label>Option 4</Label>
+						<Description>Description</Description>
+					</Item>
+					<Item key='option4' label='Option 4'>
+						<Label>Option 4</Label>
+						<Description>Description</Description>
+					</Item>
+					<Item key='option4' label='Option 4'>
+						<Label>Option 4</Label>
+						<Description>Description</Description>
+					</Item>
+					<Item key='option4' label='Option 4'>
+						<Label>Option 4</Label>
+						<Description>Description</Description>
+					</Item>
+					<Item key='option4' label='Option 4'>
+						<Label>Option 4</Label>
+						<Description>Description</Description>
+					</Item>
+					<Item key='option4' label='Option 4'>
+						<Label>Option 4</Label>
+						<Description>Description</Description>
+					</Item>
+					<Item key='option4' label='Option 4'>
+						<Label>Option 4</Label>
+						<Description>Description</Description>
+					</Item>
+					<Item key='option4' label='Option 4'>
+						<Label>Option 4</Label>
+						<Description>Description</Description>
+					</Item>
 				</Section>
 			</ComboBox>
 			<Select placeholder='Choose One!' label='Favorite Animal'>

@@ -1,6 +1,6 @@
 function listbox() {
 	return {
-		'@apply flex flex-col outline-none': {},
+		'@apply flex flex-col outline-none overflow-auto': {},
 		'@apply text-sm': {},
 
 		'&-content': {
@@ -12,7 +12,17 @@ function listbox() {
 function listboxOptions() {
 	return {
 		'&-items': {
-			'@apply flex flex-col gap-2': {},
+			'@apply flex flex-col gap-2 max-h-[300px]': {},
+			'&::-webkit-scrollbar': {
+				width: '1px',
+			},
+			'&::-webkit-scrollbar-track': {
+				width: '1px',
+			},
+
+			'&::-webkit-scrollbar-thumb': {
+				backgroundColor: 'darkgrey',
+			},
 		},
 	}
 }
@@ -20,7 +30,7 @@ function listboxOptions() {
 function listboxOption() {
 	return {
 		'@apply flex items-center justify-between': {},
-		'@apply px-2 py-1': {},
+		'@apply px-2 py-2': {},
 		'@apply text-neutral-700': {},
 		'@apply outline-none rounded-md': {},
 		'@apply transition-all duration-300': {},

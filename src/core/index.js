@@ -1,7 +1,7 @@
 const plugin = require(`tailwindcss/plugin`)
 const defaultTheme = require('tailwindcss/defaultTheme')
 const components = require('./components')
-
+const colors = require('tailwindcss/colors')
 const defaultColors = ['gray']
 
 const skaui = plugin.withOptions(
@@ -46,6 +46,14 @@ const skaui = plugin.withOptions(
 					h4: { '@apply text-xl': {} },
 					h5: { '@apply text-lg': {} },
 					p: { '@apply text-base': {} },
+					/* width */
+					'::-webkit-scrollbar': {
+						width: '10px',
+					},
+					'::-webkit-scrollbar-track': {},
+					'::-webkit-scrollbar-thumb': {
+						backgroundColor: colors.neutral[200],
+					},
 				})
 			}
 		}

@@ -43,13 +43,15 @@
 -   [x] Collapsible
 -   [ ] IllustratedMessage https://react-spectrum.adobe.com/react-spectrum/IllustratedMessage.html
 -   [x] Spacer
+-   [x] Scrollbar
+-   [ ] Dialog
 
 ## TODO
 
 -   [ ] FileTree
 -   [ ] Window
 -   [ ] Skeleton
--   [ ] Modal
+-   [ ] Dialog
 
 ## TOFIX
 
