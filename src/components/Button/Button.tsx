@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react'
 import { forwardRef, useState, useRef, useContext } from 'react'
 import { useButton } from '@react-aria/button'
-import { useHover } from '@react-aria/interactions'
+import { useHover, usePress } from '@react-aria/interactions'
 import { DisabledContext } from '../../contexts/DisabledContext'
 import { ButtonProps } from './Button.types'
 import classNames from 'classnames'
@@ -49,7 +49,6 @@ const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
 				},
 				onPressEnd: (e) => {
 					if (e.pointerType === 'touch') {
-						onClick?.(e as any)
 					}
 					if (e.pointerType === 'mouse') {
 						focusafterclick ? '' : e.target.blur()
@@ -59,9 +58,11 @@ const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
 				onPressStart: (e) => {
 					if (e.pointerType === 'mouse') {
 						setFocused(true)
-						onClick?.(e as any)
 					}
 					return e
+				},
+				onPress: (e) => {
+					onClick?.(e as any)
 				},
 			},
 			buttonRef

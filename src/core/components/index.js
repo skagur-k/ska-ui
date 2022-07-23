@@ -15,6 +15,7 @@ const Note = require('./note')
 const Progress = require('./progress')
 const Snippet = require('./snippet')
 const Radio = require('./forms/radio')
+const TreeView = require('./treeview')
 const Select = require('./forms/select')
 const StatusDot = require('./statusdot')
 const Tabs = require('./tabs')
@@ -47,6 +48,7 @@ module.exports = [
 	Tabs,
 	Tag,
 	TextArea,
+	TreeView,
 	Toast,
 	Toggle,
 	Tooltip,
