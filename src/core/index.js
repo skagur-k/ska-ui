@@ -34,7 +34,7 @@ const skaui = plugin.withOptions(
 				addBase({
 					html: {
 						'@apply selection:bg-sky-700 selection:text-white': {},
-						fontSize: '16px',
+						fontSize: '14px',
 					},
 					body: {
 						position: 'relative',

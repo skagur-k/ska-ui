@@ -17,6 +17,36 @@ const Template = (args: any) => {
 						<File name='package.js' />
 						<File name='file2.js' />
 						<File name='picture.js' />
+						<Folder name='Components'>
+							<File name='package.js' />
+							<File name='file2.js' />
+							<File name='picture.js' />
+						</Folder>
+						<Folder name='Components'>
+							<File name='package.js' />
+							<File name='file2.js' />
+							<File name='picture.js' />
+						</Folder>
+						<Folder name='Components'>
+							<File name='package.js' />
+							<File name='file2.js' />
+							<File name='picture.js' />
+							<Folder name='Components'>
+								<File name='package.js' />
+								<File name='file2.js' />
+								<File name='picture.js' />
+								<Folder name='Components'>
+									<File name='package.js' />
+									<File name='file2.js' />
+									<File name='picture.js' />
+								</Folder>
+								<Folder name='Components'>
+									<File name='package.js' />
+									<File name='file2.js' />
+									<File name='picture.js' />
+								</Folder>
+							</Folder>
+						</Folder>
 					</Folder>
 				</Folder>
 				<Folder name='Hooks'>

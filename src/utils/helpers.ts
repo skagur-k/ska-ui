@@ -1,3 +1,5 @@
+import { KeyboardEvent } from 'react'
+import { useFocusManager } from 'react-aria'
 import type { Dict } from './types'
 
 export let nanoid = (t = 21) =>
@@ -36,4 +38,19 @@ export const clamp = (
 ): number => {
 	let newValue = Math.min(Math.max(value, min), max)
 	return newValue
+}
+
+export const useFocusKeyDown = () => {
+	const focusManager = useFocusManager()
+	const onKeyDown = (e: KeyboardEvent) => {
+		switch (e.key) {
+			case 'ArrowUp':
+				focusManager.focusPrevious({ wrap: true })
+				break
+			case 'ArrowDown':
+				focusManager.focusNext({ wrap: true })
+				break
+		}
+	}
+	return onKeyDown
 }

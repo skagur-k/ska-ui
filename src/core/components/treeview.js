@@ -3,6 +3,7 @@ function treeview() {
 		'@apply flex flex-col': {},
 		'@apply list-none gap-0': {},
 		'@apply text-sm': {},
+		'@apply transition-all': {},
 
 		'&-icons': {
 			'@apply w-4 h-4': {},
@@ -15,7 +16,7 @@ function treeview() {
 
 			'&-folder': {},
 			'&-file': {
-				'@apply bg-gradient-to-r from-neutral-100 to-neutral-100 bg-[length:2px_100%] bg-no-repeat bg-center':
+				'@apply bg-gradient-to-r from-neutral-200 to-neutral-200 bg-[length:1px_100%] bg-no-repeat bg-center':
 					{},
 			},
 			'&-file:not(:last-child)': {
@@ -27,16 +28,24 @@ function treeview() {
 function treeviewFolder() {
 	return {
 		'@apply flex flex-col': {},
-		'@apply cursor-pointer': {},
+		'@apply cursor-pointer outline-none': {},
 		'@apply list-none gap-0': {},
+		'@apply overflow-hidden transition-all': {},
+
+		'&-focused': {
+			'@apply bg-neutral-100': {},
+		},
+
 		'&-label': {
-			'@apply flex relative items-center py-[2px]': {},
+			'@apply flex relative items-center': {},
 			'&-icon': {
 				'@apply mr-3': {},
 			},
-			'&-name': {},
+			'&-name': {
+				'@apply py-[4px]': {},
+			},
 			'&-status': {
-				'@apply flex justify-center items-center': {},
+				'@apply flex justify-center items-center h-full': {},
 				'@apply mr-3': {},
 				'@apply bg-gradient-to-r from-neutral-100 to-neutral-100 bg-[length:2px_100%] bg-no-repeat bg-center':
 					{},
@@ -45,6 +54,7 @@ function treeviewFolder() {
 		'&-children': {
 			'@apply flex flex-col gap-0': {},
 			'@apply ml-6': {},
+
 			'& .treeview-file': {
 				'@apply ml-0': {},
 			},
@@ -57,15 +67,23 @@ function treeviewFolder() {
 function treeviewFile() {
 	return {
 		'@apply flex ml-5': {},
-		'@apply cursor-default': {},
+		'@apply cursor-default outline-none': {},
+		'@apply overflow-hidden transition-all': {},
+
+		'&-focused .treeview-file-label': {
+			'@apply bg-neutral-100': {},
+		},
+
 		'&-label': {
-			'@apply flex relative items-center py-[2px]': {},
-			'@apply ml-2': {},
+			'@apply flex relative items-center pl-1 py-[2px] flex-1': {},
+			'@apply ml-1': {},
 
 			'&-icon': {
 				'@apply mr-3': {},
 			},
-			'&-name': {},
+			'&-name': {
+				'@apply py-[2px] flex flex-1': {},
+			},
 		},
 	}
 }
