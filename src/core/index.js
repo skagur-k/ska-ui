@@ -48,7 +48,8 @@ const skaui = plugin.withOptions(
 					p: { '@apply text-base': {} },
 					/* width */
 					'::-webkit-scrollbar': {
-						width: '10px',
+						width: '5px',
+						borderRight: '10px',
 					},
 					'::-webkit-scrollbar-track': {},
 					'::-webkit-scrollbar-thumb': {
