@@ -44,7 +44,7 @@ function treeviewFolder() {
 		},
 
 		'&-label': {
-			'@apply flex relative items-center': {},
+			'@apply flex relative items-center hover:text-blue-700': {},
 			'&-icon': {
 				'@apply mr-3': {},
 			},
