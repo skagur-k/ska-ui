@@ -1,4 +1,4 @@
-import { FiAlertTriangle, FiBook } from 'react-icons/fi'
+import { FiAlertTriangle } from 'react-icons/fi'
 import { SiJavascript } from 'react-icons/si'
 import TreeView, { File, Folder } from './TreeView'
 export default {

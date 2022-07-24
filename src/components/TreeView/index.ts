@@ -1,1 +1,2 @@
-export { default as Grid } from './TreeView'
+export { default as Treeview } from './TreeView'
+export * from './TreeView'

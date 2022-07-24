@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { Tooltip } from '../Tooltip'
 import { FaInfo } from 'react-icons/fa'
-import { Description, DescriptionProps } from './Description.types'
+import { DescriptionProps } from './Description.types'
 
 const Description = ({
 	title,
@@ -10,7 +10,7 @@ const Description = ({
 	children,
 	className,
 	...rest
-}: DescriptionProps): Description => {
+}: DescriptionProps) => {
 	return (
 		<div {...rest} className={classNames('description', className)}>
 			<div className='flex items-center gap-2 mb-2'>

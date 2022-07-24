@@ -1,13 +1,6 @@
 import classNames from 'classnames'
-import { Button } from '../Button'
-import React, { ComponentType, memo, useEffect, useRef, useState } from 'react'
-import {
-	FocusScope,
-	useFocusManager,
-	useFocusRing,
-	useFocusWithin,
-	usePress,
-} from 'react-aria'
+import React, { ComponentType, memo, useRef, useState } from 'react'
+import { FocusScope, useFocusRing } from 'react-aria'
 import {
 	AiOutlineFile,
 	AiOutlineMinusSquare,

@@ -8,7 +8,6 @@ import type {
 	OptionContextValue,
 } from './ListBox.types'
 import { useListBox, useListBoxSection, useOption } from '@react-aria/listbox'
-import classNames from 'classnames'
 import React from 'react'
 import { useListBoxOptionClass } from './styles'
 import { FaCheck } from 'react-icons/fa'
@@ -119,7 +118,7 @@ const ListBoxOption = ({ item, state }: OptionProps): ListBoxOptionType => {
 	)
 }
 
-export const Label = ({ children }: { children: React.ReactNode }) => {
+export const ListBoxLabel = ({ children }: { children: React.ReactNode }) => {
 	let { labelProps } = React.useContext(OptionContext)
 	return (
 		<div {...labelProps} className='listbox-option-label'>
@@ -128,7 +127,11 @@ export const Label = ({ children }: { children: React.ReactNode }) => {
 	)
 }
 
-export const Description = ({ children }: { children: React.ReactNode }) => {
+export const ListBoxDescription = ({
+	children,
+}: {
+	children: React.ReactNode
+}) => {
 	let { descriptionProps } = React.useContext(OptionContext)
 
 	return (
