@@ -1,6 +1,9 @@
 import React from 'react'
 
-interface TreeViewProps {}
+interface TreeViewProps {
+	children: React.ReactNode
+	title?: string
+}
 
 export interface BaseProps {
 	name: string
@@ -16,6 +19,8 @@ export interface FolderProps extends BaseProps {
 export interface FileProps extends BaseProps {
 	active?: boolean
 	type?: 'lambda'
+	isSelected?: boolean
+	icon?: React.ReactElement
 }
 
 export { TreeViewProps }

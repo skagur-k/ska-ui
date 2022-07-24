@@ -1,6 +1,13 @@
 import classNames from 'classnames'
-import React, { ComponentType, memo, useState } from 'react'
-import { FocusScope, useFocusRing } from 'react-aria'
+import { Button } from '../Button'
+import React, { ComponentType, memo, useEffect, useRef, useState } from 'react'
+import {
+	FocusScope,
+	useFocusManager,
+	useFocusRing,
+	useFocusWithin,
+	usePress,
+} from 'react-aria'
 import {
 	AiOutlineFile,
 	AiOutlineMinusSquare,
@@ -10,12 +17,15 @@ import { BsFolder } from 'react-icons/bs'
 import { CSSTransition } from 'react-transition-group'
 import { useFocusKeyDown } from '../../utils'
 import { TreeContextProvider, useTree } from './TreeContext'
-import { FileProps, FolderProps } from './TreeView.types'
+import { FileProps, FolderProps, TreeViewProps } from './TreeView.types'
 
-export const TreeView = ({ children }: { children: React.ReactNode }) => {
+export const TreeView = ({ children, title }: TreeViewProps) => {
 	return (
-		<FocusScope contain restoreFocus autoFocus>
-			<div className='treeview'>{children}</div>
+		<FocusScope>
+			<div className='treeview'>
+				{title && <div className='treeview-title'>{title}</div>}
+				{children}
+			</div>
 		</FocusScope>
 	)
 }
@@ -23,6 +33,7 @@ export const TreeView = ({ children }: { children: React.ReactNode }) => {
 export const Folder: ComponentType<FolderProps> = memo(
 	({ children, name, open, defaultOpen = false }) => {
 		const depth = useTree()
+
 		const [isOpen, setIsOpen] = useState(defaultOpen)
 
 		const ref = React.useRef<HTMLUListElement>(null)
@@ -52,7 +63,14 @@ export const Folder: ComponentType<FolderProps> = memo(
 							)
 						})}
 						<div className='treeview-folder-label'>
-							<span className='treeview-folder-label-status treeview-icons'>
+							<span
+								className={classNames(
+									'treeview-folder-label-status treeview-icons',
+									{
+										'treeview-folder-label-status-disabled':
+											open,
+									}
+								)}>
 								{open || isOpen ? (
 									<AiOutlineMinusSquare className='align-middle' />
 								) : (
@@ -92,38 +110,56 @@ export const Folder: ComponentType<FolderProps> = memo(
 	}
 )
 
-export const File: ComponentType<FileProps> = memo(({ name, active, type }) => {
-	const depth = useTree()
-	const { focusProps, isFocusVisible } = useFocusRing()
-	const onKeyDown = useFocusKeyDown()
+export const File: ComponentType<FileProps> = memo(
+	({ name, active, isSelected, icon }) => {
+		const depth = useTree()
+		const ref = useRef<HTMLLIElement>(null)
+		const [selected] = useState(isSelected)
+		const { focusProps, isFocusVisible } = useFocusRing()
+		const onKeyDown = useFocusKeyDown()
 
-	return (
-		<li
-			{...focusProps}
-			tabIndex={0}
-			onKeyDown={onKeyDown}
-			className={classNames('treeview-file', {
-				'treeview-file-active': active,
-				'treeview-file-focused': isFocusVisible,
-			})}>
-			<a>
-				{Array.from(Array(depth)).map((_e, i) => {
-					return (
-						<span
-							className='treeview-indent treeview-indent-file'
-							key={i}
-						/>
-					)
-				})}
-			</a>
-			<div className={classNames('treeview-file-label')}>
-				<span className='treeview-file-label-icon '>
-					<AiOutlineFile className='treeview-icons' />
-				</span>
-				<span className='treeview-file-label-name'>{name}</span>
-			</div>
-		</li>
-	)
-})
+		let iconClone
+
+		if (icon) {
+			iconClone = React.cloneElement(icon!, {
+				className: 'treeview-icons',
+			})
+		}
+
+		return (
+			<li
+				{...focusProps}
+				ref={ref}
+				tabIndex={0}
+				onKeyDown={onKeyDown}
+				className={classNames('treeview-file', {
+					'treeview-file-active': active,
+					'treeview-file-focused': isFocusVisible,
+					'treeview-file-selected': selected,
+				})}>
+				<a title={name}>
+					{Array.from(Array(depth)).map((_e, i) => {
+						return (
+							<span
+								className='treeview-indent treeview-indent-file'
+								key={i}
+							/>
+						)
+					})}
+				</a>
+				<div className={classNames('treeview-file-label')}>
+					<span className='treeview-file-label-icon '>
+						{icon ? (
+							iconClone
+						) : (
+							<AiOutlineFile className='treeview-icons' />
+						)}
+					</span>
+					<span className='treeview-file-label-name'>{name}</span>
+				</div>
+			</li>
+		)
+	}
+)
 
 export default TreeView

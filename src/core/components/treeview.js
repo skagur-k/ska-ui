@@ -4,6 +4,13 @@ function treeview() {
 		'@apply list-none gap-0': {},
 		'@apply text-sm': {},
 		'@apply transition-all': {},
+		'@apply min-w-[250px] w-fit': {},
+
+		'&-title': {
+			'@apply text-center': {},
+			'@apply pb-1 mb-4 border-b border-neutral-400': {},
+			'@apply select-none': {},
+		},
 
 		'&-icons': {
 			'@apply w-4 h-4': {},
@@ -49,6 +56,9 @@ function treeviewFolder() {
 				'@apply mr-3': {},
 				'@apply bg-gradient-to-r from-neutral-100 to-neutral-100 bg-[length:2px_100%] bg-no-repeat bg-center':
 					{},
+				'&-disabled': {
+					'@apply cursor-not-allowed': {},
+				},
 			},
 		},
 		'&-children': {
@@ -74,15 +84,20 @@ function treeviewFile() {
 			'@apply bg-neutral-100': {},
 		},
 
+		'&-selected .treeview-file-label': {
+			'@apply bg-neutral-800/60 text-white': {},
+		},
+
 		'&-label': {
 			'@apply flex relative items-center pl-1 py-[2px] flex-1': {},
 			'@apply ml-1': {},
+			'@apply rounded-md': {},
 
 			'&-icon': {
 				'@apply mr-3': {},
 			},
 			'&-name': {
-				'@apply py-[2px] flex flex-1': {},
+				'@apply py-[2px] flex flex-1 select-none': {},
 			},
 		},
 	}
