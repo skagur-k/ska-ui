@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { TOAST_POSITION, tTOAST_POSITION } from 'types'
 import { nanoid } from '../utils'
 import { UseToastProps } from './types'
 
@@ -6,7 +7,7 @@ const useToast = ({ position = 'TOP_RIGHT' }: UseToastProps) => {
 	const [loaded, setLoaded] = useState(false)
 	const [portalId] = useState(`toast-portal-${nanoid(8)}`)
 
-	const positions = {
+	const positions: tTOAST_POSITION = {
 		TOP_RIGHT: 'toast-manager--top-right',
 		TOP_LEFT: 'toast-manager--top-left',
 		BOTTOM_RIGHT: 'toast-manager--bottom-right',

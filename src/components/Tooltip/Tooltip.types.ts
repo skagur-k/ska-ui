@@ -1,3 +1,5 @@
+import { DefaultProps } from '../../types'
+
 import { TooltipTriggerState } from '@react-stately/tooltip'
 import {
 	AriaTooltipProps,

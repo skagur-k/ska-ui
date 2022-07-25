@@ -1,3 +1,5 @@
+import { DefaultProps } from '../../types'
+
 interface KBDProps extends DefaultProps {
 	mac?: boolean
 	meta?: boolean

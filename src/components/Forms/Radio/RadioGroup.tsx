@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { RadioGroup, RadioGroupProps } from './Radio.types'
+import { RadioGroupProps } from './Radio.types'
 import { useRadioGroupClass } from './style'
 
 import { useRadioGroup } from 'react-aria'
@@ -11,7 +11,7 @@ import { getValidChildren } from '../../../utils'
 
 const RadioContext = React.createContext<RadioGroupState>({} as RadioGroupState)
 
-const RadioGroup = (props: RadioGroupProps): RadioGroup => {
+const RadioGroup = (props: RadioGroupProps) => {
 	const {
 		label,
 		disabled,

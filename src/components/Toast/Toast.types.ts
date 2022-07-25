@@ -1,5 +1,7 @@
 type ToastTypes = 'info' | 'success' | 'warning' | 'error'
-interface Toast extends DefaultProps {
+import { DefaultProps, TOAST_POSITION } from '../../types'
+
+export interface ToastProps extends DefaultProps {
 	id?: string
 	type?: ToastTypes
 	onClose?: () => void
@@ -8,13 +10,13 @@ interface Toast extends DefaultProps {
 	cancelAction?: string
 }
 
-interface ToastManager {
+export interface ToastManagerProps {
 	autoClose?: boolean
 	autoCloseTime?: number
 	position?: TOAST_POSITION
 	maxToasts?: number
 }
 
-interface ToastManagerHandle {
-	addMessage: (toast: Toast) => void
+export interface ToastManagerHandle {
+	addMessage: (toast: ToastProps) => void
 }

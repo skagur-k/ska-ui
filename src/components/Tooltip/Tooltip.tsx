@@ -2,11 +2,11 @@ import { useTooltipTriggerState } from '@react-stately/tooltip'
 import classNames from 'classnames'
 import React from 'react'
 import { mergeProps, useTooltip, useTooltipTrigger } from 'react-aria'
-import { AriaToolTipProps, Tooltip, ToolTipProps } from './Tooltip.types'
+import { AriaToolTipProps, ToolTipProps } from './Tooltip.types'
 import { getValidChildren } from '../../utils'
 import { useTooltipClass } from './styles'
 
-const _Tooltip = (props: AriaToolTipProps): Tooltip => {
+const _Tooltip = (props: AriaToolTipProps) => {
 	const { message, state, className, ...rest } = props
 
 	const { tooltipProps } = useTooltip(props, state)

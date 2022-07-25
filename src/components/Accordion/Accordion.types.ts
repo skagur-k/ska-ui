@@ -1,4 +1,5 @@
 import React from 'react'
+import { DefaultProps } from '../../types'
 
 export type IAccordionItem = {
 	title: string

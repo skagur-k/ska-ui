@@ -1,11 +1,11 @@
 import classNames from 'classnames'
-import { Radio, RadioProps } from './Radio.types'
+import { RadioProps } from './Radio.types'
 
 import { useFocusRing, useRadio } from 'react-aria'
 import React from 'react'
 import { RadioContext } from './RadioGroup'
 
-const Radio = (props: RadioProps): Radio => {
+const Radio = (props: RadioProps) => {
 	const { children, rounded, className, disabled, caption, ...rest } = props
 	const state = React.useContext(RadioContext)
 	const ref = React.useRef(null)

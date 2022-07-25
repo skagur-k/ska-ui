@@ -1,4 +1,5 @@
 import React from 'react'
+import { DefaultProps } from '../../types'
 
 interface PopoverProps extends DefaultProps {
 	popoverRef?: React.RefObject<HTMLDivElement>

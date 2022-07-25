@@ -4,25 +4,30 @@ import { forwardRef, useImperativeHandle, useState } from 'react'
 import { Toast } from './Toast'
 import { nanoid } from '../../utils'
 import { Badge } from '../Badge'
+import {
+	ToastManagerProps,
+	ToastManagerHandle,
+	ToastProps,
+} from './Toast.types'
 
-export const ToastManager = forwardRef<ToastManagerHandle, ToastManager>(
+export const ToastManager = forwardRef<ToastManagerHandle, ToastManagerProps>(
 	(
 		{
 			autoClose = false,
 			autoCloseTime = 4000,
 			position = 'TOP_RIGHT',
 			maxToasts = 3,
-		}: ToastManager,
+		}: ToastManagerProps,
 		ref
 	) => {
-		const [toasts, setToasts] = useState<Toast[]>([])
+		const [toasts, setToasts] = useState<ToastProps[]>([])
 		const { loaded, portalId } = useToast({ position })
 		const portal = document.getElementById(portalId) as HTMLElement
-		const removeToast = (id: Toast['id']) => {
+		const removeToast = (id: ToastProps['id']) => {
 			setToasts(toasts.filter((t) => t.id !== id))
 		}
 
-		const addMessage = (toast: Toast) => {
+		const addMessage = (toast: ToastProps) => {
 			setToasts([...toasts, { ...toast, id: `toast-${nanoid(8)}` }])
 		}
 

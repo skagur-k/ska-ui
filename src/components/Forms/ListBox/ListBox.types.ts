@@ -1,5 +1,6 @@
 import type { AriaListBoxOptions } from '@react-aria/listbox'
 import type { Node } from '@react-types/shared'
+import { DefaultProps } from '../../../types'
 
 import React from 'react'
 import { ListState } from 'react-stately'
@@ -7,6 +8,7 @@ import { ListState } from 'react-stately'
 interface ListBoxProps extends AriaListBoxOptions<unknown>, DefaultProps {
 	listBoxRef?: React.RefObject<HTMLUListElement>
 	state: ListState<unknown>
+	className?: string
 }
 
 interface SectionProps {

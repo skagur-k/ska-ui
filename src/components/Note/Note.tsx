@@ -1,9 +1,9 @@
 import classNames from 'classnames'
 import { Button } from '../Button'
-import { Note, NoteProps } from './Note.types'
+import { NoteProps } from './Note.types'
 import { useNoteClass } from './styles'
 
-const Note = (props: NoteProps): Note => {
+const Note = (props: NoteProps) => {
 	const {
 		label = 'Note',
 		size = 'md',

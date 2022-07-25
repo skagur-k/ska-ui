@@ -1,4 +1,5 @@
 import React from 'react'
+import { DefaultProps } from '../../types'
 
 interface TextProps extends DefaultProps {
 	size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl'

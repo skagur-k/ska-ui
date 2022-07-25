@@ -1,3 +1,5 @@
+import { DefaultProps } from '../../types'
+
 interface SnippetProps extends DefaultProps {
 	width?: string
 	prompt?: boolean

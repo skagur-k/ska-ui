@@ -1,4 +1,5 @@
 import { ImgHTMLAttributes } from 'react'
+import { TOAST_POSITION } from '../types'
 
 interface UseImageProps {
 	src?: string

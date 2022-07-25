@@ -1,9 +1,9 @@
 import classNames from 'classnames'
 import React from 'react'
 import { DismissButton, FocusScope, useOverlay } from 'react-aria'
-import { Popover, PopoverProps } from './Popover.types'
+import { PopoverProps } from './Popover.types'
 
-const Popover = (props: PopoverProps): Popover => {
+const Popover = (props: PopoverProps) => {
 	const ref = React.useRef<HTMLDivElement>(null)
 	const { popoverRef = ref, isOpen, onClose, children, className } = props
 

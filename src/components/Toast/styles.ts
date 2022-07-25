@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import { useMemo } from 'react'
-interface ToastClassProps extends Partial<Toast> {}
+import { ToastProps } from './Toast.types'
+interface ToastClassProps extends Partial<ToastProps> {}
 
 function useToastClass(props: ToastClassProps) {
 	const { type } = props

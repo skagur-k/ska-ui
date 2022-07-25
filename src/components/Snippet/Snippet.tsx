@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { BiCopy } from 'react-icons/bi'
-import { Snippet, SnippetProps } from './Snippet.types'
+import { SnippetProps } from './Snippet.types'
 import { useSnippetClass } from './styles'
 
 const Snippet = ({
@@ -9,7 +9,7 @@ const Snippet = ({
 	text,
 	dark,
 	className,
-}: SnippetProps): Snippet => {
+}: SnippetProps) => {
 	const copyText = text.reduce((current, t) => current + '\n' + t)
 	function copyToClipboard() {
 		navigator.clipboard.writeText(copyText)

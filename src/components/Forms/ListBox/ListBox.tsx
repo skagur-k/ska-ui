@@ -1,5 +1,4 @@
 import type {
-	ListBoxType,
 	ListBoxOptionType,
 	ListBoxSectionType,
 	ListBoxProps,
@@ -11,14 +10,18 @@ import { useListBox, useListBoxSection, useOption } from '@react-aria/listbox'
 import React from 'react'
 import { useListBoxOptionClass } from './styles'
 import { FaCheck } from 'react-icons/fa'
+import classNames from 'classnames'
 
-const ListBox = (props: ListBoxProps): ListBoxType => {
+const ListBox = (props: ListBoxProps) => {
 	const ref = React.useRef<HTMLUListElement>(null)
-	const { listBoxRef = ref, state } = props
+	const { listBoxRef = ref, state, className } = props
 	const { listBoxProps } = useListBox(props, state, listBoxRef)
 
 	return (
-		<ul {...listBoxProps} ref={listBoxRef} className='listbox'>
+		<ul
+			{...listBoxProps}
+			ref={listBoxRef}
+			className={classNames('listbox', className)}>
 			<div className='listbox-items'>
 				{[...state.collection].map((item) =>
 					item.type === 'section' ? (

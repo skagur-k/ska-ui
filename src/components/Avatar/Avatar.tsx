@@ -8,7 +8,6 @@ import {
 } from './Avatar.types'
 import { Image } from '../Image'
 import { useAvatarClass, useAvatarNameClass } from './styles'
-import type { Badge } from 'components/Badge/Badge.types'
 
 const getInitials = (name: string) => {
 	const [firstName, lastName] = name.split(' ')
@@ -67,7 +66,6 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
 			bordered = false,
 			name,
 			icon,
-			badge,
 			src,
 			srcSet,
 			onError,
@@ -136,7 +134,6 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
 						{renderChildren()}
 					</div>
 					{icon && <Icon className='avatar-icon' />}
-					{badge && <div className='avatar-badge'>{badge}</div>}
 				</div>
 			</div>
 		)

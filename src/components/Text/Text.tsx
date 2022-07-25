@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import { useTextClass } from './styles'
-import { CodeBlockProps, InlineCodeProps, Text, TextProps } from './Text.types'
+import { CodeBlockProps, InlineCodeProps, TextProps } from './Text.types'
 
 const Text = ({
 	size,
@@ -12,7 +12,7 @@ const Text = ({
 	children,
 	className,
 	...rest
-}: TextProps): Text => {
+}: TextProps) => {
 	const textClasses = useTextClass({
 		size,
 		weight,

@@ -1,6 +1,7 @@
 import { AriaTabListProps, AriaTabPanelProps } from '@react-types/tabs'
 import { Node } from '@react-types/shared'
 import { TabListState } from 'react-stately'
+import { DefaultProps } from '../../types'
 
 export interface TabProps<T> extends DefaultProps {
 	item: Node<T>

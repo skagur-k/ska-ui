@@ -1,4 +1,5 @@
 import { Tag } from './Tag'
+import { DefaultProps } from '../../types'
 
 export interface TagProps extends DefaultProps {
 	id: string

@@ -1,3 +1,5 @@
+import { DefaultProps } from '../../types'
+
 import {
 	ItemProps as _ItemProps,
 	SectionProps as _SectionProps,

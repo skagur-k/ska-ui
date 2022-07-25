@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import { useToastClass } from './styles'
 import { BsXLg } from 'react-icons/bs'
 import { Button } from '../Button'
+import { ToastProps } from './Toast.types'
 export const Toast = ({
 	type = 'info',
 	onClose,
@@ -9,7 +10,7 @@ export const Toast = ({
 	action,
 	cancelAction,
 	...rest
-}: Toast) => {
+}: ToastProps) => {
 	const toastClasses = useToastClass({ type })
 
 	return (

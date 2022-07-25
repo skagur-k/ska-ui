@@ -1,7 +1,5 @@
-import { ComboBoxProps as NativeComboBoxProps } from '@react-types/combobox'
+import { AriaComboBoxProps } from '@react-types/combobox'
 
-interface ComboBoxProps<T extends object> extends NativeComboBoxProps<T> {}
+interface ComboBoxProps<T extends object> extends AriaComboBoxProps<T> {}
 
-type ComboBox = JSX.Element
-
-export { ComboBox, ComboBoxProps }
+export { ComboBoxProps }

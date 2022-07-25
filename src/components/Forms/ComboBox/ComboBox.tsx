@@ -6,9 +6,9 @@ import { ListBox } from '../ListBox'
 import React from 'react'
 import { useButton, useComboBox, useFilter, useHover } from 'react-aria'
 import { FiChevronDown } from 'react-icons/fi'
-import { ComboBox, ComboBoxProps } from './ComboBox.types'
+import { ComboBoxProps } from './ComboBox.types'
 
-const ComboBox = <T extends object>(props: ComboBoxProps<T>): ComboBox => {
+const ComboBox = <T extends object>(props: ComboBoxProps<T>) => {
 	const { label } = props
 	const { contains } = useFilter({ sensitivity: 'base' })
 	const state = useComboBoxState({
@@ -86,5 +86,6 @@ const ComboBox = <T extends object>(props: ComboBoxProps<T>): ComboBox => {
 		</div>
 	)
 }
+// ComboBox.displayName = 'SKA-UI ComboBox'
 
 export default ComboBox

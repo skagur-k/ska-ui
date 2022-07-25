@@ -1,5 +1,5 @@
 import { Item, Section } from '../../Shared'
-import { Label, Description } from '../ListBox/ListBox'
+import { ListBoxLabel, ListBoxDescription } from '../ListBox/'
 import { Select } from '../Select'
 import ComboBox from './ComboBox'
 export default {
@@ -17,87 +17,87 @@ const Template = (args: any) => {
 				</Item>
 				<Section title='Category 2'>
 					<Item key='option2' label='Option 2'>
-						<Label>Option 2</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 2</ListBoxLabel>
+						<ListBoxDescription>Description</ListBoxDescription>
 					</Item>
 					<Item label='Option 3' key='option3'>
-						<Label>Option 3</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 3</ListBoxLabel>
+						<ListBoxDescription>Description</ListBoxDescription>
 					</Item>
 					<Item key='option4' label='Option 4'>
-						<Label>Option 4</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 4</ListBoxLabel>
+						<ListBoxDescription>Description</ListBoxDescription>
 					</Item>
 					<Item key='option4' label='Option 4'>
-						<Label>Option 4</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 4</ListBoxLabel>
+						<ListBoxDescription>Description</ListBoxDescription>
 					</Item>
 					<Item key='option4' label='Option 4'>
-						<Label>Option 4</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 4</ListBoxLabel>
+						<ListBoxDescription>Description</ListBoxDescription>
 					</Item>
 					<Item key='option4' label='Option 4'>
-						<Label>Option 4</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 4</ListBoxLabel>
+						<ListBoxDescription>Description</ListBoxDescription>
 					</Item>
 					<Item key='option4' label='Option 4'>
-						<Label>Option 4</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 4</ListBoxLabel>
+						<ListBoxDescription>Description</ListBoxDescription>
 					</Item>
 					<Item key='option4' label='Option 4'>
-						<Label>Option 4</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 4</ListBoxLabel>
+						<ListBoxDescription>Description</ListBoxDescription>
 					</Item>
 					<Item key='option4' label='Option 4'>
-						<Label>Option 4</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 4</ListBoxLabel>
+						<ListBoxDescription>Description</ListBoxDescription>
 					</Item>
 					<Item key='option4' label='Option 4'>
-						<Label>Option 4</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 4</ListBoxLabel>
+						<ListBoxDescription>Description</ListBoxDescription>
 					</Item>
 					<Item key='option4' label='Option 4'>
-						<Label>Option 4</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 4</ListBoxLabel>
+						<ListBoxDescription>Description</ListBoxDescription>
 					</Item>
 					<Item key='option4' label='Option 4'>
-						<Label>Option 4</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 4</ListBoxLabel>
+						<ListBoxDescription>Description</ListBoxDescription>
 					</Item>
 					<Item key='option4' label='Option 4'>
-						<Label>Option 4</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 4</ListBoxLabel>
+						<ListBoxDescription>Description</ListBoxDescription>
 					</Item>
 					<Item key='option4' label='Option 4'>
-						<Label>Option 4</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 4</ListBoxLabel>
+						<ListBoxDescription>Description</ListBoxDescription>
 					</Item>
 					<Item key='option4' label='Option 4'>
-						<Label>Option 4</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 4</ListBoxLabel>
+						<ListBoxDescription>Description</ListBoxDescription>
 					</Item>
 					<Item key='option4' label='Option 4'>
-						<Label>Option 4</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 4</ListBoxLabel>
+						<ListBoxDescription>Description</ListBoxDescription>
 					</Item>
 				</Section>
 			</ComboBox>
 			<Select placeholder='Choose One!' label='Favorite Animal'>
-				<Item key='option1'>
-					<Label>Option 1</Label>
-				</Item>
+				<ListBoxDescription key='option1'>
+					<ListBoxLabel>Option 1</ListBoxLabel>
+				</ListBoxDescription>
 				<Section title='Category 2'>
 					<Item key='option2'>
-						<Label>Option 2</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 2</ListBoxLabel>
+						<ListBoxDescription>Description</ListBoxDescription>
 					</Item>
 					<Item key='option3'>
-						<Label>Option 3</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 3</ListBoxLabel>
+						<ListBoxDescription>Description</ListBoxDescription>
 					</Item>
 					<Item key='option4'>
-						<Label>Option 4</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 4</ListBoxLabel>
+						<ListBoxDescription>Description</ListBoxDescription>
 					</Item>
 				</Section>
 			</Select>

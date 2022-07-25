@@ -1,9 +1,9 @@
 import classNames from 'classnames'
 import { BiCommand } from 'react-icons/bi'
-import { BsAlt, BsArrowReturnLeft, BsOption, BsShift } from 'react-icons/bs'
+import { BsArrowReturnLeft, BsOption, BsShift } from 'react-icons/bs'
 import { FiDelete } from 'react-icons/fi'
 import { ImCtrl, ImWindows } from 'react-icons/im'
-import { KBD, KBDProps } from './KBD.types'
+import { KBDProps } from './KBD.types'
 
 const kbdIcons = {
 	windows: <ImWindows className='w-3 h-3' />,
@@ -15,7 +15,7 @@ const kbdIcons = {
 	deletekey: <FiDelete className='w-3 h-3' />,
 }
 
-const KBD = (props: KBDProps): KBD => {
+const KBD = (props: KBDProps) => {
 	const {
 		mac = false,
 		meta,

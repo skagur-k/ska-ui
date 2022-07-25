@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import { DefaultProps } from '../../types'
 
 export interface BlueContainerProps extends DefaultProps {
 	flex?: 2 | 3 | string

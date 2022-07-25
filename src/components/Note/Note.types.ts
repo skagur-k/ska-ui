@@ -1,3 +1,5 @@
+import { DefaultProps } from '../../types'
+
 interface NoteProps extends DefaultProps {
 	label?: boolean | string
 	action?: string

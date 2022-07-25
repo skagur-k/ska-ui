@@ -2,7 +2,7 @@ import React, { forwardRef, useState } from 'react'
 import { InputProps } from './Input.types'
 import classNames from 'classnames'
 import { useFocusRing, useTextField } from 'react-aria'
-import { mergeRefs } from 'react-merge-refs'
+import { mergeRefs } from '@react-aria/utils'
 import { useInputClass } from './styles'
 import { AiOutlineExclamationCircle } from 'react-icons/ai'
 
@@ -79,7 +79,7 @@ const Input = forwardRef<HTMLElement, InputProps>((props: InputProps, ref) => {
 						suffix && 'form-input-field-with-suffix',
 					])}
 					{...rest}
-					ref={mergeRefs([ref, _ref])}
+					ref={mergeRefs(ref, _ref)}
 				/>
 				{suffix && <div className='form-input-suffix'>{suffix}</div>}
 			</div>

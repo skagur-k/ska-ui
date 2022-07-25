@@ -11,11 +11,11 @@ function buttonBase() {
 		'@apply w-fit h-fit': {},
 
 		'&-content': {
-			[`@apply flex items-center justify-center`]: {},
+			'@apply flex items-center justify-center': {},
 		},
 
 		'&-icon': {
-			'@apply text-lg mr-2': {},
+			'@apply text-lg mr-2 inline-flex items-center justify-center': {},
 		},
 
 		'&-disabled, &-loading': {

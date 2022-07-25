@@ -1,4 +1,5 @@
 import { AriaRadioProps } from '@react-types/radio'
+import { DefaultProps } from '../../../types'
 
 interface RadioProps extends DefaultProps, AriaRadioProps {
 	caption?: string

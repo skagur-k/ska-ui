@@ -1,4 +1,5 @@
 type flexDirection = 'row' | 'col'
+import { DefaultProps } from '../../types'
 
 interface ContainerProps extends DefaultProps {
 	flex?: 1 | 2 | 3 | 'auto' | 'initial' | 'none'

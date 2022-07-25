@@ -1,5 +1,5 @@
+import classNames from 'classnames'
 import React from 'react'
-import { Item, useSelectState } from 'react-stately'
 import {
 	HiddenSelect,
 	mergeProps,
@@ -8,13 +8,11 @@ import {
 	useHover,
 	useSelect,
 } from 'react-aria'
+import { HiSelector } from 'react-icons/hi'
+import { useSelectState } from 'react-stately'
 import { Popover } from '../../Popover'
 import { ListBox } from '../ListBox'
-import classNames from 'classnames'
-import { HiSelector } from 'react-icons/hi'
-import type { SelectItemProps, SelectProps } from './Select.types'
-import type { ItemElement } from '@react-types/shared'
-import { Avatar } from '../../Avatar'
+import type { SelectProps } from './Select.types'
 
 const Select = <T extends object>(props: SelectProps<T>): JSX.Element => {
 	const { placeholder, disabled, ...rest } = props

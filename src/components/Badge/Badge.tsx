@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { Badge, BadgeProps } from './Badge.types'
+import { BadgeProps } from './Badge.types'
 import { useBadgeClass } from './styles'
 
 const Badge = ({
@@ -11,7 +11,7 @@ const Badge = ({
 	className,
 	children,
 	...rest
-}: BadgeProps): Badge => {
+}: BadgeProps) => {
 	const BadgeClasses = useBadgeClass({ size, outline, contrast })
 	return (
 		<div

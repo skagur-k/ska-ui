@@ -1,4 +1,5 @@
 import React from 'react'
+import { DefaultProps } from '../../../types'
 
 interface TextAreaNativeProps
 	extends React.HTMLAttributes<HTMLTextAreaElement> {}

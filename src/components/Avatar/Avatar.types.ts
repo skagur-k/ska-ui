@@ -1,13 +1,10 @@
-import { Badge } from 'components/Badge/Badge.types'
 import React from 'react'
-import { IconType } from 'react-icons/lib'
 
 interface IAvatarProps {
 	name?: string
 	src?: string
 	srcSet?: string
 	icon?: any
-	badge?: Badge
 	bordered?: boolean
 	onError?: () => void
 	loading?: 'eager' | 'lazy'

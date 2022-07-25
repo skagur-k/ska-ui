@@ -1,9 +1,9 @@
 import classNames from 'classnames'
 import { useFocusRing } from 'react-aria'
 import { useTextAreaClass } from './styles'
-import { TextArea, TextAreaProps } from './TextArea.types'
+import { TextAreaProps } from './TextArea.types'
 
-const TextArea = (props: TextAreaProps): TextArea => {
+const TextArea = (props: TextAreaProps) => {
 	const {
 		placeholder,
 		defaultText,

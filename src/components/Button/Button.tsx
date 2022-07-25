@@ -5,8 +5,8 @@ import { useHover, usePress } from '@react-aria/interactions'
 import { DisabledContext } from '../../contexts/DisabledContext'
 import { ButtonProps } from './Button.types'
 import classNames from 'classnames'
-import { mergeRefs } from 'react-merge-refs'
 import { useButtonClass } from './styles'
+import { mergeRefs } from '@react-aria/utils'
 
 const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
 	(props: ButtonProps, extRef: React.Ref<HTMLButtonElement | null>) => {
@@ -91,7 +91,7 @@ const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
 					className
 				)}
 				{...rest}
-				ref={mergeRefs([buttonRef, extRef])}>
+				ref={mergeRefs(buttonRef, extRef)}>
 				{loading && (
 					<span>
 						{

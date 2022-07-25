@@ -1,9 +1,10 @@
-import { mergeRefs } from 'react-merge-refs'
 import React, { forwardRef, PropsWithChildren, useEffect, useRef } from 'react'
 import { CheckboxProps } from './Checkbox.types'
 import { useCheckbox, useFocusRing } from 'react-aria'
 import { useToggleState } from '@react-stately/toggle'
 import { useCheckboxClass, useCheckboxLabelClass } from './styles'
+import { mergeRefs } from '@react-aria/utils'
+
 import classNames from 'classnames'
 
 const Checkbox = forwardRef<HTMLInputElement, PropsWithChildren<CheckboxProps>>(
@@ -71,7 +72,7 @@ const Checkbox = forwardRef<HTMLInputElement, PropsWithChildren<CheckboxProps>>(
 					aria-readonly={readOnly}
 					aria-disabled={disabled}
 					className={classNames('sr-only')}
-					ref={mergeRefs([ref, extRef])}
+					ref={mergeRefs(ref, extRef)}
 					{...rest}
 				/>
 				<div
