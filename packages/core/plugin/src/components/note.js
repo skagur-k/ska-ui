@@ -1,8 +1,8 @@
 function note() {
 	return {
-		'@apply flex flex-1 px-3 py-1 items-center': {},
+		'@apply flex px-3 py-1 items-center': {},
 		'@apply justify-between': {},
-		'@apply rounded-md h-fit': {},
+		'@apply rounded-md h-fit min-w-[420px]': {},
 		'@apply border-0 ring-1 ring-neutral-300': {},
 		'@apply text-sm': {},
 

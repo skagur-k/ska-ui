@@ -33,10 +33,8 @@ function checkbox(colors) {
 					[`@apply text-white bg-white`]: {},
 					[`@apply border-${color}-500`]: {},
 
-					// Hover
 					[`@apply group-hover:border-${color}-500 group-hover:bg-${color}-100`]:
 						{},
-					// Active
 					[`@apply group-active:bg-${color}-400`]: {},
 
 					'&.checkbox-disabled': {

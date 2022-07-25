@@ -1,7 +1,7 @@
 const plugin = require(`tailwindcss/plugin`)
+const colors = require('tailwindcss/colors')
 const defaultTheme = require('tailwindcss/defaultTheme')
 const components = require('./components')
-const colors = require('tailwindcss/colors')
 const defaultColors = ['gray']
 
 const skaui = plugin.withOptions(
@@ -13,15 +13,14 @@ const skaui = plugin.withOptions(
 			variants,
 			e,
 			theme,
-			addUtilities,
 		}) {
 			const optionColors = [...defaultColors, ...(options.colors || [])]
 
-			loading({ addVariant, e, variants, theme, addUtilities })
-			focus({ addVariant, e, variants, theme, addUtilities })
-			hover({ addVariant, e, variants, theme, addUtilities })
-			active({ addVariant, e, variants, theme, addUtilities })
-			disabled({ addVariant, e, variants, theme, addUtilities })
+			loading({ addVariant, e, variants, theme })
+			focus({ addVariant, e, variants, theme })
+			hover({ addVariant, e, variants, theme })
+			active({ addVariant, e, variants, theme })
+			disabled({ addVariant, e, variants, theme })
 
 			addComponents(
 				components.map((component) => component(optionColors)),

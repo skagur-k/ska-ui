@@ -31,7 +31,7 @@ export const InlineCode = (props: InlineCodeProps) => {
 	const { children, className, ...rest } = props
 
 	const inlineCodeClasses = classNames(
-		'bg-neutral-600 text-neutral-100 px-1',
+		'bg-neutral-600 text-neutral-100 px-2 text-sm rounded-sm w-fit',
 		className
 	)
 	return (

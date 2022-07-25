@@ -1,6 +1,5 @@
 {
 	"compilerOptions": {
-		"baseUrl": "./packages/core",
 		"outDir": "dist",
 		"sourceMap": true,
 		"target": "es6" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
@@ -21,5 +20,7 @@
 		"emitDeclarationOnly": true,
 		"plugins": [{ "name": "typescript-plugin-css-modules" }],
 		"lib": ["es5", "es6", "dom", "dom.iterable"]
-	}
+	},
+	"include": ["packages/core"],
+	"exclude": ["node_modules"]
 }

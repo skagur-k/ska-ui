@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-const skaui = require('./packages/core/core')
+const skaui = require('./packages/core/plugin/')
 
 module.exports = {
 	darkMode: 'class',

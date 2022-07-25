@@ -1,7 +1,7 @@
 import { isBrowser } from '../../utils'
 import { ThemeContext } from './ThemeContext'
 import { useState, useEffect } from 'react'
-import { useMediaQuery } from 'hooks'
+import { useMediaQuery } from '../../hooks'
 
 const ThemeContextProvider = ({ children }: any) => {
 	const prefersDark = useMediaQuery('(prefers-color-scheme:dark)')

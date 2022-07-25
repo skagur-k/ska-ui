@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { TOAST_POSITION, tTOAST_POSITION } from 'types'
+import { TOAST_POSITION, tTOAST_POSITION } from '../types'
 import { nanoid } from '../utils'
 import { UseToastProps } from './types'
 
