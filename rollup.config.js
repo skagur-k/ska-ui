@@ -30,7 +30,6 @@ export default [
 				tsconfig: './tsconfig.json',
 				exclude: ['./**/*.stories.tsx', './**/*.test.tsx'],
 			}),
-			resolve(),
 			commonjs(),
 			postcss({
 				config: {
@@ -44,6 +43,7 @@ export default [
 					insertAt: 'top',
 				},
 			}),
+			resolve(),
 			swc(),
 			terser(),
 		],

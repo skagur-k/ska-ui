@@ -1,5 +1,5 @@
 import { Item, Section } from '../../Shared'
-import { Description, Label } from '../ListBox/ListBox'
+import { ListBoxDescription, ListBoxLabel } from '../ListBox/ListBox'
 import Select from './Select'
 export default {
 	title: 'ska-ui/Select',
@@ -12,59 +12,52 @@ const Template = (args: any) => {
 		<div className='flex flex-col gap-5'>
 			<Select placeholder='Choose One!' label='Favorite Animal'>
 				<Item key='option1'>
-					<Label>Option 1</Label>
+					<ListBoxLabel>Option 1</ListBoxLabel>
 				</Item>
 				<Section title='Category 2'>
 					<Item key='option2'>
-						<Label>Option 2</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 2</ListBoxLabel>
+						<ListBoxDescription>
+							ListBoxDescription
+						</ListBoxDescription>
 					</Item>
 					<Item key='option3'>
-						<Label>Option 3</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 3</ListBoxLabel>
+						<ListBoxDescription>
+							ListBoxDescription
+						</ListBoxDescription>
 					</Item>
 					<Item key='option4'>
-						<Label>Option 4</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 4</ListBoxLabel>
+						<ListBoxDescription>
+							ListBoxDescription
+						</ListBoxDescription>
 					</Item>
 				</Section>
 			</Select>
 			<Select placeholder='Choose One!' label='Favorite Animal'>
 				<Section title='Category 1'>
 					<Item avatar='x' key='option1'>
-						<Label>Option 1</Label>
+						<ListBoxLabel>Option 1</ListBoxLabel>
 					</Item>
 					<Item avatar='x' key='option2'>
-						<Label>Option 2</Label>
+						<ListBoxLabel>Option 2</ListBoxLabel>
 					</Item>
 				</Section>
 				<Section title='Category 2'>
 					<Item avatar='x' key='option3'>
-						<Label>Option 3</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 3</ListBoxLabel>
+						<ListBoxDescription>
+							ListBoxDescription
+						</ListBoxDescription>
 					</Item>
 					<Item avatar='x' key='option4'>
-						<Label>Option 4</Label>
-						<Description>Description</Description>
+						<ListBoxLabel>Option 4</ListBoxLabel>
+						<ListBoxDescription>
+							ListBoxDescription
+						</ListBoxDescription>
 					</Item>
 				</Section>
-			</Select>
-			<Select placeholder='Choose One!' label='Favorite Animal'>
-				<Item key='option1'>
-					<Label>Option 1</Label>
-				</Item>
-				<Item key='option2'>
-					<Label>Option 2</Label>
-					<Description>Description</Description>
-				</Item>
-				<Item key='option3'>
-					<Label>Option 3</Label>
-					<Description>Description</Description>
-				</Item>
-				<Item key='option4'>
-					<Label>Option 4</Label>
-					<Description>Description</Description>
-				</Item>
 			</Select>
 		</div>
 	)

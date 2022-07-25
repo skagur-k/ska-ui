@@ -1,6 +1,6 @@
 {
 	"name": "@skagur-k/ska-ui",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "SKA-UI, A React UI Component Library",
 	"main": "./dist/cjs/index.js",
 	"module": "./dist/esm/index.esm.js",

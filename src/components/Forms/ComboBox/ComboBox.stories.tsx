@@ -82,25 +82,6 @@ const Template = (args: any) => {
 					</Item>
 				</Section>
 			</ComboBox>
-			<Select placeholder='Choose One!' label='Favorite Animal'>
-				<ListBoxDescription key='option1'>
-					<ListBoxLabel>Option 1</ListBoxLabel>
-				</ListBoxDescription>
-				<Section title='Category 2'>
-					<Item key='option2'>
-						<ListBoxLabel>Option 2</ListBoxLabel>
-						<ListBoxDescription>Description</ListBoxDescription>
-					</Item>
-					<Item key='option3'>
-						<ListBoxLabel>Option 3</ListBoxLabel>
-						<ListBoxDescription>Description</ListBoxDescription>
-					</Item>
-					<Item key='option4'>
-						<ListBoxLabel>Option 4</ListBoxLabel>
-						<ListBoxDescription>Description</ListBoxDescription>
-					</Item>
-				</Section>
-			</Select>
 		</div>
 	)
 }
