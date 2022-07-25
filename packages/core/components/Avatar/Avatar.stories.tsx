@@ -16,31 +16,16 @@ export default {
 const Template = (args: any) => {
 	return (
 		<div className='flex flex-col gap-5'>
-			<Avatar
-				size='lg'
-				name='Nam Hyuck'
-				icon={AiFillSetting}
-				badge={
-					<Badge contrast color='red'>
-						New
-					</Badge>
-				}
-			/>
+			<Avatar size='lg' name='Nam Hyuck' icon={AiFillSetting} />
 			<div className='flex gap-10 items-center'>
 				<Avatar size='xs' name='Nam Hyuck' icon={AiFillAlert} />
 				<Avatar size='sm' name='Nam Hyuck' icon={AiFillAlert} />
 				<Avatar size='md' name='Nam Hyuck' icon={AiFillAlert} />
-				<Avatar
-					size='lg'
-					name='Nam Hyuck'
-					icon={AiFillSetting}
-					badge={<Badge size='md'>Github</Badge>}
-				/>
+				<Avatar size='lg' name='Nam Hyuck' icon={AiFillSetting} />
 				<Avatar
 					bordered
 					size='xl'
 					name='Nam Hyuck'
-					badge={<Badge outline>Github</Badge>}
 					icon={AiFillFacebook}
 				/>
 				<Avatar
@@ -48,7 +33,6 @@ const Template = (args: any) => {
 					size='2xl'
 					name='Karina H'
 					icon={AiFillGithub}
-					badge={<Badge>1</Badge>}
 				/>
 				<Avatar size='2xl' icon={AiFillGithub} />
 			</div>
@@ -92,9 +76,6 @@ const Template = (args: any) => {
 				<Avatar bordered size='2xl' name='Nam Hyuck' />
 			</AvatarGroup>
 			<AvatarGroup size='lg' max={3}>
-				<Avatar badge={<Badge>Github</Badge>} name='Nam Hyuck' />
-				<Avatar badge={<Badge>Github</Badge>} name='Nam Hyuck' />
-				<Avatar badge={<Badge>Github</Badge>} name='Nam Hyuck' />
 				<Avatar name='Nam Hyuck' />
 				<Avatar name='Nam Hyuck' />
 				<Avatar bordered name='Nam Hyuck' />

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { TOAST_POSITION, tTOAST_POSITION } from '../types'
-import { nanoid } from '../utils'
-import { UseToastProps } from './types'
+import { TOAST_POSITION, tTOAST_POSITION } from '../../types'
+import { nanoid } from '../'
+import { UseToastProps } from '../types'
 
 const useToast = ({ position = 'TOP_RIGHT' }: UseToastProps) => {
 	const [loaded, setLoaded] = useState(false)

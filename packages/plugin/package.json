@@ -7,7 +7,9 @@
 		"src/",
 		"dist/"
 	],
-	"scripts": {},
+	"scripts": {
+		"build": "NODE_ENV=production rollup -c"
+	},
 	"author": "Nam Hyuck Kim (skagur0329@gmail.com)",
 	"license": "ISC",
 	"peerDependencies": {

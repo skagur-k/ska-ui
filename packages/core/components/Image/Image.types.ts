@@ -1,4 +1,4 @@
-import { UseImageProps } from '../../hooks/'
+import { UseImageProps } from '../../utils'
 import React, { ImgHTMLAttributes } from 'react'
 
 interface INativeImageProps {

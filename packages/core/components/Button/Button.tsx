@@ -2,7 +2,6 @@ import React, { PropsWithChildren } from 'react'
 import { forwardRef, useState, useRef, useContext } from 'react'
 import { useButton } from '@react-aria/button'
 import { useHover, usePress } from '@react-aria/interactions'
-import { DisabledContext } from '../../contexts/DisabledContext'
 import { ButtonProps } from './Button.types'
 import classNames from 'classnames'
 import { useButtonClass } from './styles'
@@ -28,17 +27,15 @@ const Button = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(
 			...rest
 		} = props
 		const buttonRef = useRef<HTMLButtonElement>(null)
-		const ctxDisabled = useContext(DisabledContext)
-		const isDisabled = disabled ?? ctxDisabled
 
 		const [isFocused, setFocused] = useState(false)
 		const { hoverProps, isHovered } = useHover({
-			isDisabled: isDisabled || loading,
+			isDisabled: disabled || loading,
 		})
 		const { buttonProps, isPressed } = useButton(
 			{
 				type: 'submit',
-				isDisabled: isDisabled || loading,
+				isDisabled: disabled || loading,
 				onFocusChange: setFocused,
 				onKeyDown: (e) => {
 					if (e.key === 'Enter' || e.key === ' ') {

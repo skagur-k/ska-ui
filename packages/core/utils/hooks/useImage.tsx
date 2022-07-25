@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 import { useCallback, useRef, useState } from 'react'
-import { ImageEvent, Status, UseImageProps } from './types'
+import { ImageEvent, Status, UseImageProps } from '../'
 
 export default function useImage(props: UseImageProps) {
 	const { src, srcSet, sizes, onLoad, onError, ignoreFallback, crossOrigin } =

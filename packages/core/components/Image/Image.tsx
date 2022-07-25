@@ -1,4 +1,4 @@
-import { useImage, Status } from '../../hooks/'
+import { useImage, Status } from '../../utils'
 import React, { forwardRef } from 'react'
 import { omit } from '../../utils'
 import { ImageProps, NativeImageProps } from './Image.types'
@@ -41,7 +41,7 @@ const Image = forwardRef<unknown, ImageProps>((props, ref) => {
 
 	const sharedProps = {
 		ref,
-		...(shouldIgnore ? rest : omit(rest, ['onLoad', 'onError'])),
+		...(shouldIgnore ? rest : omit(rest, ['onLoad'])),
 	}
 
 	if (status !== 'loaded') {

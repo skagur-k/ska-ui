@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { useImage } from '../../hooks/'
+import { useImage } from '../../utils'
 import React from 'react'
 import {
 	AvatarNameProps,

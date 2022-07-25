@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { isBrowser } from '../utils'
+import { isBrowser } from '../'
 
 interface ScrollPosition {
 	x: number

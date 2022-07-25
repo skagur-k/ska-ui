@@ -1,4 +1,4 @@
-import { useToast } from '../../hooks'
+import { useToast } from '../../utils'
 import ReactDOM from 'react-dom'
 import { forwardRef, useImperativeHandle, useState } from 'react'
 import { Toast } from './Toast'

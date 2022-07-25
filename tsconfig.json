@@ -21,6 +21,6 @@
 		"plugins": [{ "name": "typescript-plugin-css-modules" }],
 		"lib": ["es5", "es6", "dom", "dom.iterable"]
 	},
-	"include": ["packages/core"],
+	"include": ["packages/core", "packages/plugin"],
 	"exclude": ["node_modules"]
 }
