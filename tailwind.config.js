@@ -1,10 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 
-const skaui = require('./src/core')
+const skaui = require('./packages/core/core')
 
 module.exports = {
 	darkMode: 'class',
-	content: ['./src/**/*.{ts,tsx}'],
+	content: ['./packages/core/**/*.{ts,tsx}'],
 	plugins: [
 		skaui({
 			colors: ['red', 'blue', 'sky'],

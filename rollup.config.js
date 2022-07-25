@@ -10,7 +10,7 @@ const packageJson = require('./package.json')
 
 export default [
 	{
-		input: './src/index.ts',
+		input: './packages/core/index.ts',
 		output: [
 			{
 				file: packageJson.main,
@@ -28,7 +28,10 @@ export default [
 			peerDepsExternal(),
 			typescript({
 				tsconfig: './tsconfig.json',
-				exclude: ['./**/*.stories.tsx', './**/*.test.tsx'],
+				exclude: [
+					'./packages/core/**/*.stories.tsx',
+					'./packages/core/**/*.test.tsx',
+				],
 			}),
 			commonjs(),
 			postcss({
